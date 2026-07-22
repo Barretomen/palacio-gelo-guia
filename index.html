@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b1d3b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="PG Guia" />
+  <meta name="description" content="Guia móvel e offline do Palácio do Gelo: pisos, lojas, referências cardeais e treino." />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="assets/icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>PG | Guia de Bolso</title>
+</head>
+<body>
+  <div id="app" class="app-shell">
+    <header class="topbar">
+      <div class="brand-block">
+        <div class="brand-icon" aria-hidden="true">✦</div>
+        <div>
+          <p class="eyebrow">PALÁCIO DO GELO</p>
+          <h1>Guia de Bolso</h1>
+        </div>
+      </div>
+      <div class="top-actions">
+        <button id="installBtn" class="icon-btn hidden" type="button" aria-label="Instalar aplicação">⇩</button>
+        <button id="openStatusBtn" class="status-pill" type="button" aria-label="Ver horários">
+          <span id="openStatusDot" class="status-dot"></span>
+          <span id="openStatusText">A verificar</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="content">
+      <section id="screen-home" class="screen active" data-screen="home">
+        <div class="hero-card">
+          <div class="hero-copy">
+            <span class="micro-label">LOCALIZAÇÃO RÁPIDA</span>
+            <h2>Onde fica?</h2>
+            <p>Pesquise loja, serviço, piso, unidade ou referência.</p>
+          </div>
+          <div class="search-wrap">
+            <span class="search-icon">⌕</span>
+            <input id="homeSearch" type="search" autocomplete="off" placeholder="Ex.: MEO, WC, restaurante, loja 018…" aria-label="Pesquisar local" />
+            <button id="voiceSearchBtn" class="voice-btn" type="button" aria-label="Pesquisar por voz">◉</button>
+          </div>
+          <div id="homeSearchResults" class="search-results hidden"></div>
+        </div>
+
+        <section class="section-block">
+          <div class="section-heading">
+            <div>
+              <span class="micro-label">ORIENTAÇÃO OPERACIONAL</span>
+              <h2>Rosa dos pontos de referência</h2>
+            </div>
+            <button class="text-btn" data-nav-target="training" type="button">Treinar</button>
+          </div>
+          <div class="compass-card" aria-label="Orientação por pontos cardeais">
+            <button class="compass-point north" data-direction="north" type="button"><strong>N</strong><span>MEO</span></button>
+            <button class="compass-point west" data-direction="west" type="button"><strong>P</strong><span>Farmácia</span></button>
+            <div class="compass-center"><span>PG</span><small>referências</small></div>
+            <button class="compass-point east" data-direction="east" type="button"><strong>N</strong><span>Oposto à Farmácia</span></button>
+            <button class="compass-point south" data-direction="south" type="button"><strong>S</strong><span>Auchan</span></button>
+          </div>
+          <p class="compass-legend"><b>P</b> = Poente · <b>N</b> à direita = Nascente</p>
+        </section>
+
+        <section class="section-block">
+          <div class="section-heading"><h2>Acesso rápido</h2></div>
+          <div class="quick-grid">
+            <button class="quick-card" data-action="open-floor" data-floor="0" type="button"><span class="quick-icon">⌖</span><b>Mapa Piso 0</b><small>Mapa ampliado e marcadores</small></button>
+            <button class="quick-card" data-action="find-place" data-place="Balcão de Informações" type="button"><span class="quick-icon">i</span><b>Informações</b><small>Piso -2</small></button>
+            <button class="quick-card" data-action="find-place" data-place="Perdidos e achados" type="button"><span class="quick-icon">◇</span><b>Perdidos</b><small>Balcão de Informações</small></button>
+            <button class="quick-card" data-action="open-radio" type="button"><span class="quick-icon">⌁</span><b>Rádio</b><small>Modelo de comunicação</small></button>
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-heading">
+            <h2>Favoritos</h2>
+            <button class="text-btn" data-nav-target="directory" type="button">Diretório</button>
+          </div>
+          <div id="favoritesList" class="horizontal-list empty-state">Ainda não marcou favoritos.</div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-heading"><h2>Agora</h2><button id="showAllHours" class="text-btn" type="button">Ver horários</button></div>
+          <div id="hoursStrip" class="hours-strip"></div>
+        </section>
+      </section>
+
+      <section id="screen-map" class="screen" data-screen="map">
+        <div class="section-heading sticky-heading">
+          <div><span class="micro-label">MAPA</span><h2 id="mapTitle">Piso 0</h2></div>
+          <button id="markModeBtn" class="outline-btn" type="button">+ Marcar ponto</button>
+        </div>
+        <div id="floorTabs" class="floor-tabs" role="tablist" aria-label="Escolher piso"></div>
+        <div class="map-card">
+          <div id="mapViewport" class="map-viewport">
+            <img id="floorMapImage" src="assets/mapa-piso-0.jpg" alt="Mapa do Piso 0" draggable="false" />
+            <div id="markerLayer" class="marker-layer"></div>
+            <div class="map-compass" aria-hidden="true"><b>N</b><span>↥</span><small>MEO</small></div>
+          </div>
+          <div id="mapHint" class="map-hint">Toque num marcador ou pesquise uma loja.</div>
+          <div class="zoom-actions">
+            <button id="zoomOutBtn" type="button" aria-label="Diminuir zoom">−</button>
+            <button id="resetZoomBtn" type="button">Ajustar</button>
+            <button id="zoomInBtn" type="button" aria-label="Aumentar zoom">+</button>
+          </div>
+        </div>
+        <div class="section-heading compact"><h2>Locais deste piso</h2><span id="floorCount" class="count-badge"></span></div>
+        <div id="floorPlaces" class="card-list"></div>
+      </section>
+
+      <section id="screen-directory" class="screen" data-screen="directory">
+        <div class="section-heading sticky-heading">
+          <div><span class="micro-label">142 LOCAIS CADASTRADOS</span><h2>Diretório</h2></div>
+          <button id="directoryFavoritesOnly" class="outline-btn" type="button">☆ Favoritos</button>
+        </div>
+        <div class="filter-card">
+          <div class="search-wrap compact-search">
+            <span class="search-icon">⌕</span>
+            <input id="directorySearch" type="search" placeholder="Nome, categoria, piso ou unidade" aria-label="Pesquisar diretório" />
+          </div>
+          <div class="filter-row">
+            <select id="floorFilter" aria-label="Filtrar por piso">
+              <option value="all">Todos os pisos</option>
+              <option value="-2">Piso -2</option><option value="-1">Piso -1</option><option value="P0">Parque P0</option>
+              <option value="0">Piso 0</option><option value="1">Piso 1</option><option value="2">Piso 2</option><option value="3">Piso 3</option>
+              <option value="unknown">Por confirmar</option>
+            </select>
+            <select id="categoryFilter" aria-label="Filtrar por categoria"><option value="all">Todas as categorias</option></select>
+          </div>
+          <label class="check-row"><input id="verifiedFilter" type="checkbox" /> Mostrar apenas localizações confirmadas</label>
+        </div>
+        <div class="result-summary"><span id="directoryCount"></span><button id="clearFilters" class="text-btn" type="button">Limpar filtros</button></div>
+        <div id="directoryList" class="card-list"></div>
+      </section>
+
+      <section id="screen-training" class="screen" data-screen="training">
+        <div class="section-heading">
+          <div><span class="micro-label">MEMORIZAÇÃO</span><h2>Modo treino</h2></div>
+          <div id="trainingScore" class="score-pill">0 / 0</div>
+        </div>
+        <div class="training-tabs">
+          <button class="active" data-training-mode="mixed" type="button">Misto</button>
+          <button data-training-mode="compass" type="button">Direções</button>
+          <button data-training-mode="floors" type="button">Pisos</button>
+        </div>
+        <div id="quizCard" class="quiz-card">
+          <span id="quizType" class="micro-label">DIREÇÃO</span>
+          <h2 id="quizQuestion">A carregar pergunta…</h2>
+          <div id="quizAnswers" class="answer-grid"></div>
+          <div id="quizFeedback" class="quiz-feedback hidden"></div>
+          <button id="nextQuestionBtn" class="primary-btn hidden" type="button">Próxima pergunta</button>
+        </div>
+        <section class="section-block">
+          <div class="section-heading"><h2>Referências essenciais</h2></div>
+          <div id="referenceCards" class="reference-grid"></div>
+        </section>
+        <section class="section-block">
+          <div class="section-heading"><h2>Checklist de ronda</h2><button id="resetPatrolBtn" class="text-btn" type="button">Reiniciar</button></div>
+          <div id="patrolChecklist" class="patrol-list"></div>
+        </section>
+      </section>
+
+      <section id="screen-more" class="screen" data-screen="more">
+        <div class="section-heading"><div><span class="micro-label">APOIO</span><h2>Mais ferramentas</h2></div></div>
+
+        <details class="accordion" open>
+          <summary>Serviços públicos</summary>
+          <div id="servicesList" class="mini-list"></div>
+        </details>
+
+        <details class="accordion">
+          <summary>Regras públicas do shopping</summary>
+          <div id="rulesList" class="mini-list"></div>
+        </details>
+
+        <details class="accordion" id="operationalNotesAccordion">
+          <summary>Notas operacionais pessoais</summary>
+          <p class="muted-note">Guardadas apenas neste dispositivo. Confirme sempre o procedimento oficial da empresa.</p>
+          <div id="operationalNotes" class="notes-grid"></div>
+        </details>
+
+        <details class="accordion">
+          <summary>Pontos personalizados</summary>
+          <button id="addCustomPlaceBtn" class="primary-btn full" type="button">Adicionar local</button>
+          <div id="customPlacesList" class="mini-list"></div>
+        </details>
+
+        <details class="accordion">
+          <summary>Diretório fotografado</summary>
+          <a href="assets/diretorio-fotografado.png" target="_blank" rel="noopener"><img class="directory-photo" src="assets/diretorio-fotografado.png" alt="Fotografia ampliada do diretório do shopping" /></a>
+        </details>
+
+        <details class="accordion">
+          <summary>Contactos e fontes</summary>
+          <div id="contactCard" class="contact-card"></div>
+          <div id="sourcesList" class="source-list"></div>
+          <p class="muted-note" id="dataNote"></p>
+        </details>
+
+        <div class="danger-zone">
+          <h3>Dados locais</h3>
+          <p>Favoritos, correções, notas, treino e pontos personalizados ficam apenas no seu telemóvel.</p>
+          <button id="exportDataBtn" class="outline-btn" type="button">Exportar cópia</button>
+          <button id="importDataBtn" class="outline-btn" type="button">Importar cópia</button>
+          <input id="importDataInput" type="file" accept="application/json" hidden />
+        </div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Navegação principal">
+      <button class="active" data-nav="home" type="button"><span>⌂</span><small>Início</small></button>
+      <button data-nav="map" type="button"><span>⌖</span><small>Mapa</small></button>
+      <button data-nav="directory" type="button"><span>☷</span><small>Diretório</small></button>
+      <button data-nav="training" type="button"><span>◎</span><small>Treino</small></button>
+      <button data-nav="more" type="button"><span>•••</span><small>Mais</small></button>
+    </nav>
+  </div>
+
+  <dialog id="placeDialog" class="sheet-dialog">
+    <form method="dialog" class="sheet-card">
+      <button class="sheet-close" value="cancel" aria-label="Fechar">×</button>
+      <div id="placeDialogContent"></div>
+    </form>
+  </dialog>
+
+  <dialog id="formDialog" class="sheet-dialog">
+    <form id="customPlaceForm" class="sheet-card">
+      <button class="sheet-close" type="button" data-close-dialog="formDialog" aria-label="Fechar">×</button>
+      <span class="micro-label">LOCAL PERSONALIZADO</span>
+      <h2 id="formDialogTitle">Adicionar local</h2>
+      <label>Nome<input name="name" required placeholder="Ex.: Posto de segurança" /></label>
+      <div class="two-cols"><label>Piso<select name="floor"><option>-2</option><option>-1</option><option>P0</option><option selected>0</option><option>1</option><option>2</option><option>3</option></select></label><label>Unidade<input name="unit" placeholder="Ex.: 018" /></label></div>
+      <label>Direção<select name="direction"><option value="">Por confirmar</option><option>Norte</option><option>Sul</option><option>Poente</option><option>Nascente</option></select></label>
+      <label>Referência / nota<textarea name="note" rows="3" placeholder="Ex.: corredor junto ao elevador"></textarea></label>
+      <input type="hidden" name="x" /><input type="hidden" name="y" />
+      <button class="primary-btn full" type="submit">Guardar neste dispositivo</button>
+    </form>
+  </dialog>
+
+  <dialog id="hoursDialog" class="sheet-dialog">
+    <form method="dialog" class="sheet-card">
+      <button class="sheet-close" value="cancel" aria-label="Fechar">×</button>
+      <span class="micro-label">HORÁRIOS PÚBLICOS</span><h2>Estado e horários</h2>
+      <div id="hoursDialogList" class="mini-list"></div>
+      <p class="muted-note">Horários especiais e feriados podem alterar estes valores.</p>
+    </form>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

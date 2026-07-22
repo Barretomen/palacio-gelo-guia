@@ -1,0 +1,15 @@
+{
+  "name": "Palácio do Gelo — Guia de Bolso",
+  "short_name": "PG Guia",
+  "description": "Pisos, lojas, pontos cardeais, treino e notas locais do Palácio do Gelo.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#071329",
+  "theme_color": "#0b1d3b",
+  "icons": [
+    {"src":"assets/icons/icon-192.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},
+    {"src":"assets/icons/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
+  ]
+}
