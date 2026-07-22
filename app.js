@@ -522,7 +522,7 @@
   function init(){
     initFilters();bindEvents();renderAll();
     setInterval(renderHours,60000);
-    if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js').catch(()=>{});
+    if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=1.1.1').catch(()=>{});
   }
   document.addEventListener('DOMContentLoaded',init);
 })();
