@@ -1,8 +1,8 @@
-const CACHE = 'pg-guia-v1.0.0';
+const CACHE = 'pg-guia-v1.1.0';
 const ASSETS = [
-  './','./index.html','./styles.css','./data.js','./app.js','./manifest.webmanifest',
-  './assets/mapa-piso--2.jpg','./assets/mapa-piso--1.jpg','./assets/mapa-piso-0.jpg','./assets/mapa-piso-1.jpg','./assets/mapa-piso-2.jpg','./assets/mapa-piso-3.jpg',
-  './assets/diretorio-fotografado.png','./assets/icons/icon-192.png','./assets/icons/icon-512.png'
+  './','./index.html','./styles.css','./data.js','./store-media.js','./app.js','./manifest.webmanifest',
+  './assets/mapa-oficial-piso--2.png','./assets/mapa-oficial-piso--1.png','./assets/mapa-oficial-piso-p0.png','./assets/mapa-oficial-piso-0.png','./assets/mapa-oficial-piso-1.png','./assets/mapa-oficial-piso-2.png','./assets/mapa-oficial-piso-3.png',
+  './assets/diretorio-fotografado.png','./assets/brand/palacio-do-gelo.svg','./assets/icons/palacio-do-gelo.webp'
 ];
 self.addEventListener('install', event => event.waitUntil(caches.open(CACHE).then(c => c.addAll(ASSETS)).then(()=>self.skipWaiting())));
 self.addEventListener('activate', event => event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));

@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#0b1d3b" />
+  <meta name="theme-color" content="#080b0f" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="PG Guia" />
   <meta name="description" content="Guia móvel e offline do Palácio do Gelo: pisos, lojas, referências cardeais e treino." />
   <link rel="manifest" href="manifest.webmanifest" />
-  <link rel="icon" href="assets/icons/icon-192.png" />
-  <link rel="apple-touch-icon" href="assets/icons/icon-192.png" />
+  <link rel="icon" href="assets/icons/palacio-do-gelo.webp" />
+  <link rel="apple-touch-icon" href="assets/icons/palacio-do-gelo.webp" />
   <link rel="stylesheet" href="styles.css" />
   <title>PG | Guia de Bolso</title>
 </head>
@@ -18,10 +18,10 @@
   <div id="app" class="app-shell">
     <header class="topbar">
       <div class="brand-block">
-        <div class="brand-icon" aria-hidden="true">✦</div>
-        <div>
-          <p class="eyebrow">PALÁCIO DO GELO</p>
-          <h1>Guia de Bolso</h1>
+        <img class="brand-logo" src="assets/brand/palacio-do-gelo.svg" alt="Palácio do Gelo Shopping" />
+        <div class="brand-context">
+          <span>Guia</span>
+          <h1>de Bolso</h1>
         </div>
       </div>
       <div class="top-actions">
@@ -37,9 +37,9 @@
       <section id="screen-home" class="screen active" data-screen="home">
         <div class="hero-card">
           <div class="hero-copy">
-            <span class="micro-label">LOCALIZAÇÃO RÁPIDA</span>
-            <h2>Onde fica?</h2>
-            <p>Pesquise loja, serviço, piso, unidade ou referência.</p>
+            <span class="micro-label">CONSULTA IMEDIATA</span>
+            <h2>O que procura?</h2>
+            <p>Lojas, serviços e referências — sem perder tempo.</p>
           </div>
           <div class="search-wrap">
             <span class="search-icon">⌕</span>
@@ -61,10 +61,10 @@
             <button class="compass-point north" data-direction="north" type="button"><strong>N</strong><span>MEO</span></button>
             <button class="compass-point west" data-direction="west" type="button"><strong>P</strong><span>Farmácia</span></button>
             <div class="compass-center"><span>PG</span><small>referências</small></div>
-            <button class="compass-point east" data-direction="east" type="button"><strong>N</strong><span>Oposto à Farmácia</span></button>
+            <button class="compass-point east" data-direction="east" type="button"><strong>E</strong><span>Oposto à Farmácia</span></button>
             <button class="compass-point south" data-direction="south" type="button"><strong>S</strong><span>Auchan</span></button>
           </div>
-          <p class="compass-legend"><b>P</b> = Poente · <b>N</b> à direita = Nascente</p>
+          <p class="compass-legend"><b>P</b> = Poente · <b>E</b> = Nascente</p>
         </section>
 
         <section class="section-block">
@@ -99,7 +99,7 @@
         <div id="floorTabs" class="floor-tabs" role="tablist" aria-label="Escolher piso"></div>
         <div class="map-card">
           <div id="mapViewport" class="map-viewport">
-            <img id="floorMapImage" src="assets/mapa-piso-0.jpg" alt="Mapa do Piso 0" draggable="false" />
+            <img id="floorMapImage" src="assets/mapa-oficial-piso-0.png" alt="Mapa do Piso 0" draggable="false" />
             <div id="markerLayer" class="marker-layer"></div>
             <div class="map-compass" aria-hidden="true"><b>N</b><span>↥</span><small>MEO</small></div>
           </div>
@@ -181,7 +181,7 @@
 
         <details class="accordion" id="operationalNotesAccordion">
           <summary>Notas operacionais pessoais</summary>
-          <p class="muted-note">Guardadas apenas neste dispositivo. Confirme sempre o procedimento oficial da empresa.</p>
+          <p class="muted-note">Modelos editáveis para comunicação rápida. Ficam apenas neste dispositivo e não substituem o procedimento oficial.</p>
           <div id="operationalNotes" class="notes-grid"></div>
         </details>
 
@@ -255,6 +255,7 @@
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
   <script src="data.js"></script>
+  <script src="store-media.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

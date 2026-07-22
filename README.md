@@ -22,8 +22,10 @@ Abra `http://localhost:8080`.
 
 ## Dados
 - 142 locais pesquisáveis.
+- Imagens oficiais disponíveis para 132 lojas, com monograma de segurança nos restantes locais.
+- Plantas oficiais em alta resolução para os pisos -2, -1, P0, 0, 1, 2 e 3.
 - Piso e unidade transcritos do diretório fotografado.
 - Lista pública complementada pelo site oficial.
 - Correções, favoritos, notas e pontos personalizados ficam no `localStorage` do dispositivo.
 
-Alguns pisos usam miniaturas do diretório porque ainda não há fotografias aproximadas de cada mapa. O app permite atualizar dados à medida que forem confirmados no terreno.
+As áreas a azul nas plantas são referências visuais do ficheiro oficial de origem. No Piso 0, a loja pesquisada pode ser destacada por um marcador aproximado.

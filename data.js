@@ -18,12 +18,13 @@ window.PG_DATA = {
     }
   },
   "floorImages": {
-    "-2": "assets/mapa-piso--2.jpg",
-    "-1": "assets/mapa-piso--1.jpg",
-    "0": "assets/mapa-piso-0.jpg",
-    "1": "assets/mapa-piso-1.jpg",
-    "2": "assets/mapa-piso-2.jpg",
-    "3": "assets/mapa-piso-3.jpg"
+    "-2": "assets/mapa-oficial-piso--2.png",
+    "-1": "assets/mapa-oficial-piso--1.png",
+    "P0": "assets/mapa-oficial-piso-p0.png",
+    "0": "assets/mapa-oficial-piso-0.png",
+    "1": "assets/mapa-oficial-piso-1.png",
+    "2": "assets/mapa-oficial-piso-2.png",
+    "3": "assets/mapa-oficial-piso-3.png"
   },
   "stores": [
     {

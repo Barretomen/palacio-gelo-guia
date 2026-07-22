@@ -1,13 +1,21 @@
 (() => {
   'use strict';
   const DATA = window.PG_DATA;
+  const STORE_MEDIA = window.PG_STORE_MEDIA || {};
   const STORAGE_KEY = 'pg-guia-bolso-v1';
-  const floors = ['-2', '-1', '0', '1', '2', '3'];
+  const floors = ['-2', '-1', 'P0', '0', '1', '2', '3'];
   const floorLabel = f => f === 'P0' ? 'Parque P0' : (f === 'unknown' || f === 'Por confirmar') ? 'Por confirmar' : f === 'Shopping' ? 'Todo o shopping' : f === 'Parque' ? 'Parque' : `Piso ${f}`;
   const qs = (s, root = document) => root.querySelector(s);
   const qsa = (s, root = document) => [...root.querySelectorAll(s)];
   const esc = value => String(value ?? '').replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
   const norm = value => String(value ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+  const initials = value => String(value || 'PG').split(/\s+/).filter(Boolean).slice(0, 2).map(part => part[0]).join('').toUpperCase();
+
+  function placeVisual(place, variant = '') {
+    const url = place.type === 'store' ? STORE_MEDIA[place.id] : '';
+    const label = initials(place.name);
+    return `<span class="store-media ${variant}"><span class="store-initials" aria-hidden="true">${esc(label)}</span>${url ? `<img src="${esc(url)}" alt="Logótipo de ${esc(place.name)}" loading="lazy" onerror="this.remove()" />` : ''}</span>`;
+  }
 
   const defaultState = {
     favorites: [],
@@ -120,9 +128,8 @@
   }
 
   function resultButton(place) {
-    const loc = primaryLocation(place);
     return `<button class="search-result" type="button" data-place-id="${esc(place.id)}">
-      <span class="result-floor">${esc(loc ? (loc.floor === 'P0' ? 'P0' : loc.floor) : '?')}</span>
+      ${placeVisual(place, 'small')}
       <span><b>${esc(place.name)}</b><small>${esc(placeFloorText(place))}</small></span>
     </button>`;
   }
@@ -165,8 +172,10 @@
     }).join('') : '<div class="location-box"><b>Localização por confirmar</b><small>Pode corrigir quando confirmar no terreno.</small></div>';
 
     qs('#placeDialogContent').innerHTML = `
-      <span class="micro-label">${esc(categories[0] || 'LOCAL')}</span>
-      <h2>${esc(place.name)}</h2>
+      <div class="place-hero">
+        ${placeVisual(place, 'large')}
+        <div><span class="micro-label">${esc(categories[0] || 'LOCAL')}</span><h2>${esc(place.name)}</h2></div>
+      </div>
       <div class="detail-meta">
         ${categories.slice(0,3).map(c => `<span class="meta-chip">${esc(c)}</span>`).join('')}
         <span class="meta-chip">${verified ? '✓ Confirmado' : '△ Confirmar'}</span>
@@ -238,7 +247,7 @@
     const favs = saved.favorites.map(id => allPlaces().find(p => p.id === id)).filter(Boolean);
     if (!favs.length) { el.className = 'horizontal-list empty-state'; el.textContent = 'Ainda não marcou favoritos.'; return; }
     el.className = 'horizontal-list';
-    el.innerHTML = favs.map(p => `<button class="favorite-chip" data-place-id="${esc(p.id)}"><b>${esc(p.name)}</b><small>${esc(placeFloorText(p))}</small></button>`).join('');
+    el.innerHTML = favs.map(p => `<button class="favorite-chip" data-place-id="${esc(p.id)}">${placeVisual(p, 'small')}<span><b>${esc(p.name)}</b><small>${esc(placeFloorText(p))}</small></span></button>`).join('');
     el.onclick = e => { const id = e.target.closest('[data-place-id]')?.dataset.placeId; if (id) openPlace(id); };
   }
 
@@ -251,6 +260,7 @@
   function renderMap(highlightId = selectedPlaceId) {
     renderFloorTabs();
     qs('#mapTitle').textContent = floorLabel(selectedFloor);
+    qs('#markModeBtn').classList.toggle('hidden', selectedFloor !== '0');
     const image = qs('#floorMapImage');
     image.src = DATA.floorImages[selectedFloor];
     image.alt = `Mapa do ${floorLabel(selectedFloor)}`;
@@ -260,6 +270,7 @@
     layer.innerHTML = '';
     if (selectedFloor === '0') {
       allPlaces().forEach(place => {
+        if (place.type !== 'custom' && place.id !== highlightId) return;
         place.locations.forEach(loc => {
           if (loc.floor !== '0' || !loc.map0) return;
           const [x,y] = loc.map0;
@@ -271,7 +282,16 @@
       });
     }
     layer.onclick=e=>{ const id=e.target.closest('[data-place-id]')?.dataset.placeId; if(id){ selectedPlaceId=id; renderMap(id); openPlace(id); }};
-    qs('#mapHint').textContent = selectedFloor === '0' ? 'Marcadores aproximados, calibrados pela fotografia do diretório.' : 'Miniatura extraída do diretório. Use o piso e o número da loja como referência principal.';
+    const mapNotes = {
+      '-2': 'Planta oficial · referência a azul: Bowling',
+      '-1': 'Planta oficial · referência a azul: Auchan',
+      'P0': 'Planta oficial do parque · referência a azul: Eco Car Wash',
+      '0': 'Planta oficial · referência a azul: Farmácia · selecione uma loja para a destacar',
+      '1': 'Planta oficial · referência a azul: FNAC',
+      '2': 'Planta oficial · referência a azul: Cinemas NOS',
+      '3': 'Planta oficial · referência a azul: Rádio Estação Diária',
+    };
+    qs('#mapHint').textContent = mapNotes[selectedFloor] || 'Planta oficial do piso';
     renderFloorPlaces();
   }
 
@@ -285,8 +305,8 @@
     const loc = place.locations.find(l => l.floor === selectedFloor) || primaryLocation(place);
     const dir = directionFor(place.name, loc);
     return `<article class="place-card" data-place-id="${esc(place.id)}">
-      <span class="floor-badge">${esc(loc?.floor || '?')}</span>
-      <span class="place-copy"><b>${esc(place.name)}</b><small>${loc?.unit ? `Unidade ${esc(loc.unit)}` : 'Unidade por confirmar'}${dir ? ` · ${esc(dir)}` : ''}</small></span>
+      ${placeVisual(place)}
+      <span class="place-copy"><b>${esc(place.name)}</b><small>${loc ? esc(floorLabel(loc.floor)) : 'Piso por confirmar'}${loc?.unit ? ` · Unidade ${esc(loc.unit)}` : ''}${dir ? ` · ${esc(dir)}` : ''}</small></span>
       <button class="favorite-btn ${isFavorite(place.id)?'active':''}" data-favorite-id="${esc(place.id)}" type="button">${isFavorite(place.id)?'★':'☆'}</button>
     </article>`;
   }
@@ -380,14 +400,35 @@
   }
 
   const noteTemplates = {
-    radio: 'Central, de [identificação]. Ocorrência no piso [X], zona [Norte/Sul/Poente/Nascente], referência [loja]. Situação: [resumo objetivo]. Solicito [apoio/indicação].',
-    crianca: 'Criança perdida: registar descrição, local e hora; avisar a Central; manter num local seguro e visível; seguir o procedimento interno para validar o responsável.',
-    objeto: 'Objeto perdido/encontrado: local, hora, descrição, pessoa interveniente e encaminhamento efetuado.',
-    emergencia: 'Emergência: tipo de ocorrência, piso, direção, loja de referência, riscos visíveis e apoio solicitado. Seguir sempre a cadeia de comando.',
+    radio: 'Central, aqui [nome/posição]. Tenho uma ocorrência no piso [X], junto a [loja/referência]. Trata-se de [descrição breve]. Preciso de [apoio solicitado].',
+    crianca: 'Criança [encontrada/perdida] no piso [X], junto a [referência]. Descrição: [roupa e idade aproximada]. Estou num ponto seguro e aguardo apoio da Central.',
+    objeto: 'Objeto [encontrado/perdido] no piso [X], junto a [referência], às [hora]. Descrição: [detalhes]. Encaminhado para [destino/responsável].',
+    emergencia: 'Central, emergência no piso [X], junto a [referência]. Ocorrência: [tipo]. Há [riscos visíveis]. Solicito [apoio] com prioridade.',
   };
   function renderNotes(){
-    const labels={radio:'Comunicação por rádio',crianca:'Criança perdida',objeto:'Objeto perdido',emergencia:'Emergência'};
-    qs('#operationalNotes').innerHTML=Object.entries(labels).map(([id,label])=>`<label class="note-editor"><b>${esc(label)}</b><textarea data-note-id="${id}">${esc(saved.notes[id] ?? noteTemplates[id])}</textarea></label>`).join('');
+    const labels={
+      radio:{title:'Comunicação por rádio',hint:'Mensagem curta e objetiva'},
+      crianca:{title:'Criança perdida',hint:'Primeiro contacto com a Central'},
+      objeto:{title:'Objeto perdido',hint:'Registo e encaminhamento'},
+      emergencia:{title:'Emergência',hint:'Comunicação prioritária'},
+    };
+    qs('#operationalNotes').innerHTML=Object.entries(labels).map(([id,item])=>`<article class="note-editor">
+      <div class="note-head"><div><span>${esc(item.hint)}</span><b>${esc(item.title)}</b></div><button data-copy-note="${id}" type="button">Copiar</button></div>
+      <textarea data-note-id="${id}" aria-label="${esc(item.title)}">${esc(saved.notes[id] ?? noteTemplates[id])}</textarea>
+    </article>`).join('');
+  }
+
+  async function copyOperationalNote(id) {
+    const area = qs(`[data-note-id="${id}"]`);
+    if (!area) return;
+    try {
+      await navigator.clipboard.writeText(area.value);
+      toast('Mensagem copiada.');
+    } catch {
+      area.select();
+      document.execCommand('copy');
+      toast('Mensagem copiada.');
+    }
   }
 
   function renderMore(){
@@ -453,6 +494,7 @@
     qs('#patrolChecklist').onchange=e=>{const cb=e.target.closest('[data-patrol-floor]');if(!cb)return;const key=patrolKey();const set=new Set(saved.patrol[key]||[]);cb.checked?set.add(cb.dataset.patrolFloor):set.delete(cb.dataset.patrolFloor);saved.patrol[key]=[...set];saveState();};
     qs('#resetPatrolBtn').onclick=()=>{saved.patrol[patrolKey()]=[];saveState();renderPatrol();};
     qs('#operationalNotes').addEventListener('input',e=>{const area=e.target.closest('[data-note-id]');if(!area)return;saved.notes[area.dataset.noteId]=area.value;saveState();});
+    qs('#operationalNotes').addEventListener('click',e=>{const btn=e.target.closest('[data-copy-note]');if(btn)copyOperationalNote(btn.dataset.copyNote);});
     qs('#customPlacesList').onclick=e=>{const id=e.target.closest('[data-place-id]')?.dataset.placeId;if(id)openPlace(id);};
     qs('#exportDataBtn').onclick=exportData;
     qs('#importDataBtn').onclick=()=>qs('#importDataInput').click();
