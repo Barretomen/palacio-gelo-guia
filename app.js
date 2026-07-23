@@ -10,6 +10,97 @@
     Poente: { Poente: 'Fica no mesmo lado (Poente).', Nascente: 'Siga em direção ao lado oposto (Nascente).', Norte: 'Vire à direita em direção a Norte.', Sul: 'Vire à esquerda em direção a Sul.' },
     Nascente: { Nascente: 'Fica no mesmo lado (Nascente).', Poente: 'Siga em direção ao lado oposto (Poente).', Norte: 'Vire à esquerda em direção a Norte.', Sul: 'Vire à direita em direção a Sul.' }
   };
+  const catalogKeywords = {
+    'malas': ['cavalinho', 'parfois', 'primark', 'seaside', 'vilanova', 'aldo', 'calcado-guimaraes', 'h-m', 'c-a', 'samsonite', 'sacoor-blue', 'lacoste', 'quebramar', 'cortefiel', 'benetton', 'auchan'],
+    'mala': ['cavalinho', 'parfois', 'primark', 'seaside', 'vilanova', 'aldo', 'calcado-guimaraes', 'h-m', 'c-a', 'samsonite', 'sacoor-blue', 'lacoste', 'quebramar', 'cortefiel', 'benetton', 'auchan'],
+    'carteiras': ['cavalinho', 'parfois', 'primark', 'seaside', 'vilanova', 'aldo', 'calcado-guimaraes', 'h-m', 'c-a', 'sacoor-blue', 'lacoste', 'quebramar', 'cortefiel', 'benetton', 'auchan', 'tous', 'ourivesaria-pereirinha'],
+    'carteira': ['cavalinho', 'parfois', 'primark', 'seaside', 'vilanova', 'aldo', 'calcado-guimaraes', 'h-m', 'c-a', 'sacoor-blue', 'lacoste', 'quebramar', 'cortefiel', 'benetton', 'auchan', 'tous', 'ourivesaria-pereirinha'],
+    'viagem': ['agencia-abreu', 'auchan', 'primark', 'parfois', 'seaside'],
+    'oculos': ['fabrica-dos-oculos', 'multiopticas', 'omb-grupo-optico', 'wells', 'hawkers', 'farmacia-pinto-de-campos'],
+    'óculos': ['fabrica-dos-oculos', 'multiopticas', 'omb-grupo-optico', 'wells', 'hawkers', 'farmacia-pinto-de-campos'],
+    'lentes': ['fabrica-dos-oculos', 'multiopticas', 'omb-grupo-optico', 'wells', 'hawkers'],
+    'oftalmologia': ['fabrica-dos-oculos', 'multiopticas', 'omb-grupo-optico', 'wells'],
+    'consultas': ['fabrica-dos-oculos', 'multiopticas', 'omb-grupo-optico', 'wells', 'unilabs'],
+    'relogios': ['bluebird', 'tous', 'ourivesaria-pereirinha', 'swatch', 'boutique-dos-relogios', 'primark', 'auchan'],
+    'relogio': ['bluebird', 'tous', 'ourivesaria-pereirinha', 'swatch', 'boutique-dos-relogios', 'primark', 'auchan'],
+    'relógio': ['bluebird', 'tous', 'ourivesaria-pereirinha', 'swatch', 'boutique-dos-relogios', 'primark', 'auchan'],
+    'joias': ['tous', 'ourivesaria-pereirinha', 'bluebird', 'primark'],
+    'ouro': ['ourivesaria-pereirinha', 'tous', 'bluebird'],
+    'prata': ['ourivesaria-pereirinha', 'tous', 'bluebird', 'parfois'],
+    'alianças': ['ourivesaria-pereirinha', 'tous', 'bluebird'],
+    'telemovel': ['meo', 'vodafone', 'nos', 'iservices', 'la-casa-de-las-carcasas', 'worten', 'worten-mobile', 'mi-store-xiaomi', 'pc-speed', 'fnac', 'auchan'],
+    'telemóvel': ['meo', 'vodafone', 'nos', 'iservices', 'la-casa-de-las-carcasas', 'worten', 'worten-mobile', 'mi-store-xiaomi', 'pc-speed', 'fnac', 'auchan'],
+    'smartphones': ['meo', 'vodafone', 'nos', 'iservices', 'la-casa-de-las-carcasas', 'worten', 'worten-mobile', 'mi-store-xiaomi', 'pc-speed', 'fnac', 'auchan'],
+    'reparacao': ['iservices', 'pc-speed', 'worten', 'fnac'],
+    'reparação': ['iservices', 'pc-speed', 'worten', 'fnac'],
+    'capas': ['la-casa-de-las-carcasas', 'iservices', 'fnac', 'worten', 'mi-store-xiaomi'],
+    'tablet': ['fnac', 'worten', 'mi-store-xiaomi', 'radio-popular', 'meo', 'vodafone', 'nos'],
+    'livros': ['fnac', 'press-center-cigarette', 'auchan'],
+    'livro': ['fnac', 'press-center-cigarette', 'auchan'],
+    'revistas': ['press-center-cigarette', 'auchan'],
+    'jornais': ['press-center-cigarette', 'auchan'],
+    'brinquedos': ['centroxogo', 'polar-brincar', 'fnac', 'primark', 'auchan', 'normal', 'flying-tiger-copenhagen'],
+    'jogos': ['fnac', 'worten', 'radio-popular', 'centroxogo', 'polar-brincar'],
+    'consola': ['fnac', 'worten', 'radio-popular', 'centroxogo'],
+    'playstation': ['fnac', 'worten', 'radio-popular', 'centroxogo'],
+    'nintendo': ['fnac', 'worten', 'radio-popular', 'centroxogo'],
+    'perfumes': ['druni', 'douglas', 'perfumes-companhia', 'o-boticario', 'pluricosmetica', 'flormar', 'wells', 'auchan', 'normal'],
+    'perfume': ['druni', 'douglas', 'perfumes-companhia', 'o-boticario', 'pluricosmetica', 'flormar', 'wells', 'auchan', 'normal'],
+    'maquilhagem': ['druni', 'douglas', 'perfumes-companhia', 'o-boticario', 'pluricosmetica', 'flormar', 'wells', 'auchan', 'normal'],
+    'cosmetica': ['druni', 'douglas', 'perfumes-companhia', 'o-boticario', 'pluricosmetica', 'flormar', 'wells', 'auchan', 'normal'],
+    'cremes': ['druni', 'douglas', 'perfumes-companhia', 'o-boticario', 'pluricosmetica', 'flormar', 'wells', 'auchan', 'normal', 'farmacia-pinto-de-campos'],
+    'tv': ['worten', 'radio-popular', 'fnac', 'mi-store-xiaomi'],
+    'televisores': ['worten', 'radio-popular', 'fnac', 'mi-store-xiaomi'],
+    'computador': ['fnac', 'worten', 'radio-popular', 'pc-speed'],
+    'portatil': ['fnac', 'worten', 'radio-popular', 'pc-speed'],
+    'portátil': ['fnac', 'worten', 'radio-popular', 'pc-speed'],
+    'frigorifico': ['worten', 'radio-popular'],
+    'maquina': ['worten', 'radio-popular'],
+    'máquina': ['worten', 'radio-popular'],
+    'cafe': ['nespresso', 'auchan', 'quiosque-buondi', 'quiosque-delta-onda', 'quiosque-delta-onda-2', 'o-meu-cafe-auchan', 'ola', 'alicarius', 'gen-vcrep', 'jotacake'],
+    'café': ['nespresso', 'auchan', 'quiosque-buondi', 'quiosque-delta-onda', 'quiosque-delta-onda-2', 'o-meu-cafe-auchan', 'ola', 'alicarius', 'gen-vcrep', 'jotacake'],
+    'capsulas': ['nespresso', 'auchan', 'fnac', 'worten'],
+    'cápsulas': ['nespresso', 'auchan', 'fnac', 'worten'],
+    'bebe': ['zippy', 'chicco', 'mayoral', 'h-m', 'c-a', 'primark', 'benetton', 'auchan'],
+    'bebé': ['zippy', 'chicco', 'mayoral', 'h-m', 'c-a', 'primark', 'benetton', 'auchan'],
+    'crianca': ['zippy', 'chicco', 'mayoral', 'h-m', 'c-a', 'primark', 'benetton', 'auchan'],
+    'criança': ['zippy', 'chicco', 'mayoral', 'h-m', 'c-a', 'primark', 'benetton', 'auchan'],
+    'sapatos': ['seaside', 'aldo', 'calcado-guimaraes', 'deichmann', 'jd-sports', 'sport-zone', 'xtreme', 'fuxia', 'primark', 'auchan'],
+    'sapatilhas': ['jd-sports', 'sport-zone', 'xtreme', 'fuxia', 'seaside', 'calcado-guimaraes', 'deichmann', 'primark', 'auchan'],
+    'tenis': ['jd-sports', 'sport-zone', 'xtreme', 'fuxia', 'seaside', 'calcado-guimaraes', 'deichmann', 'primark', 'auchan'],
+    'ténis': ['jd-sports', 'sport-zone', 'xtreme', 'fuxia', 'seaside', 'calcado-guimaraes', 'deichmann', 'primark', 'auchan'],
+    'desporto': ['sport-zone', 'jd-sports', 'xtreme', 'fuxia', 'academico-de-viseu', 'forlife-ginasio-e-piscinas', 'auchan'],
+    'ginasio': ['forlife-ginasio-e-piscinas'],
+    'ginásio': ['forlife-ginasio-e-piscinas'],
+    'piscina': ['forlife-ginasio-e-piscinas'],
+    'pet': ['companhia-de-4-patas', 'auchan-o-meu-pet', 'auchan'],
+    'animais': ['companhia-de-4-patas', 'auchan-o-meu-pet', 'auchan'],
+    'cao': ['companhia-de-4-patas', 'auchan-o-meu-pet', 'auchan'],
+    'cão': ['companhia-de-4-patas', 'auchan-o-meu-pet', 'auchan'],
+    'gato': ['companhia-de-4-patas', 'auchan-o-meu-pet', 'auchan'],
+    'supermercado': ['auchan'],
+    'comida': ['auchan', 'kfc', 'mcdonald-s', 'pizza-hut', 'subway', 'telepizza', 'h3', 'pans-company', 'chef-china', 'sushi-tokyo', 'rodizio-do-gelo', 'santa-grelha', 'soupa', 'vitaminas', 'troppo-squisito', 'a-gula-do-prego', 'o-dreams', 'casa-da-cevada', 'alicarius', 'gen-vcrep', 'jotacake', 'ola'],
+    'restaurante': ['kfc', 'mcdonald-s', 'pizza-hut', 'subway', 'telepizza', 'h3', 'pans-company', 'chef-china', 'sushi-tokyo', 'rodizio-do-gelo', 'santa-grelha', 'soupa', 'vitaminas', 'troppo-squisito', 'a-gula-do-prego', 'o-dreams', 'casa-da-cevada', 'alicarius', 'gen-vcrep', 'jotacake', 'ola'],
+    'decoracao': ['gato-preto', 'ikea', 'normal', 'flying-tiger-copenhagen', 'vista-alegre-atlantis', 'colchaonet', 'mob-cozinhas', 'auchan'],
+    'decoração': ['gato-preto', 'ikea', 'normal', 'flying-tiger-copenhagen', 'vista-alegre-atlantis', 'colchaonet', 'mob-cozinhas', 'auchan'],
+    'moveis': ['ikea', 'gato-preto', 'mob-cozinhas'],
+    'móveis': ['ikea', 'gato-preto', 'mob-cozinhas'],
+    'cabeleireiro': ['forlife-cabeleireiro-estetica', 'pluricosmetica'],
+    'estetica': ['forlife-cabeleireiro-estetica', 'pluricosmetica', 'wells'],
+    'estética': ['forlife-cabeleireiro-estetica', 'pluricosmetica', 'wells']
+  };
+
+  function enrichSearchText() {
+    DATA.stores.forEach(store => {
+      const tags = [];
+      for (const [keyword, ids] of Object.entries(catalogKeywords)) {
+        if (ids.includes(store.id)) tags.push(keyword);
+      }
+      if (tags.length) {
+        store.searchText = `${store.searchText || ''} ${tags.join(' ')}`.trim();
+      }
+    });
+  }
   const floorLabel = f => f === 'P0' ? 'Parque P0' : (f === 'unknown' || f === 'Por confirmar') ? 'Por confirmar' : f === 'Shopping' ? 'Todo o shopping' : f === 'Parque' ? 'Parque' : `Piso ${f}`;
   const qs = (s, root = document) => root.querySelector(s);
   const qsa = (s, root = document) => [...root.querySelectorAll(s)];
@@ -480,7 +571,26 @@
     el.innerHTML=saved.customPlaces.length?saved.customPlaces.map(p=>`<button class="mini-row" data-place-id="${esc(p.id)}" type="button"><span>${esc(p.name)}</span><small>${esc(floorLabel(p.floor))}${p.unit?` · ${esc(p.unit)}`:''}</small></button>`).join(''):'<p class="muted-note">Nenhum ponto personalizado.</p>';
   }
 
-  function renderAll(){renderFavorites();renderHours();renderMap();renderDirectory();renderReferences();renderTrainingScore();renderPatrol();renderMore();}
+  function renderDashboard() {
+    const notesCount = Object.values(saved.notes).filter(Boolean).length;
+    qs('#dbNotas').textContent = notesCount;
+
+    const favCount = saved.favorites.length;
+    qs('#dbFavoritos').textContent = favCount;
+
+    const customCount = saved.customPlaces.length;
+    qs('#dbPersonalizados').textContent = customCount;
+
+    const key = patrolKey();
+    const patrolFloors = saved.patrol[key] || [];
+    const patrolPct = Math.round((patrolFloors.length / 7) * 100);
+    
+    qs('#dbRondas').textContent = `${patrolFloors.length}/7`;
+    qs('#dbProgressPct').textContent = `${patrolPct}%`;
+    qs('#dbProgressFill').style.width = `${patrolPct}%`;
+  }
+
+  function renderAll(){renderFavorites();renderHours();renderMap();renderDirectory();renderReferences();renderTrainingScore();renderPatrol();renderMore();renderDashboard();}
 
   function exportData(){
     const blob=new Blob([JSON.stringify({version:1,exportedAt:new Date().toISOString(),data:saved},null,2)],{type:'application/json'});
@@ -526,9 +636,9 @@
     qs('#quizAnswers').onclick=e=>{const b=e.target.closest('[data-answer]');if(b&&!b.disabled)answerQuestion(b.dataset.answer);};
     qs('#nextQuestionBtn').onclick=nextQuestion;
     qsa('[data-training-mode]').forEach(btn=>btn.onclick=()=>{trainingMode=btn.dataset.trainingMode;qsa('[data-training-mode]').forEach(x=>x.classList.toggle('active',x===btn));nextQuestion();});
-    qs('#patrolChecklist').onchange=e=>{const cb=e.target.closest('[data-patrol-floor]');if(!cb)return;const key=patrolKey();const set=new Set(saved.patrol[key]||[]);cb.checked?set.add(cb.dataset.patrolFloor):set.delete(cb.dataset.patrolFloor);saved.patrol[key]=[...set];saveState();};
-    qs('#resetPatrolBtn').onclick=()=>{saved.patrol[patrolKey()]=[];saveState();renderPatrol();};
-    qs('#operationalNotes').addEventListener('input',e=>{const area=e.target.closest('[data-note-id]');if(!area)return;saved.notes[area.dataset.noteId]=area.value;saveState();});
+    qs('#patrolChecklist').onchange=e=>{const cb=e.target.closest('[data-patrol-floor]');if(!cb)return;const key=patrolKey();const set=new Set(saved.patrol[key]||[]);cb.checked?set.add(cb.dataset.patrolFloor):set.delete(cb.dataset.patrolFloor);saved.patrol[key]=[...set];saveState();renderAll();};
+    qs('#resetPatrolBtn').onclick=()=>{saved.patrol[patrolKey()]=[];saveState();renderAll();};
+    qs('#operationalNotes').addEventListener('input',e=>{const area=e.target.closest('[data-note-id]');if(!area)return;saved.notes[area.dataset.noteId]=area.value;saveState();renderDashboard();});
     qs('#operationalNotes').addEventListener('click',e=>{const btn=e.target.closest('[data-copy-note]');if(btn)copyOperationalNote(btn.dataset.copyNote);});
     qs('#customPlacesList').onclick=e=>{const id=e.target.closest('[data-place-id]')?.dataset.placeId;if(id)openPlace(id);};
     qs('#exportDataBtn').onclick=exportData;
@@ -557,6 +667,69 @@
   function bindPositionAndSOS() {
     qs('#sosBtn').onclick = () => qs('#sosDialog').showModal();
 
+    // Quick search chips Click bindings
+    qsa('.chip-btn').forEach(btn => {
+      btn.onclick = () => {
+        const searchInput = qs('#homeSearch');
+        searchInput.value = btn.dataset.search;
+        searchInput.dispatchEvent(new Event('input'));
+      };
+    });
+
+    // Device orientation gyroscope compass
+    let isCompassActive = false;
+    const centerBtn = qs('.compass-center');
+
+    centerBtn.onclick = async () => {
+      if (isCompassActive) {
+        window.removeEventListener('deviceorientation', handleOrientation);
+        isCompassActive = false;
+        qs('.compass-card').style.transform = 'rotate(0deg)';
+        centerBtn.classList.remove('active');
+        toast('Bússola real desativada.');
+        return;
+      }
+
+      if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function') {
+        try {
+          const permission = await DeviceOrientationEvent.requestPermission();
+          if (permission === 'granted') {
+            startCompass();
+          } else {
+            toast('Permissão de giroscópio recusada.');
+          }
+        } catch (err) {
+          toast('Erro ao solicitar giroscópio.');
+        }
+      } else {
+        startCompass();
+      }
+    };
+
+    function startCompass() {
+      window.addEventListener('deviceorientation', handleOrientation, true);
+      isCompassActive = true;
+      centerBtn.classList.add('active');
+      toast('Bússola giroscópica ativada!');
+    }
+
+    function handleOrientation(e) {
+      let heading = 0;
+      if (e.webkitCompassHeading) {
+        heading = e.webkitCompassHeading;
+      } else if (e.alpha) {
+        heading = 360 - e.alpha;
+      } else {
+        return;
+      }
+      const compassCard = qs('.compass-card');
+      if (compassCard) {
+        compassCard.style.transform = `rotate(${-heading}deg)`;
+        compassCard.style.transition = 'transform 0.1s ease-out';
+      }
+    }
+
+    // Position selectors
     const floorSelect = qs('#userCurrentFloor');
     const dirSelect = qs('#userCurrentDir');
 
@@ -566,17 +739,20 @@
     floorSelect.addEventListener('change', e => {
       saved.userFloor = e.target.value;
       saveState();
+      renderAll();
     });
     dirSelect.addEventListener('change', e => {
       saved.userDir = e.target.value;
       saveState();
+      renderAll();
     });
   }
 
   function init(){
+    enrichSearchText();
     initFilters();bindEvents();bindPositionAndSOS();renderAll();
     setInterval(renderHours,60000);
-    if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=1.2.3').catch(()=>{});
+    if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=1.2.4').catch(()=>{});
   }
   document.addEventListener('DOMContentLoaded',init);
 })();

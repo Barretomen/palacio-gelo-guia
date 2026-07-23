@@ -1889,3 +1889,95 @@ select {
   color: var(--ice);
 }
 
+/* Quick search chips styling */
+.search-chips {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 10px 0 2px;
+  scrollbar-width: none;
+}
+.search-chips::-webkit-scrollbar {
+  display: none;
+}
+.chip-btn {
+  flex: 0 0 auto;
+  padding: 6px 14px;
+  border-radius: 99px;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  color: var(--text);
+  font-size: 12.5px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.chip-btn:hover {
+  background: var(--ice-dim);
+  border-color: var(--ice);
+  transform: translateY(-1px);
+}
+
+/* Dashboard styles */
+.dashboard-card {
+  padding: 22px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  margin-bottom: 24px;
+}
+.db-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 18px 0;
+}
+.db-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 12px 6px;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+}
+.db-val {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--ice);
+}
+.db-lbl {
+  font-size: 9.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 4px;
+}
+.db-progress-container {
+  margin-top: 14px;
+}
+.db-progress-bar {
+  height: 8px;
+  background: var(--panel-2);
+  border-radius: 99px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+.db-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--ice-dim) 0%, var(--ice) 100%);
+  border-radius: 99px;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Active compass center indicating active giroscop tracking */
+.compass-center.active {
+  border-color: var(--danger) !important;
+  color: var(--danger) !important;
+  background: rgba(239, 68, 68, 0.08) !important;
+  box-shadow: 0 0 12px rgba(239, 68, 68, 0.2);
+}
+
+
