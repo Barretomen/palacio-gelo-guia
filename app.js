@@ -576,7 +576,7 @@
   function init(){
     initFilters();bindEvents();bindPositionAndSOS();renderAll();
     setInterval(renderHours,60000);
-    if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=1.2.2').catch(()=>{});
+    if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=1.2.3').catch(()=>{});
   }
   document.addEventListener('DOMContentLoaded',init);
 })();
