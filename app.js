@@ -4,6 +4,12 @@
   const STORE_MEDIA = window.PG_STORE_MEDIA || {};
   const STORAGE_KEY = 'pg-guia-bolso-v1';
   const floors = ['-2', '-1', 'P0', '0', '1', '2', '3'];
+  const directionsRel = {
+    Norte: { Norte: 'Fica no mesmo lado (Norte).', Sul: 'Siga em direção ao lado oposto (Sul).', Poente: 'Vire à esquerda em direção a Poente.', Nascente: 'Vire à direita em direção a Nascente.' },
+    Sul: { Sul: 'Fica no mesmo lado (Sul).', Norte: 'Siga em direção ao lado oposto (Norte).', Poente: 'Vire à direita em direção a Poente.', Nascente: 'Vire à esquerda em direção a Nascente.' },
+    Poente: { Poente: 'Fica no mesmo lado (Poente).', Nascente: 'Siga em direção ao lado oposto (Nascente).', Norte: 'Vire à direita em direção a Norte.', Sul: 'Vire à esquerda em direção a Sul.' },
+    Nascente: { Nascente: 'Fica no mesmo lado (Nascente).', Poente: 'Siga em direção ao lado oposto (Poente).', Norte: 'Vire à esquerda em direção a Norte.', Sul: 'Vire à direita em direção a Sul.' }
+  };
   const floorLabel = f => f === 'P0' ? 'Parque P0' : (f === 'unknown' || f === 'Por confirmar') ? 'Por confirmar' : f === 'Shopping' ? 'Todo o shopping' : f === 'Parque' ? 'Parque' : `Piso ${f}`;
   const qs = (s, root = document) => root.querySelector(s);
   const qsa = (s, root = document) => [...root.querySelectorAll(s)];
@@ -24,6 +30,8 @@
     notes: {},
     quiz: { correct: 0, total: 0 },
     patrol: {},
+    userFloor: '0',
+    userDir: '',
   };
 
   let saved = loadState();
@@ -162,11 +170,38 @@
     const verified = place.type === 'custom' || (source.verified !== false && locations.every(l => l.verified !== false));
     const note = place.type === 'store' ? (saved.overrides[id]?.note || source.note || '') : source.note || '';
 
+    const userFloor = qs('#userCurrentFloor')?.value || '0';
+    const userDir = qs('#userCurrentDir')?.value || '';
+
     const locHtml = locations.length ? locations.map(loc => {
       const dir = directionFor(place.name, loc);
+      
+      let relativeRoute = '';
+      if (userDir && dir && directionsRel[userDir]?.[dir]) {
+        relativeRoute = `<div class="relative-route-hint">🧭 ${directionsRel[userDir][dir]}</div>`;
+      }
+      
+      let floorRoute = '';
+      if (userFloor && loc.floor) {
+        if (userFloor === loc.floor) {
+          floorRoute = '<span class="floor-route-hint same">No mesmo piso</span>';
+        } else {
+          const userFloorNum = userFloor === 'P0' ? 0 : Number(userFloor);
+          const targetFloorNum = loc.floor === 'P0' ? 0 : Number(loc.floor);
+          const diff = targetFloorNum - userFloorNum;
+          if (!isNaN(diff)) {
+            floorRoute = `<span class="floor-route-hint diff">${diff > 0 ? `Suba ${diff} piso(s)` : `Desça ${Math.abs(diff)} piso(s)`}</span>`;
+          }
+        }
+      }
+
       return `<div class="location-box">
-        <b>${esc(floorLabel(loc.floor))}${loc.unit ? ` · Unidade ${esc(loc.unit)}` : ''}</b>
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+          <b>${esc(floorLabel(loc.floor))}${loc.unit ? ` · Unidade ${esc(loc.unit)}` : ''}</b>
+          ${floorRoute}
+        </div>
         ${dir ? `<small>${esc(dir)} — ${esc(directionReference(dir))}</small>` : '<small>Direção por confirmar</small>'}
+        ${relativeRoute}
         ${loc.override ? '<small>Correção guardada neste dispositivo</small>' : ''}
       </div>`;
     }).join('') : '<div class="location-box"><b>Localização por confirmar</b><small>Pode corrigir quando confirmar no terreno.</small></div>';
@@ -519,10 +554,29 @@
     qs('#categoryFilter').innerHTML='<option value="all">Todas as categorias</option>'+categories.map(c=>`<option>${esc(c)}</option>`).join('');
   }
 
+  function bindPositionAndSOS() {
+    qs('#sosBtn').onclick = () => qs('#sosDialog').showModal();
+
+    const floorSelect = qs('#userCurrentFloor');
+    const dirSelect = qs('#userCurrentDir');
+
+    floorSelect.value = saved.userFloor || '0';
+    dirSelect.value = saved.userDir || '';
+
+    floorSelect.addEventListener('change', e => {
+      saved.userFloor = e.target.value;
+      saveState();
+    });
+    dirSelect.addEventListener('change', e => {
+      saved.userDir = e.target.value;
+      saveState();
+    });
+  }
+
   function init(){
-    initFilters();bindEvents();renderAll();
+    initFilters();bindEvents();bindPositionAndSOS();renderAll();
     setInterval(renderHours,60000);
-    if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=1.2.1').catch(()=>{});
+    if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=1.2.2').catch(()=>{});
   }
   document.addEventListener('DOMContentLoaded',init);
 })();

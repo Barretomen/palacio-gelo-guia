@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=1.2.1" />
+  <link rel="stylesheet" href="styles.css?v=1.2.2" />
   <title>PG | Guia de Bolso</title>
 </head>
 <body>
@@ -28,6 +28,7 @@
         </div>
       </div>
       <div class="top-actions">
+        <button id="sosBtn" class="sos-pill" type="button" aria-label="Emergência SOS">🚨 SOS</button>
         <button id="installBtn" class="icon-btn hidden" type="button" aria-label="Instalar aplicação">⇩</button>
         <button id="openStatusBtn" class="status-pill" type="button" aria-label="Ver horários">
           <span id="openStatusDot" class="status-dot"></span>
@@ -50,6 +51,30 @@
             <button id="voiceSearchBtn" class="voice-btn" type="button" aria-label="Pesquisar por voz">◉</button>
           </div>
           <div id="homeSearchResults" class="search-results hidden"></div>
+        </div>
+
+        <div class="position-card">
+          <span class="micro-label">A MINHA POSIÇÃO</span>
+          <h2>Onde estou agora?</h2>
+          <p class="muted-note">Defina o seu piso e zona atual para calcular rotas e indicações contextuais no detalhe de cada loja.</p>
+          <div class="position-selectors">
+            <select id="userCurrentFloor" aria-label="O meu piso atual">
+              <option value="0">Piso 0</option>
+              <option value="-2">Piso -2</option>
+              <option value="-1">Piso -1</option>
+              <option value="P0">Parque P0</option>
+              <option value="1">Piso 1</option>
+              <option value="2">Piso 2</option>
+              <option value="3">Piso 3</option>
+            </select>
+            <select id="userCurrentDir" aria-label="A minha zona atual">
+              <option value="">(Definir zona atual para rota)</option>
+              <option value="Norte">Norte (Lado MEO)</option>
+              <option value="Sul">Sul (Lado Auchan)</option>
+              <option value="Poente">Poente (Lado Farmácia)</option>
+              <option value="Nascente">Nascente (Oposto Farmácia)</option>
+            </select>
+          </div>
         </div>
 
         <section class="section-block">
@@ -258,10 +283,38 @@
     </form>
   </dialog>
 
+  <dialog id="sosDialog" class="sheet-dialog">
+    <form method="dialog" class="sheet-card sos-dialog-card">
+      <div class="sheet-handle"></div>
+      <button class="sheet-close" value="cancel" aria-label="Fechar">×</button>
+      <span class="micro-label" style="color:var(--danger)">🚨 EMERGÊNCIA</span>
+      <h2>Contactos Rápidos SOS</h2>
+      <p class="muted-note" style="margin-bottom: 20px;">Use apenas em caso de ocorrência grave, emergência médica ou segurança operacional imediata.</p>
+      <div class="sos-grid">
+        <a href="tel:910000000" class="sos-link-btn primary">
+          <span>📞 Central de Segurança PG</span>
+          <small>Interno: 2118 / Móvel: 910 000 000</small>
+        </a>
+        <a href="tel:112" class="sos-link-btn danger">
+          <span>🚒 Emergência Nacional (112)</span>
+          <small>Bombeiros / INEM / Polícia</small>
+        </a>
+        <a href="tel:232422020" class="sos-link-btn">
+          <span>🚒 Bombeiros Voluntários de Viseu</span>
+          <small>Linha direta: 232 422 020</small>
+        </a>
+        <a href="tel:232460880" class="sos-link-btn">
+          <span>🚓 PSP - Comando de Viseu</span>
+          <small>Geral: 232 460 880</small>
+        </a>
+      </div>
+    </form>
+  </dialog>
+
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
-  <script src="data.js?v=1.2.1"></script>
-  <script src="store-media.js?v=1.2.1"></script>
-  <script src="app.js?v=1.2.1"></script>
+  <script src="data.js?v=1.2.2"></script>
+  <script src="store-media.js?v=1.2.2"></script>
+  <script src="app.js?v=1.2.2"></script>
 </body>
 </html>

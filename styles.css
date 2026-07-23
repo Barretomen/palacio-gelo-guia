@@ -350,6 +350,7 @@ p {
   border-color: var(--line);
   background: var(--panel);
   overflow: visible;
+  z-index: 10;
 }
 .hero-card::after {
   content: "";
@@ -1773,3 +1774,118 @@ select {
     grid-template-columns: 1fr;
   }
 }
+
+/* Position selector card styled like other cards but flat and matte */
+.position-card {
+  margin-top: 16px;
+  padding: 20px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+.position-selectors {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+/* SOS Header button */
+.sos-pill {
+  min-height: 38px;
+  display: flex;
+  align-items: center;
+  border-radius: 99px;
+  padding: 0 14px;
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  color: var(--danger);
+  font-size: 12px;
+  font-weight: 800;
+}
+.sos-pill:hover {
+  background: rgba(239, 68, 68, 0.25);
+  border-color: var(--danger);
+}
+
+/* SOS Modal Grid and links */
+.sos-dialog-card {
+  border-color: rgba(239, 68, 68, 0.2) !important;
+}
+.sos-grid {
+  display: grid;
+  gap: 12px;
+}
+.sos-link-btn {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  border-radius: var(--radius-md);
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  transition: all 0.25s ease;
+}
+.sos-link-btn:hover {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: var(--muted);
+  transform: translateY(-2px);
+}
+.sos-link-btn.primary {
+  border-color: rgba(255, 219, 112, 0.3);
+  background: rgba(255, 219, 112, 0.03);
+}
+.sos-link-btn.primary:hover {
+  background: rgba(255, 219, 112, 0.08);
+  border-color: var(--ice);
+}
+.sos-link-btn.danger {
+  border-color: rgba(239, 68, 68, 0.3);
+  background: rgba(239, 68, 68, 0.03);
+}
+.sos-link-btn.danger:hover {
+  background: rgba(239, 68, 68, 0.08);
+  border-color: var(--danger);
+}
+.sos-link-btn span {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--text);
+}
+.sos-link-btn.primary span {
+  color: var(--ice);
+}
+.sos-link-btn.danger span {
+  color: var(--danger);
+}
+.sos-link-btn small {
+  color: var(--muted);
+  font-size: 11px;
+  margin-top: 4px;
+}
+
+/* Route hints inside store dialog boxes */
+.relative-route-hint {
+  margin-top: 8px;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 219, 112, 0.06);
+  border-left: 3px solid var(--ice);
+  font-size: 12.5px;
+  color: var(--ice-2);
+}
+.floor-route-hint {
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 8px;
+  border-radius: 99px;
+}
+.floor-route-hint.same {
+  background: rgba(110, 231, 183, 0.15);
+  color: var(--success);
+}
+.floor-route-hint.diff {
+  background: rgba(255, 219, 112, 0.15);
+  color: var(--ice);
+}
+
