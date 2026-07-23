@@ -349,6 +349,7 @@ p {
   position: relative;
   border-color: var(--line);
   background: var(--panel);
+  overflow: visible;
 }
 .hero-card::after {
   content: "";

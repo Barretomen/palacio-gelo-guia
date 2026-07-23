@@ -1,6 +1,6 @@
-const CACHE = 'pg-guia-v1.2.0';
+const CACHE = 'pg-guia-v1.2.1';
 const ASSETS = [
-  './','./index.html?v=1.2.0','./styles.css?v=1.2.0','./data.js?v=1.2.0','./store-media.js?v=1.2.0','./app.js?v=1.2.0','./manifest.webmanifest',
+  './','./index.html?v=1.2.1','./styles.css?v=1.2.1','./data.js?v=1.2.1','./store-media.js?v=1.2.1','./app.js?v=1.2.1','./manifest.webmanifest',
   './assets/mapa-oficial-piso--2.png','./assets/mapa-oficial-piso--1.png','./assets/mapa-oficial-piso-p0.png','./assets/mapa-oficial-piso-0.png','./assets/mapa-oficial-piso-1.png','./assets/mapa-oficial-piso-2.png','./assets/mapa-oficial-piso-3.png',
   './assets/diretorio-fotografado.png','./assets/brand/palacio-do-gelo.svg','./assets/icons/palacio-do-gelo.webp'
 ];
@@ -15,7 +15,7 @@ self.addEventListener('fetch', event => {
       const copy = response.clone();
       caches.open(CACHE).then(cache => cache.put(event.request, copy));
       return response;
-    }).catch(() => caches.match(event.request).then(cached => cached || caches.match('./index.html?v=1.2.0'))));
+    }).catch(() => caches.match(event.request).then(cached => cached || caches.match('./index.html?v=1.2.1'))));
     return;
   }
   event.respondWith(caches.match(event.request).then(cached => cached || fetch(event.request).then(response => {
