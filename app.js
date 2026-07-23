@@ -189,7 +189,12 @@
     'decoração': ['gato-preto', 'ikea', 'normal', 'flying-tiger-copenhagen', 'vista-alegre-atlantis', 'colchaonet', 'mob-cozinhas', 'auchan', 'h-m', 'primark'],
     'moveis': ['ikea', 'gato-preto', 'mob-cozinhas'],
     'móveis': ['ikea', 'gato-preto', 'mob-cozinhas'],
-    'colchão': ['colchaonet']
+    'colchão': ['colchaonet'],
+
+    // Outros Serviços Comuns
+    'wc': ['wc-acessivel', 'balcao-de-informacoes'],
+    'elevador': ['balcao-de-informacoes'],
+    'elevadores': ['balcao-de-informacoes']
   };
 
   function enrichSearchText() {
@@ -349,7 +354,7 @@
       openPlace(btn.dataset.placeId);
     });
     document.addEventListener('click', e => {
-      if (!resultsEl.contains(e.target) && e.target !== input) resultsEl.classList.add('hidden');
+      if (!resultsEl.contains(e.target) && e.target !== input && !e.target.closest('.chip-btn')) resultsEl.classList.add('hidden');
     });
   }
 
@@ -628,17 +633,19 @@
   }
 
   const noteTemplates = {
-    radio: 'Central, aqui [nome/posição]. Tenho uma ocorrência no piso [X], junto a [loja/referência]. Trata-se de [descrição breve]. Preciso de [apoio solicitado].',
-    crianca: 'Criança [encontrada/perdida] no piso [X], junto a [referência]. Descrição: [roupa e idade aproximada]. Estou num ponto seguro e aguardo apoio da Central.',
-    objeto: 'Objeto [encontrado/perdido] no piso [X], junto a [referência], às [hora]. Descrição: [detalhes]. Encaminhado para [destino/responsável].',
-    emergencia: 'Central, emergência no piso [X], junto a [referência]. Ocorrência: [tipo]. Há [riscos visíveis]. Solicito [apoio] com prioridade.',
+    radio: 'Charlie, aqui [nome/posição]. Tenho uma ocorrência no Papa [X], junto a [loja/referência]. Trata-se de [descrição]. Solicito Alpha.',
+    crianca: 'Charlie, Sierra menor [perdido/encontrado] no Papa [X], junto a [referência]. Descrição: [roupa/idade]. Aguardo com o Sierra menor.',
+    objeto: 'Charlie, objeto [encontrado/perdido] no Papa [X], junto a [referência]. Encaminhado para Bravo India às [hora].',
+    emergencia: 'Charlie, emergência médica/segurança no Papa [X], junto a [referência]. Ocorrência: [tipo]. Solicito Alpha com prioridade máxima.',
+    limaEco: 'Charlie, anomalia na Lima Eco junto a [referência exterior]. Solicito manutenção.'
   };
   function renderNotes(){
     const labels={
       radio:{title:'Comunicação por rádio',hint:'Mensagem curta e objetiva'},
-      crianca:{title:'Criança perdida',hint:'Primeiro contacto com a Central'},
-      objeto:{title:'Objeto perdido',hint:'Registo e encaminhamento'},
+      crianca:{title:'Criança / Sierra menor',hint:'Contacto de menor com a Central'},
+      objeto:{title:'Objeto perdido',hint:'Registo e encaminhamento para Bravo India'},
       emergencia:{title:'Emergência',hint:'Comunicação prioritária'},
+      limaEco:{title:'Iluminação Exterior (Lima Eco)',hint:'Anomalia nas luzes exteriores'}
     };
     qs('#operationalNotes').innerHTML=Object.entries(labels).map(([id,item])=>`<article class="note-editor">
       <div class="note-head"><div><span>${esc(item.hint)}</span><b>${esc(item.title)}</b></div><button data-copy-note="${id}" type="button">Copiar</button></div>
@@ -771,10 +778,12 @@
 
     // Quick search chips Click bindings
     qsa('.chip-btn').forEach(btn => {
-      btn.onclick = () => {
+      btn.onclick = (e) => {
+        e.stopPropagation();
         const searchInput = qs('#homeSearch');
         searchInput.value = btn.dataset.search;
         searchInput.dispatchEvent(new Event('input'));
+        searchInput.focus();
       };
     });
 
@@ -850,11 +859,25 @@
     });
   }
 
+  function migrateNotes() {
+    const oldKeys = ['Central, aqui', 'Criança [encontrada/perdida]', 'Objeto [encontrado/perdido]', 'Central, emergência'];
+    for (const [id, value] of Object.entries(saved.notes)) {
+      if (oldKeys.some(ok => String(value).includes(ok))) {
+        saved.notes[id] = noteTemplates[id];
+      }
+    }
+    if (!saved.notes.limaEco) {
+      saved.notes.limaEco = noteTemplates.limaEco;
+    }
+    saveState();
+  }
+
   function init(){
+    migrateNotes();
     enrichSearchText();
     initFilters();bindEvents();bindPositionAndSOS();renderAll();
     setInterval(renderHours,60000);
-    if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=1.2.5').catch(()=>{});
+    if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=1.2.6').catch(()=>{});
   }
   document.addEventListener('DOMContentLoaded',init);
 })();
