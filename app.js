@@ -11,83 +11,139 @@
     Nascente: { Nascente: 'Fica no mesmo lado (Nascente).', Poente: 'Siga em direção ao lado oposto (Poente).', Norte: 'Vire à esquerda em direção a Norte.', Sul: 'Vire à direita em direção a Sul.' }
   };
   const catalogKeywords = {
-    'malas': ['cavalinho', 'parfois', 'primark', 'seaside', 'vilanova', 'aldo', 'calcado-guimaraes', 'h-m', 'c-a', 'samsonite', 'sacoor-blue', 'lacoste', 'quebramar', 'cortefiel', 'benetton', 'auchan'],
-    'mala': ['cavalinho', 'parfois', 'primark', 'seaside', 'vilanova', 'aldo', 'calcado-guimaraes', 'h-m', 'c-a', 'samsonite', 'sacoor-blue', 'lacoste', 'quebramar', 'cortefiel', 'benetton', 'auchan'],
-    'carteiras': ['cavalinho', 'parfois', 'primark', 'seaside', 'vilanova', 'aldo', 'calcado-guimaraes', 'h-m', 'c-a', 'sacoor-blue', 'lacoste', 'quebramar', 'cortefiel', 'benetton', 'auchan', 'tous', 'ourivesaria-pereirinha'],
-    'carteira': ['cavalinho', 'parfois', 'primark', 'seaside', 'vilanova', 'aldo', 'calcado-guimaraes', 'h-m', 'c-a', 'sacoor-blue', 'lacoste', 'quebramar', 'cortefiel', 'benetton', 'auchan', 'tous', 'ourivesaria-pereirinha'],
+    // Malas / Carteiras / Acessórios
+    'malas': ['cavalinho', 'parfois', 'primark', 'seaside', 'vilanova', 'aldo', 'calcado-guimaraes', 'h-m', 'c-a', 'lacoste', 'quebramar', 'cortefiel', 'benetton', 'auchan', 'tous', 'desigual', 'lion-of-porches', 'mango', 'springfield', 'salsa-jeans', 'sacoor-blue', 'upstyle', 'natura-selection', 'deichmann'],
+    'mala': ['cavalinho', 'parfois', 'primark', 'seaside', 'vilanova', 'aldo', 'calcado-guimaraes', 'h-m', 'c-a', 'lacoste', 'quebramar', 'cortefiel', 'benetton', 'auchan', 'tous', 'desigual', 'lion-of-porches', 'mango', 'springfield', 'salsa-jeans', 'sacoor-blue', 'upstyle', 'natura-selection', 'deichmann'],
+    'carteiras': ['cavalinho', 'parfois', 'primark', 'seaside', 'vilanova', 'aldo', 'calcado-guimaraes', 'h-m', 'c-a', 'sacoor-blue', 'lacoste', 'quebramar', 'cortefiel', 'benetton', 'auchan', 'tous', 'ourivesaria-pereirinha', 'desigual', 'lion-of-porches', 'mango', 'springfield', 'salsa-jeans', 'upstyle', 'natura-selection'],
+    'carteira': ['cavalinho', 'parfois', 'primark', 'seaside', 'vilanova', 'aldo', 'calcado-guimaraes', 'h-m', 'c-a', 'sacoor-blue', 'lacoste', 'quebramar', 'cortefiel', 'benetton', 'auchan', 'tous', 'ourivesaria-pereirinha', 'desigual', 'lion-of-porches', 'mango', 'springfield', 'salsa-jeans', 'upstyle', 'natura-selection'],
     'viagem': ['agencia-abreu', 'auchan', 'primark', 'parfois', 'seaside'],
+    'maletas': ['cavalinho', 'parfois', 'primark', 'seaside', 'aldo', 'calcado-guimaraes', 'auchan'],
+
+    // Óculos / Lentes / Oftalmologia
     'oculos': ['fabrica-dos-oculos', 'multiopticas', 'omb-grupo-optico', 'wells', 'hawkers', 'farmacia-pinto-de-campos'],
     'óculos': ['fabrica-dos-oculos', 'multiopticas', 'omb-grupo-optico', 'wells', 'hawkers', 'farmacia-pinto-de-campos'],
     'lentes': ['fabrica-dos-oculos', 'multiopticas', 'omb-grupo-optico', 'wells', 'hawkers'],
     'oftalmologia': ['fabrica-dos-oculos', 'multiopticas', 'omb-grupo-optico', 'wells'],
-    'consultas': ['fabrica-dos-oculos', 'multiopticas', 'omb-grupo-optico', 'wells', 'unilabs'],
-    'relogios': ['bluebird', 'tous', 'ourivesaria-pereirinha', 'swatch', 'boutique-dos-relogios', 'primark', 'auchan'],
-    'relogio': ['bluebird', 'tous', 'ourivesaria-pereirinha', 'swatch', 'boutique-dos-relogios', 'primark', 'auchan'],
-    'relógio': ['bluebird', 'tous', 'ourivesaria-pereirinha', 'swatch', 'boutique-dos-relogios', 'primark', 'auchan'],
-    'joias': ['tous', 'ourivesaria-pereirinha', 'bluebird', 'primark'],
+    'consultas': ['fabrica-dos-oculos', 'multiopticas', 'omb-grupo-optico', 'wells', 'unilabs', 'widex'],
+    'exames': ['fabrica-dos-oculos', 'multiopticas', 'omb-grupo-optico', 'wells'],
+
+    // Relógios / Joias
+    'relogios': ['bluebird', 'tous', 'ourivesaria-pereirinha', 'primark', 'auchan'],
+    'relogio': ['bluebird', 'tous', 'ourivesaria-pereirinha', 'primark', 'auchan'],
+    'relógio': ['bluebird', 'tous', 'ourivesaria-pereirinha', 'primark', 'auchan'],
+    'joias': ['tous', 'ourivesaria-pereirinha', 'bluebird', 'primark', 'auchan'],
     'ouro': ['ourivesaria-pereirinha', 'tous', 'bluebird'],
     'prata': ['ourivesaria-pereirinha', 'tous', 'bluebird', 'parfois'],
     'alianças': ['ourivesaria-pereirinha', 'tous', 'bluebird'],
+    'brincos': ['bluebird', 'tous', 'ourivesaria-pereirinha', 'parfois', 'primark'],
+
+    // Telemóveis / Reparações / Tecnologia
     'telemovel': ['meo', 'vodafone', 'nos', 'iservices', 'la-casa-de-las-carcasas', 'worten', 'worten-mobile', 'mi-store-xiaomi', 'pc-speed', 'fnac', 'auchan'],
     'telemóvel': ['meo', 'vodafone', 'nos', 'iservices', 'la-casa-de-las-carcasas', 'worten', 'worten-mobile', 'mi-store-xiaomi', 'pc-speed', 'fnac', 'auchan'],
     'smartphones': ['meo', 'vodafone', 'nos', 'iservices', 'la-casa-de-las-carcasas', 'worten', 'worten-mobile', 'mi-store-xiaomi', 'pc-speed', 'fnac', 'auchan'],
-    'reparacao': ['iservices', 'pc-speed', 'worten', 'fnac'],
-    'reparação': ['iservices', 'pc-speed', 'worten', 'fnac'],
-    'capas': ['la-casa-de-las-carcasas', 'iservices', 'fnac', 'worten', 'mi-store-xiaomi'],
+    'reparacao': ['iservices', 'pc-speed', 'worten', 'fnac', 'mister-minit', 'mundicor'],
+    'reparação': ['iservices', 'pc-speed', 'worten', 'fnac', 'mister-minit', 'mundicor'],
+    'conserto': ['iservices', 'pc-speed', 'worten', 'fnac', 'mister-minit', 'mundicor'],
+    'arranjar': ['iservices', 'pc-speed', 'worten', 'fnac', 'mister-minit', 'mundicor'],
+    'capas': ['la-casa-de-las-carcasas', 'iservices', 'fnac', 'worten', 'mi-store-xiaomi', 'worten-mobile'],
+    'película': ['la-casa-de-las-carcasas', 'iservices', 'fnac', 'worten', 'mi-store-xiaomi', 'worten-mobile'],
     'tablet': ['fnac', 'worten', 'mi-store-xiaomi', 'radio-popular', 'meo', 'vodafone', 'nos'],
+    'computador': ['fnac', 'worten', 'radio-popular', 'pc-speed'],
+    'portatil': ['fnac', 'worten', 'radio-popular', 'pc-speed'],
+    'portátil': ['fnac', 'worten', 'radio-popular', 'pc-speed'],
+    'televisores': ['worten', 'radio-popular', 'fnac', 'mi-store-xiaomi'],
+    'tv': ['worten', 'radio-popular', 'fnac', 'mi-store-xiaomi'],
+    'eletrodomésticos': ['worten', 'radio-popular', 'auchan'],
+    'frigorifico': ['worten', 'radio-popular', 'auchan'],
+    'chaves': ['mister-minit'],
+    'costura': ['mundicor'],
+
+    // Dinheiro / Bancos
+    'dinheiro': ['multibanco', 'millennium-bcp', 'unicambio'],
+    'levantamento': ['multibanco', 'millennium-bcp'],
+    'banco': ['millennium-bcp'],
+    'câmbio': ['unicambio'],
+
+    // Livros / Tabaco
     'livros': ['fnac', 'press-center-cigarette', 'auchan'],
     'livro': ['fnac', 'press-center-cigarette', 'auchan'],
     'revistas': ['press-center-cigarette', 'auchan'],
     'jornais': ['press-center-cigarette', 'auchan'],
-    'brinquedos': ['centroxogo', 'polar-brincar', 'fnac', 'primark', 'auchan', 'normal', 'flying-tiger-copenhagen'],
-    'jogos': ['fnac', 'worten', 'radio-popular', 'centroxogo', 'polar-brincar'],
+    'tabaco': ['press-center-cigarette'],
+    'cigarros': ['press-center-cigarette'],
+    'raspadinhas': ['press-center-cigarette'],
+    'euromilhões': ['press-center-cigarette'],
+
+    // Brinquedos / Jogos
+    'brinquedos': ['centroxogo', 'polar-brincar', 'fnac', 'primark', 'auchan', 'normal', 'flying-tiger-copenhagen', 'tuttocars', 'zippy', 'chicco'],
+    'jogos': ['fnac', 'worten', 'radio-popular', 'centroxogo', 'polar-brincar', 'bowling-play-center'],
     'consola': ['fnac', 'worten', 'radio-popular', 'centroxogo'],
     'playstation': ['fnac', 'worten', 'radio-popular', 'centroxogo'],
     'nintendo': ['fnac', 'worten', 'radio-popular', 'centroxogo'],
+
+    // Perfumaria / Cosmética / Cuidado
     'perfumes': ['druni', 'douglas', 'perfumes-companhia', 'o-boticario', 'pluricosmetica', 'flormar', 'wells', 'auchan', 'normal'],
     'perfume': ['druni', 'douglas', 'perfumes-companhia', 'o-boticario', 'pluricosmetica', 'flormar', 'wells', 'auchan', 'normal'],
-    'maquilhagem': ['druni', 'douglas', 'perfumes-companhia', 'o-boticario', 'pluricosmetica', 'flormar', 'wells', 'auchan', 'normal'],
+    'maquilhagem': ['druni', 'douglas', 'perfumes-companhia', 'o-boticario', 'pluricosmetica', 'flormar', 'wells', 'auchan', 'normal', 'primark'],
     'cosmetica': ['druni', 'douglas', 'perfumes-companhia', 'o-boticario', 'pluricosmetica', 'flormar', 'wells', 'auchan', 'normal'],
     'cremes': ['druni', 'douglas', 'perfumes-companhia', 'o-boticario', 'pluricosmetica', 'flormar', 'wells', 'auchan', 'normal', 'farmacia-pinto-de-campos'],
-    'tv': ['worten', 'radio-popular', 'fnac', 'mi-store-xiaomi'],
-    'televisores': ['worten', 'radio-popular', 'fnac', 'mi-store-xiaomi'],
-    'computador': ['fnac', 'worten', 'radio-popular', 'pc-speed'],
-    'portatil': ['fnac', 'worten', 'radio-popular', 'pc-speed'],
-    'portátil': ['fnac', 'worten', 'radio-popular', 'pc-speed'],
-    'frigorifico': ['worten', 'radio-popular'],
-    'maquina': ['worten', 'radio-popular'],
-    'máquina': ['worten', 'radio-popular'],
+    'cabeleireiro': ['forlife-cabeleireiro-estetica', 'pluricosmetica'],
+    'estetica': ['forlife-cabeleireiro-estetica', 'pluricosmetica', 'wells'],
+    'estética': ['forlife-cabeleireiro-estetica', 'pluricosmetica', 'wells'],
+
+    // Café / Doces
     'cafe': ['nespresso', 'auchan', 'quiosque-buondi', 'quiosque-delta-onda', 'quiosque-delta-onda-2', 'o-meu-cafe-auchan', 'ola', 'alicarius', 'gen-vcrep', 'jotacake'],
     'café': ['nespresso', 'auchan', 'quiosque-buondi', 'quiosque-delta-onda', 'quiosque-delta-onda-2', 'o-meu-cafe-auchan', 'ola', 'alicarius', 'gen-vcrep', 'jotacake'],
     'capsulas': ['nespresso', 'auchan', 'fnac', 'worten'],
     'cápsulas': ['nespresso', 'auchan', 'fnac', 'worten'],
-    'bebe': ['zippy', 'chicco', 'mayoral', 'h-m', 'c-a', 'primark', 'benetton', 'auchan'],
-    'bebé': ['zippy', 'chicco', 'mayoral', 'h-m', 'c-a', 'primark', 'benetton', 'auchan'],
-    'crianca': ['zippy', 'chicco', 'mayoral', 'h-m', 'c-a', 'primark', 'benetton', 'auchan'],
-    'criança': ['zippy', 'chicco', 'mayoral', 'h-m', 'c-a', 'primark', 'benetton', 'auchan'],
-    'sapatos': ['seaside', 'aldo', 'calcado-guimaraes', 'deichmann', 'jd-sports', 'sport-zone', 'xtreme', 'fuxia', 'primark', 'auchan'],
-    'sapatilhas': ['jd-sports', 'sport-zone', 'xtreme', 'fuxia', 'seaside', 'calcado-guimaraes', 'deichmann', 'primark', 'auchan'],
+    'crepes': ['gen-vcrep', 'o-dreams'],
+    'gelados': ['ola'],
+    'doces': ['jotacake', 'alicarius', 'ola', 'o-dreams', 'normal'],
+
+    // Bebé / Criança
+    'bebe': ['zippy', 'chicco', 'mayoral', 'h-m', 'c-a', 'primark', 'benetton', 'auchan', 'minimingos', 'bleem', 'sergent-major', 'polar-brincar', 'tuttocars', 'espaco-kids', 'farmacia-pinto-de-campos', 'wells'],
+    'bebé': ['zippy', 'chicco', 'mayoral', 'h-m', 'c-a', 'primark', 'benetton', 'auchan', 'minimingos', 'bleem', 'sergent-major', 'polar-brincar', 'tuttocars', 'espaco-kids', 'farmacia-pinto-de-campos', 'wells'],
+    'crianca': ['zippy', 'chicco', 'mayoral', 'h-m', 'c-a', 'primark', 'benetton', 'auchan', 'minimingos', 'bleem', 'sergent-major', 'polar-brincar', 'tuttocars', 'espaco-kids'],
+    'criança': ['zippy', 'chicco', 'mayoral', 'h-m', 'c-a', 'primark', 'benetton', 'auchan', 'minimingos', 'bleem', 'sergent-major', 'polar-brincar', 'tuttocars', 'espaco-kids'],
+
+    // Calçado / Sapatilhas
+    'sapatos': ['seaside', 'aldo', 'calcado-guimaraes', 'deichmann', 'jd-sports', 'sport-zone', 'xtreme', 'fuxia', 'primark', 'auchan', 'cavalinho', 'parfois', 'lacoste', 'vilanova', 'inside'],
+    'sapatilhas': ['jd-sports', 'sport-zone', 'xtreme', 'fuxia', 'seaside', 'calcado-guimaraes', 'deichmann', 'primark', 'auchan', 'lacoste', 'vilanova', 'inside'],
     'tenis': ['jd-sports', 'sport-zone', 'xtreme', 'fuxia', 'seaside', 'calcado-guimaraes', 'deichmann', 'primark', 'auchan'],
     'ténis': ['jd-sports', 'sport-zone', 'xtreme', 'fuxia', 'seaside', 'calcado-guimaraes', 'deichmann', 'primark', 'auchan'],
-    'desporto': ['sport-zone', 'jd-sports', 'xtreme', 'fuxia', 'academico-de-viseu', 'forlife-ginasio-e-piscinas', 'auchan'],
+    'sapataria': ['seaside', 'aldo', 'calcado-guimaraes', 'deichmann', 'cavalinho'],
+
+    // Roupa / Moda
+    'roupa': ['benetton', 'bleem', 'c-a', 'calzedonia', 'cortefiel', 'decenio', 'desigual', 'fuxia', 'h-m', 'inside', 'intimissimi', 'lacoste', 'levi-s', 'lion-of-porches', 'mango', 'mayoral', 'minimingos', 'mo', 'mr-blue', 'natura-selection', 'parfois', 'piantella', 'primark', 'punt-roma', 'quebramar', 'sacoor-blue', 'salsa-jeans', 'sergent-major', 'springfield', 'suits-inc', 'tezenis', 'tiffosi', 'vilanova', 'women-secret', 'zippy', 'chicco', 'academico-de-viseu', 'sport-zone', 'jd-sports', 'xtreme', 'auchan'],
+    'vestuário': ['benetton', 'bleem', 'c-a', 'calzedonia', 'cortefiel', 'decenio', 'desigual', 'fuxia', 'h-m', 'inside', 'intimissimi', 'lacoste', 'levi-s', 'lion-of-porches', 'mango', 'mayoral', 'minimingos', 'mo', 'mr-blue', 'natura-selection', 'parfois', 'piantella', 'primark', 'punt-roma', 'quebramar', 'sacoor-blue', 'salsa-jeans', 'sergent-major', 'springfield', 'suits-inc', 'tezenis', 'tiffosi', 'vilanova', 'women-secret', 'zippy', 'chicco', 'academico-de-viseu', 'sport-zone', 'jd-sports', 'xtreme', 'auchan'],
+    'moda': ['benetton', 'bleem', 'c-a', 'calzedonia', 'cortefiel', 'decenio', 'desigual', 'fuxia', 'h-m', 'inside', 'intimissimi', 'lacoste', 'levi-s', 'lion-of-porches', 'mango', 'mayoral', 'minimingos', 'mo', 'mr-blue', 'natura-selection', 'parfois', 'piantella', 'primark', 'punt-roma', 'quebramar', 'sacoor-blue', 'salsa-jeans', 'sergent-major', 'springfield', 'suits-inc', 'tezenis', 'tiffosi', 'vilanova', 'women-secret', 'zippy', 'chicco', 'academico-de-viseu', 'sport-zone', 'jd-sports', 'xtreme', 'auchan', 'upstyle', 'cavalinho', 'aldo', 'calcado-guimaraes', 'deichmann', 'seaside'],
+    'fatos': ['suits-inc', 'giovanni-galli', 'cortefiel'],
+
+    // Desporto / Lazer
+    'desporto': ['sport-zone', 'jd-sports', 'xtreme', 'fuxia', 'academico-de-viseu', 'forlife-ginasio-e-piscinas', 'auchan', 'pista-de-gelo'],
     'ginasio': ['forlife-ginasio-e-piscinas'],
     'ginásio': ['forlife-ginasio-e-piscinas'],
     'piscina': ['forlife-ginasio-e-piscinas'],
+    'patinagem': ['pista-de-gelo'],
+
+    // Animais
     'pet': ['companhia-de-4-patas', 'auchan-o-meu-pet', 'auchan'],
     'animais': ['companhia-de-4-patas', 'auchan-o-meu-pet', 'auchan'],
     'cao': ['companhia-de-4-patas', 'auchan-o-meu-pet', 'auchan'],
     'cão': ['companhia-de-4-patas', 'auchan-o-meu-pet', 'auchan'],
     'gato': ['companhia-de-4-patas', 'auchan-o-meu-pet', 'auchan'],
+
+    // Supermercado / Comida
     'supermercado': ['auchan'],
     'comida': ['auchan', 'kfc', 'mcdonald-s', 'pizza-hut', 'subway', 'telepizza', 'h3', 'pans-company', 'chef-china', 'sushi-tokyo', 'rodizio-do-gelo', 'santa-grelha', 'soupa', 'vitaminas', 'troppo-squisito', 'a-gula-do-prego', 'o-dreams', 'casa-da-cevada', 'alicarius', 'gen-vcrep', 'jotacake', 'ola'],
     'restaurante': ['kfc', 'mcdonald-s', 'pizza-hut', 'subway', 'telepizza', 'h3', 'pans-company', 'chef-china', 'sushi-tokyo', 'rodizio-do-gelo', 'santa-grelha', 'soupa', 'vitaminas', 'troppo-squisito', 'a-gula-do-prego', 'o-dreams', 'casa-da-cevada', 'alicarius', 'gen-vcrep', 'jotacake', 'ola'],
-    'decoracao': ['gato-preto', 'ikea', 'normal', 'flying-tiger-copenhagen', 'vista-alegre-atlantis', 'colchaonet', 'mob-cozinhas', 'auchan'],
-    'decoração': ['gato-preto', 'ikea', 'normal', 'flying-tiger-copenhagen', 'vista-alegre-atlantis', 'colchaonet', 'mob-cozinhas', 'auchan'],
+
+    // Casa / Decoração
+    'decoracao': ['gato-preto', 'ikea', 'normal', 'flying-tiger-copenhagen', 'vista-alegre-atlantis', 'colchaonet', 'mob-cozinhas', 'auchan', 'h-m', 'primark'],
+    'decoração': ['gato-preto', 'ikea', 'normal', 'flying-tiger-copenhagen', 'vista-alegre-atlantis', 'colchaonet', 'mob-cozinhas', 'auchan', 'h-m', 'primark'],
     'moveis': ['ikea', 'gato-preto', 'mob-cozinhas'],
     'móveis': ['ikea', 'gato-preto', 'mob-cozinhas'],
-    'cabeleireiro': ['forlife-cabeleireiro-estetica', 'pluricosmetica'],
-    'estetica': ['forlife-cabeleireiro-estetica', 'pluricosmetica', 'wells'],
-    'estética': ['forlife-cabeleireiro-estetica', 'pluricosmetica', 'wells']
+    'colchão': ['colchaonet']
   };
 
   function enrichSearchText() {
