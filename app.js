@@ -27,7 +27,7 @@
     'consultas': ['fabrica-dos-oculos', 'multiopticas', 'omb-grupo-optico', 'wells', 'unilabs', 'widex'],
     'exames': ['fabrica-dos-oculos', 'multiopticas', 'omb-grupo-optico', 'wells'],
 
-    // Relógios / Joias
+    // Relógios / Joias / Bateria de Relógio e Reparação
     'relogios': ['bluebird', 'tous', 'ourivesaria-pereirinha', 'primark', 'auchan'],
     'relogio': ['bluebird', 'tous', 'ourivesaria-pereirinha', 'primark', 'auchan'],
     'relógio': ['bluebird', 'tous', 'ourivesaria-pereirinha', 'primark', 'auchan'],
@@ -36,6 +36,18 @@
     'prata': ['ourivesaria-pereirinha', 'tous', 'bluebird', 'parfois'],
     'alianças': ['ourivesaria-pereirinha', 'tous', 'bluebird'],
     'brincos': ['bluebird', 'tous', 'ourivesaria-pereirinha', 'parfois', 'primark'],
+    'bateria relógio': ['ourivesaria-pereirinha', 'bluebird', 'tous', 'mister-minit'],
+    'consertar relógio': ['ourivesaria-pereirinha', 'bluebird', 'tous', 'mister-minit'],
+    'consertar relogio': ['ourivesaria-pereirinha', 'bluebird', 'tous', 'mister-minit'],
+    'reparar relogio': ['ourivesaria-pereirinha', 'bluebird', 'tous', 'mister-minit'],
+    'reparar relógio': ['ourivesaria-pereirinha', 'bluebird', 'tous', 'mister-minit'],
+    'pilha relógio': ['ourivesaria-pereirinha', 'bluebird', 'tous', 'mister-minit'],
+    'pilha relogio': ['ourivesaria-pereirinha', 'bluebird', 'tous', 'mister-minit'],
+    'bracelete': ['ourivesaria-pereirinha', 'bluebird', 'tous', 'mister-minit'],
+    'furar orelha': ['bluebird', 'tous', 'ourivesaria-pereirinha'],
+    'furar orelhas': ['bluebird', 'tous', 'ourivesaria-pereirinha'],
+    'furo orelha': ['bluebird', 'tous', 'ourivesaria-pereirinha'],
+    'piercing': ['bluebird', 'tous', 'ourivesaria-pereirinha'],
 
     // Telemóveis / Reparações / Tecnologia
     'telemovel': ['meo', 'vodafone', 'nos', 'iservices', 'la-casa-de-las-carcasas', 'worten', 'worten-mobile', 'mi-store-xiaomi', 'pc-speed', 'fnac', 'auchan'],
@@ -58,11 +70,45 @@
     'chaves': ['mister-minit'],
     'costura': ['mundicor'],
 
-    // Dinheiro / Bancos
+    // Dinheiro / Bancos / Câmbios
     'dinheiro': ['multibanco', 'millennium-bcp', 'unicambio'],
     'levantamento': ['multibanco', 'millennium-bcp'],
     'banco': ['millennium-bcp'],
     'câmbio': ['unicambio'],
+    'cambio': ['unicambio'],
+    'dolares': ['unicambio'],
+    'trocar dinheiro': ['unicambio'],
+
+    // Correios / CTT / Pagamento de Contas (Payshop)
+    'ctt': ['press-center-cigarette'],
+    'correio': ['press-center-cigarette'],
+    'cartas': ['press-center-cigarette'],
+    'encomendas': ['press-center-cigarette'],
+    'selos': ['press-center-cigarette'],
+    'postais': ['press-center-cigarette'],
+    'payshop': ['press-center-cigarette', 'multibanco'],
+    'pagar contas': ['press-center-cigarette', 'multibanco'],
+    'carregar passe': ['press-center-cigarette', 'multibanco'],
+    'portagens': ['press-center-cigarette', 'multibanco'],
+    'pagamentos': ['press-center-cigarette', 'multibanco'],
+
+    // Fotocópias / Impressões / Revelar Fotos
+    'imprimir': ['press-center-cigarette', 'fnac'],
+    'fotocopias': ['press-center-cigarette', 'fnac'],
+    'fotocópias': ['press-center-cigarette', 'fnac'],
+    'copias': ['press-center-cigarette', 'fnac'],
+    'digitalizar': ['press-center-cigarette', 'fnac'],
+    'impressão': ['press-center-cigarette', 'fnac'],
+    'pdf': ['press-center-cigarette', 'fnac'],
+    'fotografia': ['fnac'],
+    'foto passe': ['fnac'],
+    'revelar fotos': ['fnac'],
+
+    // Serviços Automóveis
+    'lavagem auto': ['eco-car-wash'],
+    'aspirar carro': ['eco-car-wash'],
+    'limpeza carro': ['eco-car-wash'],
+    'lavar carro': ['eco-car-wash'],
 
     // Livros / Tabaco
     'livros': ['fnac', 'press-center-cigarette', 'auchan'],
@@ -808,7 +854,7 @@
     enrichSearchText();
     initFilters();bindEvents();bindPositionAndSOS();renderAll();
     setInterval(renderHours,60000);
-    if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=1.2.4').catch(()=>{});
+    if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=1.2.5').catch(()=>{});
   }
   document.addEventListener('DOMContentLoaded',init);
 })();
