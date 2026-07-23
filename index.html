@@ -11,6 +11,9 @@
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="icon" href="assets/icons/palacio-do-gelo.webp" />
   <link rel="apple-touch-icon" href="assets/icons/palacio-do-gelo.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css?v=1.1.1" />
   <title>PG | Guia de Bolso</title>
 </head>
@@ -224,6 +227,7 @@
 
   <dialog id="placeDialog" class="sheet-dialog">
     <form method="dialog" class="sheet-card">
+      <div class="sheet-handle"></div>
       <button class="sheet-close" value="cancel" aria-label="Fechar">×</button>
       <div id="placeDialogContent"></div>
     </form>
@@ -231,6 +235,7 @@
 
   <dialog id="formDialog" class="sheet-dialog">
     <form id="customPlaceForm" class="sheet-card">
+      <div class="sheet-handle"></div>
       <button class="sheet-close" type="button" data-close-dialog="formDialog" aria-label="Fechar">×</button>
       <span class="micro-label">LOCAL PERSONALIZADO</span>
       <h2 id="formDialogTitle">Adicionar local</h2>
@@ -245,6 +250,7 @@
 
   <dialog id="hoursDialog" class="sheet-dialog">
     <form method="dialog" class="sheet-card">
+      <div class="sheet-handle"></div>
       <button class="sheet-close" value="cancel" aria-label="Fechar">×</button>
       <span class="micro-label">HORÁRIOS PÚBLICOS</span><h2>Estado e horários</h2>
       <div id="hoursDialogList" class="mini-list"></div>
