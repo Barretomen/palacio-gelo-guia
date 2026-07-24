@@ -1,6 +1,6 @@
-const CACHE = 'pg-guia-v1.2.6';
+const CACHE = 'pg-guia-v1.2.9';
 const ASSETS = [
-  './','./index.html?v=1.2.6','./styles.css?v=1.2.6','./data.js?v=1.2.6','./store-media.js?v=1.2.6','./app.js?v=1.2.6','./manifest.webmanifest',
+  './','./index.html?v=1.2.9','./styles.css?v=1.2.9','./data.js?v=1.2.9','./store-media.js?v=1.2.9','./catalogo-pesquisa-v2.js?v=1.2.9','./search-engine-v2.js?v=1.2.9','./app.js?v=1.2.9','./manifest.webmanifest',
   './assets/mapa-oficial-piso--2.png','./assets/mapa-oficial-piso--1.png','./assets/mapa-oficial-piso-p0.png','./assets/mapa-oficial-piso-0.png','./assets/mapa-oficial-piso-1.png','./assets/mapa-oficial-piso-2.png','./assets/mapa-oficial-piso-3.png',
   './assets/diretorio-fotografado.png','./assets/brand/palacio-do-gelo.svg','./assets/icons/palacio-do-gelo.webp'
 ];
@@ -15,7 +15,7 @@ self.addEventListener('fetch', event => {
       const copy = response.clone();
       caches.open(CACHE).then(cache => cache.put(event.request, copy));
       return response;
-    }).catch(() => caches.match(event.request).then(cached => cached || caches.match('./index.html?v=1.2.6'))));
+    }).catch(() => caches.match(event.request).then(cached => cached || caches.match('./index.html?v=1.2.9'))));
     return;
   }
   event.respondWith(caches.match(event.request).then(cached => cached || fetch(event.request).then(response => {

@@ -3,293 +3,575 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#080b0f" />
+  <meta name="theme-color" content="#0b1730" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="PG Guia" />
-  <meta name="description" content="Guia móvel e offline do Palácio do Gelo: pisos, lojas, referências cardeais e treino." />
+  <meta name="description" content="Guia operacional e offline do Palácio do Gelo: pisos, lojas, referências cardeais e ferramentas." />
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="icon" href="assets/icons/palacio-do-gelo.webp" />
   <link rel="apple-touch-icon" href="assets/icons/palacio-do-gelo.webp" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=1.2.6" />
+  <link rel="stylesheet" href="styles.css?v=1.2.9" />
   <title>PG | Guia de Bolso</title>
 </head>
 <body>
-  <div id="app" class="app-shell">
-    <header class="topbar">
-      <div class="brand-block">
-        <img class="brand-logo" src="assets/brand/palacio-do-gelo.svg" alt="Palácio do Gelo Shopping" />
-        <div class="brand-context">
-          <span>Guia</span>
-          <h1>de Bolso</h1>
-        </div>
+  <div class="app">
+    <!-- Sidebar fixa à esquerda (Desktop) -->
+    <aside class="sidebar">
+      <div class="brand">
+        <img src="assets/brand/palacio-do-gelo.svg" alt="Palácio do Gelo">
+        <div><strong>Guia Operacional</strong><span>Palácio do Gelo Shopping</span></div>
       </div>
-      <div class="top-actions">
-        <button id="sosBtn" class="sos-pill" type="button" aria-label="Emergência SOS">🚨 SOS</button>
-        <button id="installBtn" class="icon-btn hidden" type="button" aria-label="Instalar aplicação">⇩</button>
-        <button id="openStatusBtn" class="status-pill" type="button" aria-label="Ver horários">
-          <span id="openStatusDot" class="status-dot"></span>
-          <span id="openStatusText">A verificar</span>
+      <div class="side-label">Navegação</div>
+      <nav class="nav" id="desktopNav">
+        <button class="active" data-view="home" type="button">
+          <svg viewBox="0 0 24 24"><path d="M3 10.8 12 3l9 7.8v9.7a.5.5 0 0 1-.5.5H15v-6H9v6H3.5a.5.5 0 0 1-.5-.5z"/></svg>
+          <span>Visão geral</span>
         </button>
+        <button data-view="map" type="button">
+          <svg viewBox="0 0 24 24"><path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3z"/><path d="M9 3v15M15 6v15"/></svg>
+          <span>Mapa e orientação</span>
+        </button>
+        <button data-view="directory" type="button">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+          <span>Diretório inteligente</span>
+        </button>
+        <button data-view="training" type="button">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
+          <span>Treino operacional</span>
+        </button>
+        <button data-view="more" type="button">
+          <svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18"/></svg>
+          <span>Ferramentas</span>
+        </button>
+      </nav>
+      <div class="side-label">Estado</div>
+      <div class="shift-card">
+        <div class="shift-head"><b>Turno em curso</b><span class="live-dot">Ativo</span></div>
+        <p>Consulta local offline.<br>Dados guardados neste dispositivo.</p>
       </div>
-    </header>
+      <div class="side-spacer"></div>
+      <div class="profile">
+        <div class="avatar">BM</div>
+        <div><b>Barreto Mendes</b><span>Perfil operacional</span></div>
+      </div>
+    </aside>
 
-    <main class="content">
-      <section id="screen-home" class="screen active" data-screen="home">
-        <div class="hero-card">
-          <div class="hero-copy">
-            <span class="micro-label">CONSULTA IMEDIATA</span>
-            <h2>O que procura?</h2>
-            <p>Lojas, serviços e referências — sem perder tempo.</p>
-          </div>
-          <div class="search-wrap">
-            <span class="search-icon">⌕</span>
-            <input id="homeSearch" type="search" autocomplete="off" placeholder="Ex.: MEO, WC, restaurante, loja 018…" aria-label="Pesquisar local" />
-            <button id="voiceSearchBtn" class="voice-btn" type="button" aria-label="Pesquisar por voz">◉</button>
-          </div>
-          <div class="search-chips">
-            <button class="chip-btn" data-search="wc" type="button">🚽 WC</button>
-            <button class="chip-btn" data-search="multibanco" type="button">🏧 ATM</button>
-            <button class="chip-btn" data-search="restaurante" type="button">🍔 Restauração</button>
-            <button class="chip-btn" data-search="elevador" type="button">🛗 Elevadores</button>
-            <button class="chip-btn" data-search="farmacia" type="button">💊 Farmácia</button>
-          </div>
-          <div id="homeSearchResults" class="search-results hidden"></div>
+    <!-- Área Principal de Conteúdo -->
+    <main class="main">
+      <header class="topbar">
+        <div class="page-title">
+          <small>Palácio do Gelo · Viseu</small>
+          <h1 id="pageTitle">Visão geral</h1>
         </div>
+        <div class="top-actions">
+          <button id="openStatusBtn" class="status" type="button">
+            <span id="openStatusText">A verificar</span>
+          </button>
+          <button id="installBtn" class="icon-button hidden" type="button" aria-label="Instalar aplicação">⇩</button>
+          <button class="sos" id="sosBtn" type="button">SOS · 112</button>
+        </div>
+      </header>
 
-        <div class="position-card">
-          <span class="micro-label">A MINHA POSIÇÃO</span>
-          <h2>Onde estou agora?</h2>
-          <p class="muted-note">Defina o seu piso e zona atual para calcular rotas e indicações contextuais no detalhe de cada loja.</p>
-          <div class="position-selectors">
-            <select id="userCurrentFloor" aria-label="O meu piso atual">
-              <option value="0">Piso 0</option>
+      <div class="content">
+        <!-- VISTA: HOME / VISÃO GERAL -->
+        <section class="view active" data-screen="home">
+          <article class="hero">
+            <div class="hero-grid">
+              <div>
+                <span class="eyebrow">
+                  <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
+                  Consulta assistida
+                </span>
+                <h2>Encontre qualquer loja, produto ou serviço em segundos.</h2>
+                <p>Resultados organizados por localização, relevância e nível de confirmação.</p>
+              </div>
+              <div class="hero-side">
+                <div class="hero-stat">
+                  <strong id="homeStatCount">-</strong>
+                  <span id="homeStatLabel">registos indexados</span>
+                  <small>
+                    <svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg> Base verificada v2.0
+                  </small>
+                </div>
+              </div>
+            </div>
+            
+            <div class="command-search">
+              <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+              <input id="homeSearch" type="search" autocomplete="off" placeholder="Ex.: capa de iPhone, fraldário, wroten, óculos…">
+              <button class="voice-btn" id="voiceSearchBtn" type="button" aria-label="Pesquisar por voz">◉</button>
+            </div>
+            <div class="suggestions search-chips">
+              <button class="chip-btn" data-search="wc" type="button">🚽 WC</button>
+              <button class="chip-btn" data-search="multibanco" type="button">🏧 ATM</button>
+              <button class="chip-btn" data-search="restaurante" type="button">🍔 Restauração</button>
+              <button class="chip-btn" data-search="elevador" type="button">🛗 Elevadores</button>
+              <button class="chip-btn" data-search="farmacia" type="button">💊 Farmácia</button>
+            </div>
+
+            <!-- Contentor de resultados da pesquisa rápida -->
+            <div id="homeSearchResults" class="search-results-v2 hidden"></div>
+          </article>
+
+          <!-- Métricas operacionais em grelha -->
+          <div class="metrics">
+            <div class="metric">
+              <div class="metric-icon">
+                <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+              </div>
+              <div><strong id="metricStores">-</strong><span>Lojas oficiais</span></div>
+            </div>
+            <div class="metric">
+              <div class="metric-icon">
+                <svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg>
+              </div>
+              <div><strong id="metricCatalog">-</strong><span>Catálogos ativos</span></div>
+            </div>
+            <div class="metric">
+              <div class="metric-icon">
+                <svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18"/></svg>
+              </div>
+              <div><strong id="metricServices">-</strong><span>Serviços indexados</span></div>
+            </div>
+            <div class="metric">
+              <div class="metric-icon">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
+              </div>
+              <div><strong id="dbProgressPct">0%</strong><span>Ronda concluída</span></div>
+            </div>
+          </div>
+
+          <div class="grid-main">
+            <!-- Painel: Posição do utilizador e Rota -->
+            <section class="panel">
+              <div class="panel-head">
+                <div class="panel-title">
+                  <small>Contexto de Rota</small>
+                  <h3>A minha posição atual</h3>
+                </div>
+              </div>
+              <div class="ops-body">
+                <p class="muted-note" style="margin-top:0; margin-bottom:12px;">Selecione onde está para calcular rotas e indicações contextuais no detalhe de cada local.</p>
+                <div class="position-selectors" style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+                  <select id="userCurrentFloor" class="select-lite" style="width:100%" aria-label="O meu piso atual">
+                    <option value="0">Piso 0</option>
+                    <option value="-2">Piso -2</option>
+                    <option value="-1">Piso -1</option>
+                    <option value="P0">Parque P0</option>
+                    <option value="1">Piso 1</option>
+                    <option value="2">Piso 2</option>
+                    <option value="3">Piso 3</option>
+                  </select>
+                  <select id="userCurrentDir" class="select-lite" style="width:100%" aria-label="A minha zona atual">
+                    <option value="">(Definir zona)</option>
+                    <option value="Norte">Norte (Lado MEO)</option>
+                    <option value="Sul">Sul (Lado Auchan)</option>
+                    <option value="Poente">Poente (Lado Farmácia)</option>
+                    <option value="Nascente">Nascente (Oposto Farmácia)</option>
+                  </select>
+                </div>
+
+                <!-- Bússola Operacional baseada em Giroscópio -->
+                <div class="compass-container" style="margin-top: 20px; display: flex; flex-direction: column; align-items: center;">
+                  <div class="compass-card" aria-label="Rosa dos pontos de referência">
+                    <button class="compass-point north" data-direction="north" type="button"><strong>N</strong><span>MEO</span></button>
+                    <button class="compass-point west" data-direction="west" type="button"><strong>P</strong><span>Farmácia</span></button>
+                    <div class="compass-center"><span>PG</span><small>giro</small></div>
+                    <button class="compass-point east" data-direction="east" type="button"><strong>E</strong><span>Nascente</span></button>
+                    <button class="compass-point south" data-direction="south" type="button"><strong>S</strong><span>Auchan</span></button>
+                  </div>
+                  <p class="compass-legend" style="margin-top: 10px; font-size:10px; color:var(--muted);">
+                    Toque no centro da bússola para ativar o giroscópio do telemóvel.<br><b>P</b> = Poente · <b>E</b> = Nascente
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <!-- Painel: Estado Operacional / Ronda Rápida -->
+            <section class="panel">
+              <div class="panel-head">
+                <div class="panel-title">
+                  <small>Patrulhamento</small>
+                  <h3>Estado da ronda</h3>
+                </div>
+                <button class="text-link" data-go="more" type="button">
+                  Ver tudo <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </button>
+              </div>
+              <div class="ops-body">
+                <div class="progress-block" style="margin-bottom:12px;">
+                  <div class="progress-line">
+                    <span>Progresso da ronda</span>
+                    <strong id="dbRondas">0/7</strong>
+                  </div>
+                  <div class="bar"><i id="dbProgressFill" style="width: 0%;"></i></div>
+                </div>
+                <div class="notice" id="homeNotice" style="margin-top:12px;">
+                  <svg viewBox="0 0 24 24"><path d="M12 3 2.7 20h18.6z"/><path d="M12 9v5M12 18h.01"/></svg>
+                  <span id="homeNoticeText">Nenhuma nota operacional gravada. Adicione uma nota em Ferramentas.</span>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <!-- Secção: Favoritos -->
+          <section class="section">
+            <div class="section-head">
+              <div>
+                <small>Acesso Rápido</small>
+                <h2>Os meus locais favoritos</h2>
+              </div>
+              <button class="text-link" data-go="directory" type="button">
+                Ver diretório <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </button>
+            </div>
+            <div id="favoritesList" class="store-grid empty-state">Ainda não marcou favoritos.</div>
+          </section>
+
+          <!-- Secção: Serviços Essenciais Rápidos -->
+          <section class="section">
+            <div class="section-head">
+              <div>
+                <small>Assistência</small>
+                <h2>Serviços e apoios essenciais</h2>
+              </div>
+            </div>
+            <div class="service-strip">
+              <div class="service" data-action="find-place" data-place="Cadeiras de rodas">
+                <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="7" r="2"/><path d="m11 10-1 5h5l2 4M9.5 13A5 5 0 1 0 15 18"/></svg></div>
+                <div><b>Cadeira de rodas</b><span>Balcão de Informações</span></div>
+              </div>
+              <div class="service" data-action="find-place" data-place="Fraldários e WC para crianças">
+                <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3"/><path d="M7 21v-5a5 5 0 0 1 10 0v5M8 5c1-2 3-3 5-2"/></svg></div>
+                <div><b>Fraldários</b><span>Instalações sanitárias</span></div>
+              </div>
+              <div class="service" data-action="find-place" data-place="Wireless">
+                <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M5 12.5a10 10 0 0 1 14 0M8 16a6 6 0 0 1 8 0M11 19.5a1.5 1.5 0 0 1 2 0"/></svg></div>
+                <div><b>Wi-Fi gratuito</b><span>Zonas públicas</span></div>
+              </div>
+              <div class="service" data-action="find-place" data-place="Carregamento de veículos elétricos">
+                <div class="service-icon"><svg viewBox="0 0 24 24"><path d="m5 16 1.5-6h11L19 16M3 16h18v4H3zM7 20v2M17 20v2"/><circle cx="7" cy="17" r="1"/><circle cx="17" cy="17" r="1"/></svg></div>
+                <div><b>Carregamento elétrico</b><span>Parque automóvel</span></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Horários resumidos de hoje -->
+          <section class="section">
+            <div class="section-head">
+              <h2>Horários de hoje</h2>
+              <button id="showAllHours" class="text-link" type="button">Ver todos os horários</button>
+            </div>
+            <div id="hoursStrip" class="hours-strip"></div>
+          </section>
+        </section>
+
+        <!-- VISTA: MAPA -->
+        <section class="view" data-screen="map">
+          <div class="section-head">
+            <div>
+              <small>Orientação Visual</small>
+              <h2 id="mapTitle">Mapa do Piso 0</h2>
+              <p>Toque num ponto para ver detalhes ou use o botão para marcar um ponto personalizado.</p>
+            </div>
+          </div>
+          <div class="placeholder-page">
+            <div class="panel">
+              <div class="panel-head">
+                <div id="floorTabs" class="floor-tabs" style="margin:0" role="tablist" aria-label="Escolher piso"></div>
+                <div style="display:flex;gap:8px">
+                  <button id="markModeBtn" class="select-lite" type="button">+ Marcar ponto</button>
+                </div>
+              </div>
+              <div class="big-map">
+                <div id="mapViewport" class="map-viewport">
+                  <img id="floorMapImage" src="assets/mapa-oficial-piso-0.png" alt="Mapa do piso" draggable="false">
+                  <div id="markerLayer" class="marker-layer"></div>
+                  <div class="map-compass" aria-hidden="true"><b>N</b><span>↥</span><small>MEO</small></div>
+                </div>
+                <div id="mapHint" class="map-hint">Toque no mapa para selecionar local.</div>
+                <div class="floating-tools zoom-actions">
+                  <button id="zoomInBtn" type="button" aria-label="Aumentar zoom">+</button>
+                  <button id="resetZoomBtn" type="button" aria-label="Ajustar mapa">⌖</button>
+                  <button id="zoomOutBtn" type="button" aria-label="Diminuir zoom">−</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="section-heading compact" style="margin-top:20px; display:flex; justify-content:space-between; align-items:center;">
+            <h2>Locais deste piso</h2>
+            <span id="floorCount" class="count-badge" style="background:var(--blue-soft); color:var(--blue); padding:4px 8px; border-radius:999px; font-size:10px; font-weight:800;">-</span>
+          </div>
+          <div id="floorPlaces" class="store-grid" style="margin-top:10px;"></div>
+        </section>
+
+        <!-- VISTA: DIRETÓRIO -->
+        <section class="view" data-screen="directory">
+          <div class="section-head">
+            <div>
+              <small id="directoryHeaderCount">Carregando locais...</small>
+              <h2>Diretório inteligente</h2>
+              <p>Filtros discretos e cartões consistentes por nível de evidência oficial.</p>
+            </div>
+          </div>
+          <div class="directory-toolbar">
+            <label class="input-lite">
+              <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+              <input id="directorySearch" placeholder="Pesquisar loja, produto ou serviço..." aria-label="Pesquisar diretório">
+            </label>
+            <select id="floorFilter" class="select-lite" aria-label="Filtrar por piso">
+              <option value="all">Todos os pisos</option>
               <option value="-2">Piso -2</option>
               <option value="-1">Piso -1</option>
               <option value="P0">Parque P0</option>
+              <option value="0">Piso 0</option>
               <option value="1">Piso 1</option>
               <option value="2">Piso 2</option>
               <option value="3">Piso 3</option>
-            </select>
-            <select id="userCurrentDir" aria-label="A minha zona atual">
-              <option value="">(Definir zona atual para rota)</option>
-              <option value="Norte">Norte (Lado MEO)</option>
-              <option value="Sul">Sul (Lado Auchan)</option>
-              <option value="Poente">Poente (Lado Farmácia)</option>
-              <option value="Nascente">Nascente (Oposto Farmácia)</option>
-            </select>
-          </div>
-        </div>
-
-        <section class="section-block">
-          <div class="section-heading">
-            <div>
-              <span class="micro-label">ORIENTAÇÃO OPERACIONAL</span>
-              <h2>Rosa dos pontos de referência</h2>
-            </div>
-            <button class="text-btn" data-nav-target="training" type="button">Treinar</button>
-          </div>
-          <div class="compass-card" aria-label="Orientação por pontos cardeais">
-            <button class="compass-point north" data-direction="north" type="button"><strong>N</strong><span>MEO</span></button>
-            <button class="compass-point west" data-direction="west" type="button"><strong>P</strong><span>Farmácia</span></button>
-            <div class="compass-center"><span>PG</span><small>referências</small></div>
-            <button class="compass-point east" data-direction="east" type="button"><strong>E</strong><span>Oposto à Farmácia</span></button>
-            <button class="compass-point south" data-direction="south" type="button"><strong>S</strong><span>Auchan</span></button>
-          </div>
-          <p class="compass-legend"><b>P</b> = Poente · <b>E</b> = Nascente</p>
-        </section>
-
-        <section class="section-block">
-          <div class="section-heading"><h2>Acesso rápido</h2></div>
-          <div class="quick-grid">
-            <button class="quick-card" data-action="open-floor" data-floor="0" type="button"><span class="quick-icon">⌖</span><b>Mapa Piso 0</b><small>Mapa ampliado e marcadores</small></button>
-            <button class="quick-card" data-action="find-place" data-place="Balcão de Informações" type="button"><span class="quick-icon">i</span><b>Informações</b><small>Piso -2</small></button>
-            <button class="quick-card" data-action="find-place" data-place="Perdidos e achados" type="button"><span class="quick-icon">◇</span><b>Perdidos</b><small>Balcão de Informações</small></button>
-            <button class="quick-card" data-action="open-radio" type="button"><span class="quick-icon">⌁</span><b>Rádio</b><small>Modelo de comunicação</small></button>
-          </div>
-        </section>
-
-        <section class="section-block">
-          <div class="section-heading">
-            <h2>Favoritos</h2>
-            <button class="text-btn" data-nav-target="directory" type="button">Diretório</button>
-          </div>
-          <div id="favoritesList" class="horizontal-list empty-state">Ainda não marcou favoritos.</div>
-        </section>
-
-        <section class="section-block">
-          <div class="section-heading"><h2>Agora</h2><button id="showAllHours" class="text-btn" type="button">Ver horários</button></div>
-          <div id="hoursStrip" class="hours-strip"></div>
-        </section>
-      </section>
-
-      <section id="screen-map" class="screen" data-screen="map">
-        <div class="section-heading sticky-heading">
-          <div><span class="micro-label">MAPA</span><h2 id="mapTitle">Piso 0</h2></div>
-          <button id="markModeBtn" class="outline-btn" type="button">+ Marcar ponto</button>
-        </div>
-        <div id="floorTabs" class="floor-tabs" role="tablist" aria-label="Escolher piso"></div>
-        <div class="map-card">
-          <div id="mapViewport" class="map-viewport">
-            <img id="floorMapImage" src="assets/mapa-oficial-piso-0.png" alt="Mapa do Piso 0" draggable="false" />
-            <div id="markerLayer" class="marker-layer"></div>
-            <div class="map-compass" aria-hidden="true"><b>N</b><span>↥</span><small>MEO</small></div>
-          </div>
-          <div id="mapHint" class="map-hint">Toque num marcador ou pesquise uma loja.</div>
-          <div class="zoom-actions">
-            <button id="zoomOutBtn" type="button" aria-label="Diminuir zoom">−</button>
-            <button id="resetZoomBtn" type="button">Ajustar</button>
-            <button id="zoomInBtn" type="button" aria-label="Aumentar zoom">+</button>
-          </div>
-        </div>
-        <div class="section-heading compact"><h2>Locais deste piso</h2><span id="floorCount" class="count-badge"></span></div>
-        <div id="floorPlaces" class="card-list"></div>
-      </section>
-
-      <section id="screen-directory" class="screen" data-screen="directory">
-        <div class="section-heading sticky-heading">
-          <div><span class="micro-label">142 LOCAIS CADASTRADOS</span><h2>Diretório</h2></div>
-          <button id="directoryFavoritesOnly" class="outline-btn" type="button">☆ Favoritos</button>
-        </div>
-        <div class="filter-card">
-          <div class="search-wrap compact-search">
-            <span class="search-icon">⌕</span>
-            <input id="directorySearch" type="search" placeholder="Nome, categoria, piso ou unidade" aria-label="Pesquisar diretório" />
-          </div>
-          <div class="filter-row">
-            <select id="floorFilter" aria-label="Filtrar por piso">
-              <option value="all">Todos os pisos</option>
-              <option value="-2">Piso -2</option><option value="-1">Piso -1</option><option value="P0">Parque P0</option>
-              <option value="0">Piso 0</option><option value="1">Piso 1</option><option value="2">Piso 2</option><option value="3">Piso 3</option>
               <option value="unknown">Por confirmar</option>
             </select>
-            <select id="categoryFilter" aria-label="Filtrar por categoria"><option value="all">Todas as categorias</option></select>
+            <select id="categoryFilter" class="select-lite" aria-label="Filtrar por categoria">
+              <option value="all">Todas as categorias</option>
+            </select>
           </div>
-          <label class="check-row"><input id="verifiedFilter" type="checkbox" /> Mostrar apenas localizações confirmadas</label>
-        </div>
-        <div class="result-summary"><span id="directoryCount"></span><button id="clearFilters" class="text-btn" type="button">Limpar filtros</button></div>
-        <div id="directoryList" class="card-list"></div>
-      </section>
+          
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:14px; flex-wrap:wrap; gap:8px;">
+            <label class="check-row" style="font-size:11px; display:inline-flex; align-items:center; gap:6px;">
+              <input id="verifiedFilter" type="checkbox" /> Mostrar apenas localizações confirmadas
+            </label>
+            <button id="directoryFavoritesOnly" class="select-lite" style="height:32px; padding:0 10px;" type="button">☆ Apenas favoritos</button>
+          </div>
 
-      <section id="screen-training" class="screen" data-screen="training">
-        <div class="section-heading">
-          <div><span class="micro-label">MEMORIZAÇÃO</span><h2>Modo treino</h2></div>
-          <div id="trainingScore" class="score-pill">0 / 0</div>
-        </div>
-        <div class="training-tabs">
-          <button class="active" data-training-mode="mixed" type="button">Misto</button>
-          <button data-training-mode="compass" type="button">Direções</button>
-          <button data-training-mode="floors" type="button">Pisos</button>
-        </div>
-        <div id="quizCard" class="quiz-card">
-          <span id="quizType" class="micro-label">DIREÇÃO</span>
-          <h2 id="quizQuestion">A carregar pergunta…</h2>
-          <div id="quizAnswers" class="answer-grid"></div>
-          <div id="quizFeedback" class="quiz-feedback hidden"></div>
-          <button id="nextQuestionBtn" class="primary-btn hidden" type="button">Próxima pergunta</button>
-        </div>
-        <section class="section-block">
-          <div class="section-heading"><h2>Referências essenciais</h2></div>
-          <div id="referenceCards" class="reference-grid"></div>
+          <div class="result-summary" style="display:flex; justify-content:space-between; align-items:center; margin-top:14px; font-size:11px; color:var(--muted)">
+            <span id="directoryCount"></span>
+            <button id="clearFilters" class="text-link" style="border:0; background:none; font-size:11px;" type="button">Limpar filtros</button>
+          </div>
+          <div class="directory-grid" id="directoryGrid" style="margin-top:14px;"></div>
         </section>
-        <section class="section-block">
-          <div class="section-heading"><h2>Checklist de ronda</h2><button id="resetPatrolBtn" class="text-btn" type="button">Reiniciar</button></div>
-          <div id="patrolChecklist" class="patrol-list"></div>
+
+        <!-- VISTA: TREINO -->
+        <section class="view" data-screen="training">
+          <div class="section-head">
+            <div>
+              <small>Formação contínua</small>
+              <h2>Treino operacional</h2>
+              <p>Teste a memorização das referências espaciais e pontos cardeais do centro comercial.</p>
+            </div>
+          </div>
+          <div class="training-grid">
+            <section class="panel quiz">
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <span class="eyebrow" style="color:var(--blue)">Modo Treino</span>
+                <span id="trainingScore" class="score-pill" style="background:var(--blue-soft); color:var(--blue); padding:4px 8px; border-radius:999px; font-size:11px; font-weight:800;">0 / 0</span>
+              </div>
+              <div class="training-tabs" style="display:flex; gap:6px; margin:14px 0;">
+                <button class="select-lite active" data-training-mode="mixed" type="button">Misto</button>
+                <button class="select-lite" data-training-mode="compass" type="button">Direções</button>
+                <button class="select-lite" data-training-mode="floors" type="button">Pisos</button>
+              </div>
+              
+              <div id="quizCard" style="margin-top:16px;">
+                <span id="quizType" class="micro-label" style="text-transform:uppercase; color:var(--muted); font-size:9px; font-weight:800; display:block; margin-bottom:6px;">DIREÇÃO</span>
+                <h2 id="quizQuestion" style="font-size:16px; margin:0 0 16px;">A carregar pergunta…</h2>
+                <div id="quizAnswers" class="answers" style="display:grid; grid-template-columns:1fr 1fr; gap:10px;"></div>
+                <div id="quizFeedback" class="quiz-feedback hidden" style="margin-top:14px; padding:10px; border-radius:8px; font-size:11px; font-weight:700;"></div>
+                <button id="nextQuestionBtn" class="primary-btn hidden" style="margin-top:14px; width:100%; border:0; background:var(--blue); color:white; padding:10px; border-radius:10px; font-weight:800;" type="button">Próxima pergunta</button>
+              </div>
+            </section>
+
+            <!-- Referências essenciais das coordenadas -->
+            <section class="panel">
+              <div class="panel-head">
+                <div class="panel-title">
+                  <small>Memorização</small>
+                  <h3>Referências essenciais</h3>
+                </div>
+              </div>
+              <div id="referenceCards" class="reference-list" style="padding:16px;"></div>
+            </section>
+          </div>
         </section>
-      </section>
 
-      <section id="screen-more" class="screen" data-screen="more">
-        <div class="section-heading"><div><span class="micro-label">APOIO</span><h2>Mais ferramentas</h2></div></div>
-
-        <!-- Painel de Controlo Operacional -->
-        <div class="dashboard-card">
-          <span class="micro-label">DASHBOARD EM TEMPO REAL</span>
-          <h2>Painel Operacional</h2>
-          <div class="db-grid">
-            <div class="db-item">
-              <span class="db-val" id="dbRondas">0/7</span>
-              <span class="db-lbl">Rondas</span>
-            </div>
-            <div class="db-item">
-              <span class="db-val" id="dbNotas">0</span>
-              <span class="db-lbl">Notas</span>
-            </div>
-            <div class="db-item">
-              <span class="db-val" id="dbFavoritos">0</span>
-              <span class="db-lbl">Favoritos</span>
-            </div>
-            <div class="db-item">
-              <span class="db-val" id="dbPersonalizados">0</span>
-              <span class="db-lbl">Pontos</span>
+        <!-- VISTA: FERRAMENTAS / OPERAÇÃO (MORE) -->
+        <section class="view" data-screen="more">
+          <div class="section-head">
+            <div>
+              <small>Ferramentas Pessoais</small>
+              <h2>Centro operacional</h2>
+              <p>Gestão local de rondas, relatórios operacionais, rádio e exportação.</p>
             </div>
           </div>
-          <div class="db-progress-container">
-            <div style="display:flex; justify-content:space-between; font-size:11px; margin-bottom:4px; font-weight:700;">
-              <span>Progresso Total da Ronda</span>
-              <span id="dbProgressPct">0%</span>
+
+          <!-- Métricas do Dashboard Operacional -->
+          <div class="metrics">
+            <div class="metric">
+              <div class="metric-icon">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
+              </div>
+              <div><strong id="dbRondasTools">0/7</strong><span>Rondas</span></div>
             </div>
-            <div class="db-progress-bar">
-              <div class="db-progress-fill" id="dbProgressFill" style="width: 0%;"></div>
+            <div class="metric">
+              <div class="metric-icon">
+                <svg viewBox="0 0 24 24"><path d="M4 4h6a3 3 0 0 1 3 3v13a3 3 0 0 0-3-3H4zM20 4h-6a3 3 0 0 0-3 3v13a3 3 0 0 1 3-3h6z"/></svg>
+              </div>
+              <div><strong id="dbNotas">0</strong><span>Notas</span></div>
+            </div>
+            <div class="metric">
+              <div class="metric-icon">
+                <svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"/></svg>
+              </div>
+              <div><strong id="dbFavoritos">0</strong><span>Favoritos</span></div>
+            </div>
+            <div class="metric">
+              <div class="metric-icon">
+                <svg viewBox="0 0 24 24"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              </div>
+              <div><strong id="dbPersonalizados">0</strong><span>Pontos</span></div>
             </div>
           </div>
-        </div>
 
-        <details class="accordion" open>
-          <summary>Serviços públicos</summary>
-          <div id="servicesList" class="mini-list"></div>
-        </details>
+          <div class="grid-main">
+            <!-- Checklist de Ronda -->
+            <section class="panel">
+              <div class="panel-head">
+                <div class="panel-title">
+                  <small>Patrulhamento</small>
+                  <h3>Pontos essenciais da ronda</h3>
+                </div>
+                <button id="resetPatrolBtn" class="text-link" type="button">Reiniciar ronda</button>
+              </div>
+              <div class="ops-body">
+                <div id="patrolChecklist" class="patrol-list" style="display:flex; flex-direction:column; gap:8px;"></div>
+              </div>
+            </section>
 
-        <details class="accordion">
-          <summary>Regras públicas do shopping</summary>
-          <div id="rulesList" class="mini-list"></div>
-        </details>
+            <!-- Modelos de Comunicação de Rádio e Notas Operacionais -->
+            <section class="panel">
+              <div class="panel-head">
+                <div class="panel-title">
+                  <small>Notas Rápidas (Rádio Speak)</small>
+                  <h3>Modelos operacionais editáveis</h3>
+                </div>
+              </div>
+              <div class="ops-body" style="padding-bottom:0;">
+                <p class="muted-note" style="margin-top:0; margin-bottom:12px;">Modelos prontos a copiar usando a terminologia operacional (Charlie, Alpha, Lima Eco, Sierra, etc.).</p>
+              </div>
+              <div id="operationalNotes" class="ops-body" style="display:grid; gap:14px; padding-top:0;"></div>
+            </section>
+          </div>
 
-        <details class="accordion" id="operationalNotesAccordion">
-          <summary>Notas operacionais pessoais</summary>
-          <p class="muted-note">Modelos editáveis para comunicação rápida. Ficam apenas neste dispositivo e não substituem o procedimento oficial.</p>
-          <div id="operationalNotes" class="notes-grid"></div>
-        </details>
+          <!-- Secção de Pesquisas a Enriquecer -->
+          <section class="panel" style="margin-top:18px;">
+            <div class="panel-head">
+              <div class="panel-title">
+                <small>Melhoria Contínua</small>
+                <h3>Pesquisas sem correspondência segura</h3>
+              </div>
+              <div style="display:flex; gap:8px;">
+                <button id="exportFailedSearchesBtn" class="text-link" type="button">Exportar JSON</button>
+                <button id="clearFailedSearchesBtn" class="text-link" style="color:var(--red)" type="button">Limpar</button>
+              </div>
+            </div>
+            <div class="ops-body">
+              <p class="muted-note" style="margin-top:0; margin-bottom:12px;">Termos pesquisados sem correspondência de loja ou serviço. Útil para propor novas categorias ou correções.</p>
+              <div id="failedSearchesList" class="mini-list"></div>
+            </div>
+          </section>
 
-        <details class="accordion">
-          <summary>Pontos personalizados</summary>
-          <button id="addCustomPlaceBtn" class="primary-btn full" type="button">Adicionar local</button>
-          <div id="customPlacesList" class="mini-list"></div>
-        </details>
+          <!-- Pontos Personalizados -->
+          <section class="panel" style="margin-top:18px;">
+            <div class="panel-head">
+              <div class="panel-title">
+                <small>Localizações Personalizadas</small>
+                <h3>Os meus marcadores</h3>
+              </div>
+              <button id="addCustomPlaceBtn" class="text-link" type="button">+ Adicionar local</button>
+            </div>
+            <div class="ops-body">
+              <div id="customPlacesList" class="mini-list"></div>
+            </div>
+          </section>
 
-        <details class="accordion">
-          <summary>Diretório fotografado</summary>
-          <a href="assets/diretorio-fotografado.png" target="_blank" rel="noopener"><img class="directory-photo" src="assets/diretorio-fotografado.png" alt="Fotografia ampliada do diretório do shopping" /></a>
-        </details>
+          <!-- Diretório Fotografado -->
+          <section class="panel" style="margin-top:18px;">
+            <div class="panel-head">
+              <div class="panel-title">
+                <small>Fotografia de Apoio</small>
+                <h3>Diretório físico oficial do Palácio</h3>
+              </div>
+            </div>
+            <div class="ops-body">
+              <a href="assets/diretorio-fotografado.png" target="_blank" rel="noopener">
+                <img class="directory-photo" src="assets/diretorio-fotografado.png" alt="Fotografia do diretório do shopping" style="width:100%; border-radius:12px; border:1px solid var(--line); margin-bottom:6px;" />
+              </a>
+              <span class="muted-note">Toque para ver a imagem original fotografada no centro comercial.</span>
+            </div>
+          </section>
 
-        <details class="accordion">
-          <summary>Contactos e fontes</summary>
-          <div id="contactCard" class="contact-card"></div>
-          <div id="sourcesList" class="source-list"></div>
-          <p class="muted-note" id="dataNote"></p>
-        </details>
+          <!-- Serviços do centro e Regras -->
+          <section class="panel" style="margin-top:18px;">
+            <div class="panel-head"><div class="panel-title"><h3>Serviços públicos e regulamento</h3></div></div>
+            <div class="ops-body" style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+              <div>
+                <h4>Lista geral de serviços</h4>
+                <div id="servicesList" class="mini-list"></div>
+              </div>
+              <div>
+                <h4>Regulamento interno</h4>
+                <div id="rulesList" class="mini-list"></div>
+              </div>
+            </div>
+          </section>
 
-        <div class="danger-zone">
-          <h3>Dados locais</h3>
-          <p>Favoritos, correções, notas, treino e pontos personalizados ficam apenas no seu telemóvel.</p>
-          <button id="exportDataBtn" class="outline-btn" type="button">Exportar cópia</button>
-          <button id="importDataBtn" class="outline-btn" type="button">Importar cópia</button>
-          <input id="importDataInput" type="file" accept="application/json" hidden />
-        </div>
-      </section>
+          <!-- Contactos e Fontes de Dados -->
+          <section class="panel" style="margin-top:18px;">
+            <div class="panel-head"><div class="panel-title"><h3>Fontes de dados e contactos</h3></div></div>
+            <div class="ops-body">
+              <div id="contactCard" class="contact-card" style="margin-bottom:12px;"></div>
+              <div id="sourcesList" class="source-list" style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:12px;"></div>
+              <p class="muted-note" id="dataNote"></p>
+            </div>
+          </section>
+
+          <!-- Dados Locais (Exportar / Importar / Limpar) -->
+          <div class="danger-zone" style="margin-top:18px; border: 1px solid var(--line); background:#fff; border-radius:18px; padding:18px;">
+            <h3>Gestão de dados do dispositivo</h3>
+            <p class="muted-note" style="margin-bottom:14px;">Importe ou exporte uma cópia de segurança com as suas notas, favoritos, checklist e pontos de interesse.</p>
+            <div style="display:flex; gap:10px;">
+              <button id="exportDataBtn" class="select-lite" style="height:38px;" type="button">Exportar cópia</button>
+              <button id="importDataBtn" class="select-lite" style="height:38px;" type="button">Importar cópia</button>
+              <input id="importDataInput" type="file" accept="application/json" hidden />
+            </div>
+          </div>
+        </section>
+      </div>
     </main>
 
-    <nav class="bottom-nav" aria-label="Navegação principal">
-      <button class="active" data-nav="home" type="button"><span>⌂</span><small>Início</small></button>
-      <button data-nav="map" type="button"><span>⌖</span><small>Mapa</small></button>
-      <button data-nav="directory" type="button"><span>☷</span><small>Diretório</small></button>
-      <button data-nav="training" type="button"><span>◎</span><small>Treino</small></button>
-      <button data-nav="more" type="button"><span>•••</span><small>Mais</small></button>
+    <!-- Barra de Navegação Móvel (Dock inferior) -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Navegação principal">
+      <button class="active" data-view="home" type="button">
+        <svg viewBox="0 0 24 24"><path d="M3 10.8 12 3l9 7.8v9.7a.5.5 0 0 1-.5.5H15v-6H9v6H3.5a.5.5 0 0 1-.5-.5z"/></svg>Início
+      </button>
+      <button data-view="map" type="button">
+        <svg viewBox="0 0 24 24"><path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3z"/><path d="M9 3v15M15 6v15"/></svg>Mapa
+      </button>
+      <button data-view="directory" type="button">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Diretório
+      </button>
+      <button data-view="training" type="button">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>Treino
+      </button>
+      <button data-view="more" type="button">
+        <svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18"/></svg>Mais
+      </button>
     </nav>
   </div>
 
+  <!-- Diálogos / Modais (Dialog Sheets) -->
   <dialog id="placeDialog" class="sheet-dialog">
     <form method="dialog" class="sheet-card">
       <div class="sheet-handle"></div>
@@ -305,11 +587,32 @@
       <span class="micro-label">LOCAL PERSONALIZADO</span>
       <h2 id="formDialogTitle">Adicionar local</h2>
       <label>Nome<input name="name" required placeholder="Ex.: Posto de segurança" /></label>
-      <div class="two-cols"><label>Piso<select name="floor"><option>-2</option><option>-1</option><option>P0</option><option selected>0</option><option>1</option><option>2</option><option>3</option></select></label><label>Unidade<input name="unit" placeholder="Ex.: 018" /></label></div>
-      <label>Direção<select name="direction"><option value="">Por confirmar</option><option>Norte</option><option>Sul</option><option>Poente</option><option>Nascente</option></select></label>
+      <div class="two-cols">
+        <label>Piso
+          <select name="floor">
+            <option>-2</option>
+            <option>-1</option>
+            <option>P0</option>
+            <option selected>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+          </select>
+        </label>
+        <label>Unidade<input name="unit" placeholder="Ex.: 018" /></label>
+      </div>
+      <label>Direção
+        <select name="direction">
+          <option value="">Por confirmar</option>
+          <option>Norte</option>
+          <option>Sul</option>
+          <option>Poente</option>
+          <option>Nascente</option>
+        </select>
+      </label>
       <label>Referência / nota<textarea name="note" rows="3" placeholder="Ex.: corredor junto ao elevador"></textarea></label>
       <input type="hidden" name="x" /><input type="hidden" name="y" />
-      <button class="primary-btn full" type="submit">Guardar neste dispositivo</button>
+      <button class="primary-btn full" type="submit" style="margin-top:14px; border:0; background:var(--blue); color:white; padding:10px; border-radius:10px; font-weight:800; width:100%">Guardar no dispositivo</button>
     </form>
   </dialog>
 
@@ -327,25 +630,25 @@
     <form method="dialog" class="sheet-card sos-dialog-card">
       <div class="sheet-handle"></div>
       <button class="sheet-close" value="cancel" aria-label="Fechar">×</button>
-      <span class="micro-label" style="color:var(--danger)">🚨 EMERGÊNCIA</span>
+      <span class="micro-label" style="color:var(--red)">🚨 EMERGÊNCIA</span>
       <h2>Contactos Rápidos SOS</h2>
       <p class="muted-note" style="margin-bottom: 20px;">Use apenas em caso de ocorrência grave, emergência médica ou segurança operacional imediata.</p>
-      <div class="sos-grid">
-        <a href="tel:910000000" class="sos-link-btn primary">
-          <span>📞 Central de Segurança PG</span>
-          <small>Interno: 2118 / Móvel: 910 000 000</small>
+      <div class="sos-grid" style="display:grid; gap:10px;">
+        <a href="tel:910000000" class="sos-link-btn primary" style="display:block; padding:12px; text-decoration:none; background:var(--blue-soft); border-radius:10px; text-align:left;">
+          <span style="font-weight:700; color:var(--navy); display:block;">📞 Central de Segurança PG</span>
+          <small style="color:var(--muted); font-size:10px;">Interno: 2118 / Móvel: 910 000 000</small>
         </a>
-        <a href="tel:112" class="sos-link-btn danger">
-          <span>🚒 Emergência Nacional (112)</span>
-          <small>Bombeiros / INEM / Polícia</small>
+        <a href="tel:112" class="sos-link-btn danger" style="display:block; padding:12px; text-decoration:none; background:var(--red-soft); border-radius:10px; text-align:left;">
+          <span style="font-weight:700; color:var(--red); display:block;">🚒 Emergência Nacional (112)</span>
+          <small style="color:var(--muted); font-size:10px;">Bombeiros / INEM / Polícia</small>
         </a>
-        <a href="tel:232422020" class="sos-link-btn">
-          <span>🚒 Bombeiros Voluntários de Viseu</span>
-          <small>Linha direta: 232 422 020</small>
+        <a href="tel:232422020" class="sos-link-btn" style="display:block; padding:12px; text-decoration:none; background:var(--line-2); border-radius:10px; text-align:left;">
+          <span style="font-weight:700; color:var(--ink-2); display:block;">🚒 Bombeiros Voluntários de Viseu</span>
+          <small style="color:var(--muted); font-size:10px;">Linha direta: 232 422 020</small>
         </a>
-        <a href="tel:232460880" class="sos-link-btn">
-          <span>🚓 PSP - Comando de Viseu</span>
-          <small>Geral: 232 460 880</small>
+        <a href="tel:232460880" class="sos-link-btn" style="display:block; padding:12px; text-decoration:none; background:var(--line-2); border-radius:10px; text-align:left;">
+          <span style="font-weight:700; color:var(--ink-2); display:block;">🚓 PSP - Comando de Viseu</span>
+          <small style="color:var(--muted); font-size:10px;">Geral: 232 460 880</small>
         </a>
       </div>
     </form>
@@ -353,8 +656,11 @@
 
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
-  <script src="data.js?v=1.2.6"></script>
-  <script src="store-media.js?v=1.2.6"></script>
-  <script src="app.js?v=1.2.6"></script>
+  <!-- Ordem dos scripts em conformidade com o motor de pesquisa V2 -->
+  <script src="data.js?v=1.2.9"></script>
+  <script src="store-media.js?v=1.2.9"></script>
+  <script src="catalogo-pesquisa-v2.js?v=1.2.9"></script>
+  <script src="search-engine-v2.js?v=1.2.9"></script>
+  <script src="app.js?v=1.2.9"></script>
 </body>
 </html>

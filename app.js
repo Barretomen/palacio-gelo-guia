@@ -10,207 +10,11 @@
     Poente: { Poente: 'Fica no mesmo lado (Poente).', Nascente: 'Siga em direção ao lado oposto (Nascente).', Norte: 'Vire à direita em direção a Norte.', Sul: 'Vire à esquerda em direção a Sul.' },
     Nascente: { Nascente: 'Fica no mesmo lado (Nascente).', Poente: 'Siga em direção ao lado oposto (Poente).', Norte: 'Vire à esquerda em direção a Norte.', Sul: 'Vire à direita em direção a Sul.' }
   };
-  const catalogKeywords = {
-    // Malas / Carteiras / Acessórios
-    'malas': ['cavalinho', 'parfois', 'primark', 'seaside', 'vilanova', 'aldo', 'calcado-guimaraes', 'h-m', 'c-a', 'lacoste', 'quebramar', 'cortefiel', 'benetton', 'auchan', 'tous', 'desigual', 'lion-of-porches', 'mango', 'springfield', 'salsa-jeans', 'sacoor-blue', 'upstyle', 'natura-selection', 'deichmann'],
-    'mala': ['cavalinho', 'parfois', 'primark', 'seaside', 'vilanova', 'aldo', 'calcado-guimaraes', 'h-m', 'c-a', 'lacoste', 'quebramar', 'cortefiel', 'benetton', 'auchan', 'tous', 'desigual', 'lion-of-porches', 'mango', 'springfield', 'salsa-jeans', 'sacoor-blue', 'upstyle', 'natura-selection', 'deichmann'],
-    'carteiras': ['cavalinho', 'parfois', 'primark', 'seaside', 'vilanova', 'aldo', 'calcado-guimaraes', 'h-m', 'c-a', 'sacoor-blue', 'lacoste', 'quebramar', 'cortefiel', 'benetton', 'auchan', 'tous', 'ourivesaria-pereirinha', 'desigual', 'lion-of-porches', 'mango', 'springfield', 'salsa-jeans', 'upstyle', 'natura-selection'],
-    'carteira': ['cavalinho', 'parfois', 'primark', 'seaside', 'vilanova', 'aldo', 'calcado-guimaraes', 'h-m', 'c-a', 'sacoor-blue', 'lacoste', 'quebramar', 'cortefiel', 'benetton', 'auchan', 'tous', 'ourivesaria-pereirinha', 'desigual', 'lion-of-porches', 'mango', 'springfield', 'salsa-jeans', 'upstyle', 'natura-selection'],
-    'viagem': ['agencia-abreu', 'auchan', 'primark', 'parfois', 'seaside'],
-    'maletas': ['cavalinho', 'parfois', 'primark', 'seaside', 'aldo', 'calcado-guimaraes', 'auchan'],
 
-    // Óculos / Lentes / Oftalmologia
-    'oculos': ['fabrica-dos-oculos', 'multiopticas', 'omb-grupo-optico', 'wells', 'hawkers', 'farmacia-pinto-de-campos'],
-    'óculos': ['fabrica-dos-oculos', 'multiopticas', 'omb-grupo-optico', 'wells', 'hawkers', 'farmacia-pinto-de-campos'],
-    'lentes': ['fabrica-dos-oculos', 'multiopticas', 'omb-grupo-optico', 'wells', 'hawkers'],
-    'oftalmologia': ['fabrica-dos-oculos', 'multiopticas', 'omb-grupo-optico', 'wells'],
-    'consultas': ['fabrica-dos-oculos', 'multiopticas', 'omb-grupo-optico', 'wells', 'unilabs', 'widex'],
-    'exames': ['fabrica-dos-oculos', 'multiopticas', 'omb-grupo-optico', 'wells'],
-
-    // Relógios / Joias / Bateria de Relógio e Reparação
-    'relogios': ['bluebird', 'tous', 'ourivesaria-pereirinha', 'primark', 'auchan'],
-    'relogio': ['bluebird', 'tous', 'ourivesaria-pereirinha', 'primark', 'auchan'],
-    'relógio': ['bluebird', 'tous', 'ourivesaria-pereirinha', 'primark', 'auchan'],
-    'joias': ['tous', 'ourivesaria-pereirinha', 'bluebird', 'primark', 'auchan'],
-    'ouro': ['ourivesaria-pereirinha', 'tous', 'bluebird'],
-    'prata': ['ourivesaria-pereirinha', 'tous', 'bluebird', 'parfois'],
-    'alianças': ['ourivesaria-pereirinha', 'tous', 'bluebird'],
-    'brincos': ['bluebird', 'tous', 'ourivesaria-pereirinha', 'parfois', 'primark'],
-    'bateria relógio': ['ourivesaria-pereirinha', 'bluebird', 'tous', 'mister-minit'],
-    'consertar relógio': ['ourivesaria-pereirinha', 'bluebird', 'tous', 'mister-minit'],
-    'consertar relogio': ['ourivesaria-pereirinha', 'bluebird', 'tous', 'mister-minit'],
-    'reparar relogio': ['ourivesaria-pereirinha', 'bluebird', 'tous', 'mister-minit'],
-    'reparar relógio': ['ourivesaria-pereirinha', 'bluebird', 'tous', 'mister-minit'],
-    'pilha relógio': ['ourivesaria-pereirinha', 'bluebird', 'tous', 'mister-minit'],
-    'pilha relogio': ['ourivesaria-pereirinha', 'bluebird', 'tous', 'mister-minit'],
-    'bracelete': ['ourivesaria-pereirinha', 'bluebird', 'tous', 'mister-minit'],
-    'furar orelha': ['bluebird', 'tous', 'ourivesaria-pereirinha'],
-    'furar orelhas': ['bluebird', 'tous', 'ourivesaria-pereirinha'],
-    'furo orelha': ['bluebird', 'tous', 'ourivesaria-pereirinha'],
-    'piercing': ['bluebird', 'tous', 'ourivesaria-pereirinha'],
-
-    // Telemóveis / Reparações / Tecnologia
-    'telemovel': ['meo', 'vodafone', 'nos', 'iservices', 'la-casa-de-las-carcasas', 'worten', 'worten-mobile', 'mi-store-xiaomi', 'pc-speed', 'fnac', 'auchan'],
-    'telemóvel': ['meo', 'vodafone', 'nos', 'iservices', 'la-casa-de-las-carcasas', 'worten', 'worten-mobile', 'mi-store-xiaomi', 'pc-speed', 'fnac', 'auchan'],
-    'smartphones': ['meo', 'vodafone', 'nos', 'iservices', 'la-casa-de-las-carcasas', 'worten', 'worten-mobile', 'mi-store-xiaomi', 'pc-speed', 'fnac', 'auchan'],
-    'reparacao': ['iservices', 'pc-speed', 'worten', 'fnac', 'mister-minit', 'mundicor'],
-    'reparação': ['iservices', 'pc-speed', 'worten', 'fnac', 'mister-minit', 'mundicor'],
-    'conserto': ['iservices', 'pc-speed', 'worten', 'fnac', 'mister-minit', 'mundicor'],
-    'arranjar': ['iservices', 'pc-speed', 'worten', 'fnac', 'mister-minit', 'mundicor'],
-    'capas': ['la-casa-de-las-carcasas', 'iservices', 'fnac', 'worten', 'mi-store-xiaomi', 'worten-mobile'],
-    'película': ['la-casa-de-las-carcasas', 'iservices', 'fnac', 'worten', 'mi-store-xiaomi', 'worten-mobile'],
-    'tablet': ['fnac', 'worten', 'mi-store-xiaomi', 'radio-popular', 'meo', 'vodafone', 'nos'],
-    'computador': ['fnac', 'worten', 'radio-popular', 'pc-speed'],
-    'portatil': ['fnac', 'worten', 'radio-popular', 'pc-speed'],
-    'portátil': ['fnac', 'worten', 'radio-popular', 'pc-speed'],
-    'televisores': ['worten', 'radio-popular', 'fnac', 'mi-store-xiaomi'],
-    'tv': ['worten', 'radio-popular', 'fnac', 'mi-store-xiaomi'],
-    'eletrodomésticos': ['worten', 'radio-popular', 'auchan'],
-    'frigorifico': ['worten', 'radio-popular', 'auchan'],
-    'chaves': ['mister-minit'],
-    'costura': ['mundicor'],
-
-    // Dinheiro / Bancos / Câmbios
-    'dinheiro': ['multibanco', 'millennium-bcp', 'unicambio'],
-    'levantamento': ['multibanco', 'millennium-bcp'],
-    'banco': ['millennium-bcp'],
-    'câmbio': ['unicambio'],
-    'cambio': ['unicambio'],
-    'dolares': ['unicambio'],
-    'trocar dinheiro': ['unicambio'],
-
-    // Correios / CTT / Pagamento de Contas (Payshop)
-    'ctt': ['press-center-cigarette'],
-    'correio': ['press-center-cigarette'],
-    'cartas': ['press-center-cigarette'],
-    'encomendas': ['press-center-cigarette'],
-    'selos': ['press-center-cigarette'],
-    'postais': ['press-center-cigarette'],
-    'payshop': ['press-center-cigarette', 'multibanco'],
-    'pagar contas': ['press-center-cigarette', 'multibanco'],
-    'carregar passe': ['press-center-cigarette', 'multibanco'],
-    'portagens': ['press-center-cigarette', 'multibanco'],
-    'pagamentos': ['press-center-cigarette', 'multibanco'],
-
-    // Fotocópias / Impressões / Revelar Fotos
-    'imprimir': ['press-center-cigarette', 'fnac'],
-    'fotocopias': ['press-center-cigarette', 'fnac'],
-    'fotocópias': ['press-center-cigarette', 'fnac'],
-    'copias': ['press-center-cigarette', 'fnac'],
-    'digitalizar': ['press-center-cigarette', 'fnac'],
-    'impressão': ['press-center-cigarette', 'fnac'],
-    'pdf': ['press-center-cigarette', 'fnac'],
-    'fotografia': ['fnac'],
-    'foto passe': ['fnac'],
-    'revelar fotos': ['fnac'],
-
-    // Serviços Automóveis
-    'lavagem auto': ['eco-car-wash'],
-    'aspirar carro': ['eco-car-wash'],
-    'limpeza carro': ['eco-car-wash'],
-    'lavar carro': ['eco-car-wash'],
-
-    // Livros / Tabaco
-    'livros': ['fnac', 'press-center-cigarette', 'auchan'],
-    'livro': ['fnac', 'press-center-cigarette', 'auchan'],
-    'revistas': ['press-center-cigarette', 'auchan'],
-    'jornais': ['press-center-cigarette', 'auchan'],
-    'tabaco': ['press-center-cigarette'],
-    'cigarros': ['press-center-cigarette'],
-    'raspadinhas': ['press-center-cigarette'],
-    'euromilhões': ['press-center-cigarette'],
-
-    // Brinquedos / Jogos
-    'brinquedos': ['centroxogo', 'polar-brincar', 'fnac', 'primark', 'auchan', 'normal', 'flying-tiger-copenhagen', 'tuttocars', 'zippy', 'chicco'],
-    'jogos': ['fnac', 'worten', 'radio-popular', 'centroxogo', 'polar-brincar', 'bowling-play-center'],
-    'consola': ['fnac', 'worten', 'radio-popular', 'centroxogo'],
-    'playstation': ['fnac', 'worten', 'radio-popular', 'centroxogo'],
-    'nintendo': ['fnac', 'worten', 'radio-popular', 'centroxogo'],
-
-    // Perfumaria / Cosmética / Cuidado
-    'perfumes': ['druni', 'douglas', 'perfumes-companhia', 'o-boticario', 'pluricosmetica', 'flormar', 'wells', 'auchan', 'normal'],
-    'perfume': ['druni', 'douglas', 'perfumes-companhia', 'o-boticario', 'pluricosmetica', 'flormar', 'wells', 'auchan', 'normal'],
-    'maquilhagem': ['druni', 'douglas', 'perfumes-companhia', 'o-boticario', 'pluricosmetica', 'flormar', 'wells', 'auchan', 'normal', 'primark'],
-    'cosmetica': ['druni', 'douglas', 'perfumes-companhia', 'o-boticario', 'pluricosmetica', 'flormar', 'wells', 'auchan', 'normal'],
-    'cremes': ['druni', 'douglas', 'perfumes-companhia', 'o-boticario', 'pluricosmetica', 'flormar', 'wells', 'auchan', 'normal', 'farmacia-pinto-de-campos'],
-    'cabeleireiro': ['forlife-cabeleireiro-estetica', 'pluricosmetica'],
-    'estetica': ['forlife-cabeleireiro-estetica', 'pluricosmetica', 'wells'],
-    'estética': ['forlife-cabeleireiro-estetica', 'pluricosmetica', 'wells'],
-
-    // Café / Doces
-    'cafe': ['nespresso', 'auchan', 'quiosque-buondi', 'quiosque-delta-onda', 'quiosque-delta-onda-2', 'o-meu-cafe-auchan', 'ola', 'alicarius', 'gen-vcrep', 'jotacake'],
-    'café': ['nespresso', 'auchan', 'quiosque-buondi', 'quiosque-delta-onda', 'quiosque-delta-onda-2', 'o-meu-cafe-auchan', 'ola', 'alicarius', 'gen-vcrep', 'jotacake'],
-    'capsulas': ['nespresso', 'auchan', 'fnac', 'worten'],
-    'cápsulas': ['nespresso', 'auchan', 'fnac', 'worten'],
-    'crepes': ['gen-vcrep', 'o-dreams'],
-    'gelados': ['ola'],
-    'doces': ['jotacake', 'alicarius', 'ola', 'o-dreams', 'normal'],
-
-    // Bebé / Criança
-    'bebe': ['zippy', 'chicco', 'mayoral', 'h-m', 'c-a', 'primark', 'benetton', 'auchan', 'minimingos', 'bleem', 'sergent-major', 'polar-brincar', 'tuttocars', 'espaco-kids', 'farmacia-pinto-de-campos', 'wells'],
-    'bebé': ['zippy', 'chicco', 'mayoral', 'h-m', 'c-a', 'primark', 'benetton', 'auchan', 'minimingos', 'bleem', 'sergent-major', 'polar-brincar', 'tuttocars', 'espaco-kids', 'farmacia-pinto-de-campos', 'wells'],
-    'crianca': ['zippy', 'chicco', 'mayoral', 'h-m', 'c-a', 'primark', 'benetton', 'auchan', 'minimingos', 'bleem', 'sergent-major', 'polar-brincar', 'tuttocars', 'espaco-kids'],
-    'criança': ['zippy', 'chicco', 'mayoral', 'h-m', 'c-a', 'primark', 'benetton', 'auchan', 'minimingos', 'bleem', 'sergent-major', 'polar-brincar', 'tuttocars', 'espaco-kids'],
-
-    // Calçado / Sapatilhas
-    'sapatos': ['seaside', 'aldo', 'calcado-guimaraes', 'deichmann', 'jd-sports', 'sport-zone', 'xtreme', 'fuxia', 'primark', 'auchan', 'cavalinho', 'parfois', 'lacoste', 'vilanova', 'inside'],
-    'sapatilhas': ['jd-sports', 'sport-zone', 'xtreme', 'fuxia', 'seaside', 'calcado-guimaraes', 'deichmann', 'primark', 'auchan', 'lacoste', 'vilanova', 'inside'],
-    'tenis': ['jd-sports', 'sport-zone', 'xtreme', 'fuxia', 'seaside', 'calcado-guimaraes', 'deichmann', 'primark', 'auchan'],
-    'ténis': ['jd-sports', 'sport-zone', 'xtreme', 'fuxia', 'seaside', 'calcado-guimaraes', 'deichmann', 'primark', 'auchan'],
-    'sapataria': ['seaside', 'aldo', 'calcado-guimaraes', 'deichmann', 'cavalinho'],
-
-    // Roupa / Moda
-    'roupa': ['benetton', 'bleem', 'c-a', 'calzedonia', 'cortefiel', 'decenio', 'desigual', 'fuxia', 'h-m', 'inside', 'intimissimi', 'lacoste', 'levi-s', 'lion-of-porches', 'mango', 'mayoral', 'minimingos', 'mo', 'mr-blue', 'natura-selection', 'parfois', 'piantella', 'primark', 'punt-roma', 'quebramar', 'sacoor-blue', 'salsa-jeans', 'sergent-major', 'springfield', 'suits-inc', 'tezenis', 'tiffosi', 'vilanova', 'women-secret', 'zippy', 'chicco', 'academico-de-viseu', 'sport-zone', 'jd-sports', 'xtreme', 'auchan'],
-    'vestuário': ['benetton', 'bleem', 'c-a', 'calzedonia', 'cortefiel', 'decenio', 'desigual', 'fuxia', 'h-m', 'inside', 'intimissimi', 'lacoste', 'levi-s', 'lion-of-porches', 'mango', 'mayoral', 'minimingos', 'mo', 'mr-blue', 'natura-selection', 'parfois', 'piantella', 'primark', 'punt-roma', 'quebramar', 'sacoor-blue', 'salsa-jeans', 'sergent-major', 'springfield', 'suits-inc', 'tezenis', 'tiffosi', 'vilanova', 'women-secret', 'zippy', 'chicco', 'academico-de-viseu', 'sport-zone', 'jd-sports', 'xtreme', 'auchan'],
-    'moda': ['benetton', 'bleem', 'c-a', 'calzedonia', 'cortefiel', 'decenio', 'desigual', 'fuxia', 'h-m', 'inside', 'intimissimi', 'lacoste', 'levi-s', 'lion-of-porches', 'mango', 'mayoral', 'minimingos', 'mo', 'mr-blue', 'natura-selection', 'parfois', 'piantella', 'primark', 'punt-roma', 'quebramar', 'sacoor-blue', 'salsa-jeans', 'sergent-major', 'springfield', 'suits-inc', 'tezenis', 'tiffosi', 'vilanova', 'women-secret', 'zippy', 'chicco', 'academico-de-viseu', 'sport-zone', 'jd-sports', 'xtreme', 'auchan', 'upstyle', 'cavalinho', 'aldo', 'calcado-guimaraes', 'deichmann', 'seaside'],
-    'fatos': ['suits-inc', 'giovanni-galli', 'cortefiel'],
-
-    // Desporto / Lazer
-    'desporto': ['sport-zone', 'jd-sports', 'xtreme', 'fuxia', 'academico-de-viseu', 'forlife-ginasio-e-piscinas', 'auchan', 'pista-de-gelo'],
-    'ginasio': ['forlife-ginasio-e-piscinas'],
-    'ginásio': ['forlife-ginasio-e-piscinas'],
-    'piscina': ['forlife-ginasio-e-piscinas'],
-    'patinagem': ['pista-de-gelo'],
-
-    // Animais
-    'pet': ['companhia-de-4-patas', 'auchan-o-meu-pet', 'auchan'],
-    'animais': ['companhia-de-4-patas', 'auchan-o-meu-pet', 'auchan'],
-    'cao': ['companhia-de-4-patas', 'auchan-o-meu-pet', 'auchan'],
-    'cão': ['companhia-de-4-patas', 'auchan-o-meu-pet', 'auchan'],
-    'gato': ['companhia-de-4-patas', 'auchan-o-meu-pet', 'auchan'],
-
-    // Supermercado / Comida
-    'supermercado': ['auchan'],
-    'comida': ['auchan', 'kfc', 'mcdonald-s', 'pizza-hut', 'subway', 'telepizza', 'h3', 'pans-company', 'chef-china', 'sushi-tokyo', 'rodizio-do-gelo', 'santa-grelha', 'soupa', 'vitaminas', 'troppo-squisito', 'a-gula-do-prego', 'o-dreams', 'casa-da-cevada', 'alicarius', 'gen-vcrep', 'jotacake', 'ola'],
-    'restaurante': ['kfc', 'mcdonald-s', 'pizza-hut', 'subway', 'telepizza', 'h3', 'pans-company', 'chef-china', 'sushi-tokyo', 'rodizio-do-gelo', 'santa-grelha', 'soupa', 'vitaminas', 'troppo-squisito', 'a-gula-do-prego', 'o-dreams', 'casa-da-cevada', 'alicarius', 'gen-vcrep', 'jotacake', 'ola'],
-
-    // Casa / Decoração
-    'decoracao': ['gato-preto', 'ikea', 'normal', 'flying-tiger-copenhagen', 'vista-alegre-atlantis', 'colchaonet', 'mob-cozinhas', 'auchan', 'h-m', 'primark'],
-    'decoração': ['gato-preto', 'ikea', 'normal', 'flying-tiger-copenhagen', 'vista-alegre-atlantis', 'colchaonet', 'mob-cozinhas', 'auchan', 'h-m', 'primark'],
-    'moveis': ['ikea', 'gato-preto', 'mob-cozinhas'],
-    'móveis': ['ikea', 'gato-preto', 'mob-cozinhas'],
-    'colchão': ['colchaonet'],
-
-    // Outros Serviços Comuns
-    'wc': ['wc-acessivel', 'balcao-de-informacoes'],
-    'elevador': ['balcao-de-informacoes'],
-    'elevadores': ['balcao-de-informacoes']
-  };
-
-  function enrichSearchText() {
-    DATA.stores.forEach(store => {
-      const tags = [];
-      for (const [keyword, ids] of Object.entries(catalogKeywords)) {
-        if (ids.includes(store.id)) tags.push(keyword);
-      }
-      if (tags.length) {
-        store.searchText = `${store.searchText || ''} ${tags.join(' ')}`.trim();
-      }
-    });
-  }
   const floorLabel = f => f === 'P0' ? 'Parque P0' : (f === 'unknown' || f === 'Por confirmar') ? 'Por confirmar' : f === 'Shopping' ? 'Todo o shopping' : f === 'Parque' ? 'Parque' : `Piso ${f}`;
   const qs = (s, root = document) => root.querySelector(s);
   const qsa = (s, root = document) => [...root.querySelectorAll(s)];
+  const on = (selector, event, handler) => { const el = qs(selector); if (el) el.addEventListener(event, handler); };
   const esc = value => String(value ?? '').replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
   const norm = value => String(value ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
   const initials = value => String(value || 'PG').split(/\s+/).filter(Boolean).slice(0, 2).map(part => part[0]).join('').toUpperCase();
@@ -230,6 +34,8 @@
     patrol: {},
     userFloor: '0',
     userDir: '',
+    failedSearches: {},
+    feedbacks: [],
   };
 
   let saved = loadState();
@@ -245,27 +51,38 @@
 
   function loadState() {
     try {
-      return { ...defaultState, ...(JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}) };
+      const parsed = { ...defaultState, ...(JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}) };
+      parsed.failedSearches = parsed.failedSearches || {};
+      parsed.feedbacks = parsed.feedbacks || [];
+      return parsed;
     } catch {
-      return structuredClone(defaultState);
+      return { ...defaultState, failedSearches: {}, feedbacks: [] };
     }
   }
+
   function saveState() { localStorage.setItem(STORAGE_KEY, JSON.stringify(saved)); }
+
   function toast(message) {
     const el = qs('#toast');
+    if (!el) return;
     el.textContent = message;
     el.classList.add('show');
     clearTimeout(toast.timer);
     toast.timer = setTimeout(() => el.classList.remove('show'), 2600);
   }
 
-  function getStore(id) { return DATA.stores.find(s => s.id === id); }
+  function getStore(id) {
+    const catalog = window.PG_SEARCH_CATALOG_V2;
+    return catalog.stores.find(s => s.id === id) || catalog.officialServices.find(s => s.id === id);
+  }
+
   function getCustom(id) { return saved.customPlaces.find(p => p.id === id); }
   function isFavorite(id) { return saved.favorites.includes(id); }
+
   function toggleFavorite(id) {
     saved.favorites = isFavorite(id) ? saved.favorites.filter(x => x !== id) : [...saved.favorites, id];
     saveState();
-    renderFavorites(); renderDirectory(); renderFloorPlaces();
+    renderFavorites(); renderDirectory(); renderFloorPlaces(); renderDashboard();
     toast(isFavorite(id) ? 'Adicionado aos favoritos.' : 'Removido dos favoritos.');
   }
 
@@ -295,37 +112,69 @@
   }
 
   function allPlaces() {
-    const standard = DATA.stores.map(store => ({ type:'store', id:store.id, name:store.name, categories:store.categories, locations:effectiveLocations(store), source:store }));
+    const catalog = window.PG_SEARCH_CATALOG_V2;
+    const standard = catalog.stores.map(store => ({ type:'store', id:store.id, name:store.name, categories:store.categories, locations:effectiveLocations(store), source:store }));
+    const services = catalog.officialServices.map(service => ({ type:'service', id:service.id, name:service.name, categories:['Serviços'], locations:service.locations || [], source:service }));
     const custom = saved.customPlaces.map(p => ({ type:'custom', id:p.id, name:p.name, categories:['Personalizado'], locations:[{floor:p.floor, unit:p.unit || '', direction:p.direction || '', map0:p.x !== '' && p.y !== '' ? [Number(p.x), Number(p.y)] : undefined, note:p.note, verified:true}], source:p }));
-    return [...standard, ...custom];
+    return [...standard, ...services, ...custom];
   }
 
   function primaryLocation(place) { return place.locations?.[0] || null; }
 
   function searchPlaces(query, limit = 12) {
-    const q = norm(query);
-    if (!q) return [];
-    const tokens = q.split(/\s+/).filter(Boolean);
-    return allPlaces().map(place => {
-      const locText = (place.locations || []).map(l => `${floorLabel(l.floor)} ${l.unit || ''}`).join(' ');
-      const sourceText = place.type === 'store' ? place.source.searchText : `${place.name} ${place.categories.join(' ')} ${locText} ${place.source.note || ''}`;
-      const hay = norm(`${sourceText} ${locText}`);
-      let score = tokens.reduce((sum,t) => sum + (hay.includes(t) ? 1 : 0), 0);
-      if (norm(place.name).startsWith(q)) score += 3;
-      if (norm(place.name) === q) score += 6;
-      return { place, score };
-    }).filter(x => x.score > 0).sort((a,b) => b.score - a.score || a.place.name.localeCompare(b.place.name, 'pt')).slice(0, limit).map(x => x.place);
+    return window.pgSearch.search(query, { maxResults: limit });
+  }
+
+  function recordFailedSearch(query) {
+    const normQuery = norm(query);
+    if (!normQuery) return;
+    if (!saved.failedSearches) saved.failedSearches = {};
+    if (!saved.failedSearches[normQuery]) {
+      saved.failedSearches[normQuery] = {
+        term: normQuery,
+        original: query,
+        count: 0,
+        firstSeen: new Date().toISOString(),
+        lastSeen: new Date().toISOString()
+      };
+    }
+    saved.failedSearches[normQuery].count += 1;
+    saved.failedSearches[normQuery].lastSeen = new Date().toISOString();
+    saveState();
+    renderFailedSearches();
+  }
+
+  function saveFeedback(placeId, query, type) {
+    if (!saved.feedbacks) saved.feedbacks = [];
+    saved.feedbacks.push({
+      placeId,
+      query: query || '',
+      type,
+      timestamp: new Date().toISOString()
+    });
+    saveState();
+    renderDashboard();
+    toast('Feedback operacional registado localmente.');
   }
 
   function navTo(screen) {
     activeScreen = screen;
     qsa('.screen').forEach(el => el.classList.toggle('active', el.dataset.screen === screen));
-    qsa('.bottom-nav button').forEach(btn => btn.classList.toggle('active', btn.dataset.nav === screen));
+    qsa('.bottom-nav button, #desktopNav button').forEach(btn => {
+      const target = btn.dataset.nav || btn.dataset.view;
+      btn.classList.toggle('active', target === screen);
+    });
     window.scrollTo({ top: 0, behavior: 'smooth' });
     if (screen === 'map') renderMap();
     if (screen === 'directory') renderDirectory();
     if (screen === 'training' && !currentQuestion) nextQuestion();
     if (screen === 'more') renderMore();
+    
+    const pageNames = { home: 'Visão geral', map: 'Mapa e orientação', directory: 'Diretório inteligente', training: 'Treino operacional', more: 'Ferramentas' };
+    const pageTitle = qs('#pageTitle');
+    if (pageTitle && pageNames[screen]) {
+      pageTitle.textContent = pageNames[screen];
+    }
   }
 
   function placeFloorText(place) {
@@ -333,20 +182,186 @@
     return place.locations.map(l => `${floorLabel(l.floor)}${l.unit ? ` · ${l.unit}` : ''}`).join(' / ');
   }
 
-  function resultButton(place) {
-    return `<button class="search-result" type="button" data-place-id="${esc(place.id)}">
-      ${placeVisual(place, 'small')}
-      <span><b>${esc(place.name)}</b><small>${esc(placeFloorText(place))}</small></span>
-    </button>`;
+  function resultButton(result) {
+    const place = allPlaces().find(item => item.id === result.id);
+    const floor = result.locations?.length
+      ? result.locations.map(loc => `${floorLabel(loc.floor)}${loc.unit ? ` · ${loc.unit}` : ''}`).join(' / ')
+      : 'Localização no detalhe';
+
+    const confidenceLabel = result.confidence === 'high' ? 'Confirmado' : result.confidence === 'medium' ? 'Confirmar stock' : 'Verificar';
+
+    return `
+      <button class="search-result" type="button" data-place-id="${esc(result.id)}">
+        ${place ? placeVisual(place, 'small') : '<span class="store-media small"><span class="store-initials">ℹ</span></span>'}
+        <span class="result-main">
+          <b>${esc(result.name)}</b>
+          <small>${esc(floor)}</small>
+          <small class="match-reason">${esc(result.label)}</small>
+        </span>
+        <span class="confidence confidence-${esc(result.confidence)}">
+          ${esc(confidenceLabel)}
+        </span>
+      </button>`;
+  }
+
+  function renderSearchResults(query, resultsEl) {
+    const trimmed = query.trim();
+    if (!trimmed) {
+      resultsEl.innerHTML = '';
+      resultsEl.classList.add('hidden');
+      return;
+    }
+
+    let refinementHtml = '';
+    const normQ = norm(trimmed);
+    if (normQ === 'manga') {
+      refinementHtml = `
+        <div class="refinement-block">
+          <p>Deseja refinar a pesquisa para "manga"?</p>
+          <div class="refinement-chips">
+            <button class="refinement-chip" data-search-refine="livros" type="button">📚 BD / Livro</button>
+            <button class="refinement-chip" data-search-refine="vestuário" type="button">👕 Roupa</button>
+          </div>
+        </div>
+      `;
+    } else if (normQ === 'capa') {
+      refinementHtml = `
+        <div class="refinement-block">
+          <p>Deseja refinar a pesquisa para "capa"?</p>
+          <div class="refinement-chips">
+            <button class="refinement-chip" data-search-refine="capas" type="button">📱 Capa Telemóvel</button>
+            <button class="refinement-chip" data-search-refine="livros" type="button">📚 Capa de Livro</button>
+            <button class="refinement-chip" data-search-refine="decoração" type="button">🛏️ Roupa de Cama</button>
+          </div>
+        </div>
+      `;
+    } else if (normQ === 'bateria') {
+      refinementHtml = `
+        <div class="refinement-block">
+          <p>Deseja refinar a pesquisa para "bateria"?</p>
+          <div class="refinement-chips">
+            <button class="refinement-chip" data-search-refine="mister-minit" type="button">⌚ Pilha Relógio</button>
+            <button class="refinement-chip" data-search-refine="carregamento" type="button">⚡ Carro Elétrico</button>
+          </div>
+        </div>
+      `;
+    } else if (normQ === 'cartão' || normQ === 'cartao') {
+      refinementHtml = `
+        <div class="refinement-block">
+          <p>Deseja refinar a pesquisa para "cartão"?</p>
+          <div class="refinement-chips">
+            <button class="refinement-chip" data-search-refine="ctt" type="button">📞 SIM CTT</button>
+            <button class="refinement-chip" data-search-refine="multibanco" type="button">🏧 Multibanco</button>
+            <button class="refinement-chip" data-search-refine="cheque-prenda" type="button">🎁 Cheque-Prenda</button>
+          </div>
+        </div>
+      `;
+    } else if (normQ === 'carteira') {
+      refinementHtml = `
+        <div class="refinement-block">
+          <p>Deseja refinar a pesquisa para "carteira"?</p>
+          <div class="refinement-chips">
+            <button class="refinement-chip" data-search-refine="perdidos achados" type="button">🔍 Perdi a Carteira</button>
+            <button class="refinement-chip" data-search-refine="malas" type="button">👜 Comprar Carteira</button>
+          </div>
+        </div>
+      `;
+    } else if (normQ === 'carregador') {
+      refinementHtml = `
+        <div class="refinement-block">
+          <p>Deseja refinar a pesquisa para "carregador"?</p>
+          <div class="refinement-chips">
+            <button class="refinement-chip" data-search-refine="iservices worten fnac" type="button">🔌 Telemóvel / PC</button>
+            <button class="refinement-chip" data-search-refine="carregamento" type="button">⚡ Carro Elétrico</button>
+          </div>
+        </div>
+      `;
+    }
+
+    const results = searchPlaces(trimmed, 9);
+    
+    if (!results.length) {
+      recordFailedSearch(trimmed);
+      resultsEl.innerHTML = refinementHtml + `
+        <div style="padding:16px 12px; font-size:12px; color:var(--muted); text-align:center;">
+          <p style="margin:0 0 10px;">Não encontrei uma correspondência segura.</p>
+          <button id="viewAllDirBtn" class="text-link" style="font-size:11px;" type="button">Ver diretório completo</button>
+        </div>
+      `;
+      resultsEl.classList.remove('hidden');
+      const viewDirBtn = qs('#viewAllDirBtn', resultsEl);
+      if (viewDirBtn) {
+        viewDirBtn.onclick = () => {
+          resultsEl.classList.add('hidden');
+          navTo('directory');
+          const dirSearch = qs('#directorySearch');
+          if (dirSearch) dirSearch.value = '';
+          renderDirectory();
+        };
+      }
+      return;
+    }
+
+    let resultsHtml = refinementHtml;
+    const bestMatch = results[0];
+    const place = allPlaces().find(p => p.id === bestMatch.id);
+    const floorText = bestMatch.locations?.length
+      ? bestMatch.locations.map(loc => `${floorLabel(loc.floor)}${loc.unit ? ` · ${loc.unit}` : ''}`).join(' / ')
+      : 'Localização no detalhe';
+
+    const disclaimer = window.PG_SEARCH_CATALOG_V2.truthPolicy?.stockDisclaimer;
+
+    resultsHtml += `
+      <div class="smart-answer show">
+        <div class="answer-top">
+          <div>
+            <span class="eyebrow" style="color:var(--blue)">Melhor Correspondência</span>
+            <h3>Onde fica ${esc(bestMatch.name)}?</h3>
+            <p>${results.length} local(is) compatível(is) encontrado(s).</p>
+          </div>
+          <span class="confidence confidence-${esc(bestMatch.confidence)}">
+            ${esc(bestMatch.confidence === 'high' ? 'Confirmado' : bestMatch.confidence === 'medium' ? 'Confirmar stock' : 'Verificar')}
+          </span>
+        </div>
+        <div class="answer-list">
+          <button class="search-result" type="button" data-place-id="${esc(bestMatch.id)}">
+            ${place ? placeVisual(place, 'small') : '<span class="store-media small"><span class="store-initials">ℹ</span></span>'}
+            <span class="result-main">
+              <b>${esc(bestMatch.name)}</b>
+              <small>${esc(floorText)}</small>
+              <small class="match-reason">${esc(bestMatch.label)}</small>
+            </span>
+          </button>
+        </div>
+        <div class="answer-footer" style="padding:10px 14px; background:#f8fafc; font-size:10px; color:var(--muted); line-height:1.4; border-top:1px solid var(--line-2)">
+          ⚠️ <b>Aviso:</b> ${esc(disclaimer)}
+        </div>
+      </div>
+    `;
+
+    if (results.length > 1) {
+      resultsHtml += `<div style="padding:8px 12px 4px; font-size:10px; color:var(--muted); font-weight:800; text-transform:uppercase; letter-spacing:0.05em; border-top:1px solid var(--line-2)">Outras alternativas encontradas</div>`;
+      resultsHtml += results.slice(1).map(r => resultButton(r)).join('');
+    }
+
+    resultsEl.innerHTML = resultsHtml;
+    resultsEl.classList.remove('hidden');
   }
 
   function wireSearch(input, resultsEl) {
+    if (!input || !resultsEl) return;
     input.addEventListener('input', () => {
-      const results = searchPlaces(input.value, 9);
-      resultsEl.innerHTML = results.map(resultButton).join('');
-      resultsEl.classList.toggle('hidden', !input.value || !results.length);
+      renderSearchResults(input.value, resultsEl);
     });
     resultsEl.addEventListener('click', e => {
+      const chip = e.target.closest('[data-search-refine]');
+      if (chip) {
+        e.stopPropagation();
+        input.value = chip.dataset.searchRefine;
+        renderSearchResults(input.value, resultsEl);
+        input.focus();
+        return;
+      }
       const btn = e.target.closest('[data-place-id]');
       if (!btn) return;
       resultsEl.classList.add('hidden');
@@ -354,7 +369,9 @@
       openPlace(btn.dataset.placeId);
     });
     document.addEventListener('click', e => {
-      if (!resultsEl.contains(e.target) && e.target !== input && !e.target.closest('.chip-btn')) resultsEl.classList.add('hidden');
+      if (!resultsEl.contains(e.target) && e.target !== input && !e.target.closest('.chip-btn') && !e.target.closest('.refinement-chip')) {
+        resultsEl.classList.add('hidden');
+      }
     });
   }
 
@@ -365,7 +382,7 @@
     const locations = place.locations || [];
     const source = place.source;
     const categories = place.categories || [];
-    const verified = place.type === 'custom' || (source.verified !== false && locations.every(l => l.verified !== false));
+    const verified = place.type === 'custom' || place.type === 'service' || (source.verified !== false && locations.every(l => l.verified !== false));
     const note = place.type === 'store' ? (saved.overrides[id]?.note || source.note || '') : source.note || '';
 
     const userFloor = qs('#userCurrentFloor')?.value || '0';
@@ -404,33 +421,138 @@
       </div>`;
     }).join('') : '<div class="location-box"><b>Localização por confirmar</b><small>Pode corrigir quando confirmar no terreno.</small></div>';
 
+    let providersHtml = '';
+    if (place.type === 'service' && source.providerStoreIds?.length) {
+      const list = source.providerStoreIds.map(pid => allPlaces().find(p => p.id === pid)).filter(Boolean);
+      if (list.length) {
+        providersHtml = `
+          <div style="margin-top:16px;">
+            <label>Lojas/Locais Prestadores:</label>
+            <div class="providers-list" style="display:grid; gap:8px; margin-top:6px;">
+              ${list.map(p => `
+                <div class="provider-box">
+                  <div>
+                    <b>${esc(p.name)}</b>
+                    <span style="font-size:10px; color:var(--muted); display:block;">${esc(placeFloorText(p))}</span>
+                  </div>
+                  <button type="button" class="select-lite" style="height:32px; padding:0 8px; font-size:10px;" data-dialog-action="map-provider" data-provider-id="${esc(p.id)}">⌖ Ver no mapa</button>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    let trustHtml = '';
+    if (place.type === 'store' || place.type === 'service') {
+      const evidence = source.evidenceLevel;
+      let label = window.PG_SEARCH_CATALOG_V2.truthPolicy?.resultLabels?.[evidence] || source.label || 'Registo oficial';
+      let confidenceColor = 'low';
+      if (evidence && evidence.includes('official')) {
+        confidenceColor = 'high';
+      } else if (evidence) {
+        confidenceColor = 'medium';
+      }
+
+      if (!source.currentOfficialDirectoryMatch && place.type !== 'service') {
+        confidenceColor = 'low';
+        label = 'Não correspondido no diretório oficial atual — confirmar antes de indicar.';
+      }
+
+      const lastVer = source.lastVerified || window.PG_SEARCH_CATALOG_V2.generatedAt.slice(0, 10);
+      const centerUrl = source.officialCenterUrl;
+
+      trustHtml = `
+        <div style="margin-top: 16px; border-top: 1px solid var(--line); padding-top: 14px;">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span class="micro-label">Confiança e Evidência</span>
+            <span class="confidence confidence-${esc(confidenceColor)}">${esc(confidenceColor === 'high' ? 'Oficial' : confidenceColor === 'medium' ? 'Confirmar' : 'Verificar')}</span>
+          </div>
+          <p style="font-size:11px; color:var(--ink-2); margin:6px 0 2px; font-weight:600;">${esc(label)}</p>
+          <div style="display:flex; justify-content:space-between; align-items:center; font-size:10px; color:var(--muted); margin-top:4px;">
+            <span>Última verificação: ${esc(lastVer)}</span>
+            ${centerUrl ? `<a href="${esc(centerUrl)}" target="_blank" rel="noopener" style="color:var(--blue)">Ver página ↗</a>` : ''}
+          </div>
+        </div>
+      `;
+    }
+
+    let disclaimerHtml = '';
+    if (place.type === 'store') {
+      const msg = source.availabilityMessage || window.PG_SEARCH_CATALOG_V2.truthPolicy.stockDisclaimer;
+      disclaimerHtml = `
+        <div style="margin-top: 12px; background:var(--amber-soft); border: 1px solid #fedf89; border-radius:12px; padding:10px; font-size:10px; color:#7a2e0e; line-height:1.4;">
+          ⚠️ <b>Disponibilidade:</b> ${esc(msg)}
+        </div>
+      `;
+    }
+
+    const feedbackHtml = `
+      <div style="margin-top:16px; border-top:1px solid var(--line); padding-top:14px;">
+        <span class="micro-label">Feedback Operacional Local</span>
+        <div class="feedback-actions">
+          <button type="button" class="feedback-btn" data-feedback="found"><span>👍</span>Encontrou</button>
+          <button type="button" class="feedback-btn" data-feedback="no_stock"><span>👎</span>Não vendia</button>
+          <button type="button" class="feedback-btn" data-feedback="closed_moved"><span>⚠️</span>Fechado/Mudou</button>
+          <button type="button" class="feedback-btn" data-feedback="wrong_loc"><span>📍</span>Incorreto</button>
+        </div>
+      </div>
+    `;
+
     qs('#placeDialogContent').innerHTML = `
-      <div class="place-hero">
+      <div class="place-hero" style="display:flex; gap:12px; align-items:center;">
         ${placeVisual(place, 'large')}
         <div><span class="micro-label">${esc(categories[0] || 'LOCAL')}</span><h2>${esc(place.name)}</h2></div>
       </div>
-      <div class="detail-meta">
-        ${categories.slice(0,3).map(c => `<span class="meta-chip">${esc(c)}</span>`).join('')}
-        <span class="meta-chip">${verified ? '✓ Confirmado' : '△ Confirmar'}</span>
+      <div class="detail-meta" style="margin-top:10px; display:flex; flex-wrap:wrap; gap:6px;">
+        ${categories.slice(0,3).map(c => `<span class="tag">${esc(c)}</span>`).join('')}
+        <span class="tag">${verified ? '✓ Confirmado' : '△ Confirmar'}</span>
       </div>
-      <div class="detail-locations">${locHtml}</div>
-      ${note ? `<p class="muted-note">${esc(note)}</p>` : ''}
-      <div class="detail-actions">
-        <button type="button" data-dialog-action="favorite">${isFavorite(id) ? '★ Remover favorito' : '☆ Favorito'}</button>
-        <button type="button" data-dialog-action="map">⌖ Mostrar no mapa</button>
-        ${place.type === 'store' ? '<button type="button" data-dialog-action="edit">✎ Corrigir dados</button>' : '<button type="button" data-dialog-action="edit-custom">✎ Editar</button>'}
-        ${place.type === 'custom' ? '<button type="button" data-dialog-action="delete-custom">Eliminar</button>' : '<button type="button" data-dialog-action="source">Ver diretório</button>'}
+      <div class="detail-locations" style="margin-top:16px;">${locHtml}</div>
+      ${providersHtml}
+      ${note ? `<p class="muted-note" style="margin-top:12px;"><b>Notas:</b> ${esc(note)}</p>` : ''}
+      ${disclaimerHtml}
+      ${trustHtml}
+      ${feedbackHtml}
+      <div class="detail-actions" style="margin-top:16px; display:flex; flex-wrap:wrap; gap:8px;">
+        <button type="button" class="select-lite" style="height:38px;" data-dialog-action="favorite">${isFavorite(id) ? '★ Remover favorito' : '☆ Favorito'}</button>
+        <button type="button" class="select-lite" style="height:38px;" data-dialog-action="map">⌖ Mostrar no mapa</button>
+        ${place.type === 'store' ? '<button type="button" class="select-lite" style="height:38px;" data-dialog-action="edit">✎ Corrigir dados</button>' : '<button type="button" class="select-lite" style="height:38px;" data-dialog-action="edit-custom">✎ Editar</button>'}
+        ${place.type === 'custom' ? '<button type="button" class="select-lite" style="height:38px; color:var(--red);" data-dialog-action="delete-custom">Eliminar</button>' : ''}
       </div>`;
+
     const dialog = qs('#placeDialog');
     dialog.showModal();
+    
+    const feedbackBlock = qs('.feedback-actions', dialog);
+    if (feedbackBlock) {
+      feedbackBlock.onclick = e => {
+        const btn = e.target.closest('[data-feedback]');
+        if (!btn) return;
+        saveFeedback(id, qs('#homeSearch')?.value || qs('#directorySearch')?.value || '', btn.dataset.feedback);
+      };
+    }
+
     qs('#placeDialogContent').onclick = e => {
-      const action = e.target.closest('[data-dialog-action]')?.dataset.dialogAction;
-      if (!action) return;
+      const btn = e.target.closest('[data-dialog-action]');
+      if (!btn) return;
+      const action = btn.dataset.dialogAction;
+      
       if (action === 'favorite') { toggleFavorite(id); dialog.close(); openPlace(id); }
       if (action === 'map') {
         const loc = primaryLocation(place);
         if (loc && floors.includes(loc.floor)) selectedFloor = loc.floor;
         dialog.close(); navTo('map'); renderMap(id);
+      }
+      if (action === 'map-provider') {
+        const pid = e.target.closest('[data-provider-id]')?.dataset.providerId;
+        const prov = allPlaces().find(p => p.id === pid);
+        if (prov) {
+          const loc = primaryLocation(prov);
+          if (loc && floors.includes(loc.floor)) selectedFloor = loc.floor;
+          dialog.close(); navTo('map'); renderMap(prov.id);
+        }
       }
       if (action === 'edit') { dialog.close(); openStoreEdit(place); }
       if (action === 'edit-custom') { dialog.close(); openCustomForm(source); }
@@ -439,7 +561,6 @@
           saved.customPlaces = saved.customPlaces.filter(p => p.id !== id); saveState(); dialog.close(); renderAll(); toast('Local personalizado eliminado.');
         }
       }
-      if (action === 'source') { dialog.close(); navTo('more'); setTimeout(() => qs('.directory-photo')?.scrollIntoView({behavior:'smooth'}), 180); }
     };
   }
 
@@ -478,42 +599,48 @@
   function renderFavorites() {
     const el = qs('#favoritesList');
     const favs = saved.favorites.map(id => allPlaces().find(p => p.id === id)).filter(Boolean);
-    if (!favs.length) { el.className = 'horizontal-list empty-state'; el.textContent = 'Ainda não marcou favoritos.'; return; }
-    el.className = 'horizontal-list';
-    el.innerHTML = favs.map(p => `<button class="favorite-chip" data-place-id="${esc(p.id)}">${placeVisual(p, 'small')}<span><b>${esc(p.name)}</b><small>${esc(placeFloorText(p))}</small></span></button>`).join('');
-    el.onclick = e => { const id = e.target.closest('[data-place-id]')?.dataset.placeId; if (id) openPlace(id); };
+    if (!favs.length) {
+      el.className = 'store-grid empty-state';
+      el.innerHTML = '<p style="grid-column: 1 / -1; color:var(--muted); text-align:center; font-size:11px; margin:20px 0;">Ainda não marcou favoritos.</p>';
+      return;
+    }
+    el.className = 'store-grid';
+    el.innerHTML = favs.map(placeCard).join('');
   }
 
   function renderFloorTabs() {
     const el = qs('#floorTabs');
+    if (!el) return;
     el.innerHTML = floors.map(f => `<button type="button" class="${f === selectedFloor ? 'active' : ''}" data-floor="${f}">${f}</button>`).join('');
     el.onclick = e => { const b=e.target.closest('[data-floor]'); if (!b) return; selectedFloor=b.dataset.floor; selectedPlaceId=null; mapScale=1; renderMap(); };
   }
 
   function renderMap(highlightId = selectedPlaceId) {
     renderFloorTabs();
-    qs('#mapTitle').textContent = floorLabel(selectedFloor);
-    qs('#markModeBtn').classList.toggle('hidden', selectedFloor !== '0');
+    qs('#mapTitle').textContent = `Mapa do ${floorLabel(selectedFloor)}`;
+    const markModeBtn = qs('#markModeBtn');
+    if (markModeBtn) markModeBtn.classList.toggle('hidden', selectedFloor !== '0');
     const image = qs('#floorMapImage');
+    if (!image) return;
     image.src = DATA.floorImages[selectedFloor];
     image.alt = `Mapa do ${floorLabel(selectedFloor)}`;
     image.style.transform = `scale(${mapScale})`;
     const layer = qs('#markerLayer');
     layer.style.transform = `scale(${mapScale})`;
     layer.innerHTML = '';
-    if (selectedFloor === '0') {
-      allPlaces().forEach(place => {
-        if (place.type !== 'custom' && place.id !== highlightId) return;
-        place.locations.forEach(loc => {
-          if (loc.floor !== '0' || !loc.map0) return;
-          const [x,y] = loc.map0;
-          const marker=document.createElement('button');
-          marker.type='button'; marker.className=`map-marker ${place.type==='custom'?'custom':''} ${place.id===highlightId?'selected':''}`;
-          marker.style.left=`${x}%`; marker.style.top=`${y}%`; marker.dataset.placeId=place.id; marker.title=place.name;
-          layer.appendChild(marker);
-        });
+    
+    allPlaces().forEach(place => {
+      if (place.type !== 'custom' && place.id !== highlightId) return;
+      place.locations.forEach(loc => {
+        if (loc.floor !== selectedFloor || !loc.map0) return;
+        const [x,y] = loc.map0;
+        const marker=document.createElement('button');
+        marker.type='button'; marker.className=`map-marker ${place.type==='custom'?'custom':''} ${place.id===highlightId?'selected active':''}`;
+        marker.style.left=`${x}%`; marker.style.top=`${y}%`; marker.dataset.placeId=place.id; marker.title=place.name;
+        layer.appendChild(marker);
       });
-    }
+    });
+    
     layer.onclick=e=>{ const id=e.target.closest('[data-place-id]')?.dataset.placeId; if(id){ selectedPlaceId=id; renderMap(id); openPlace(id); }};
     const mapNotes = {
       '-2': 'Planta oficial · referência a azul: Bowling',
@@ -530,41 +657,68 @@
 
   function renderFloorPlaces() {
     const list = allPlaces().filter(p => p.locations.some(l => l.floor === selectedFloor)).sort((a,b)=>a.name.localeCompare(b.name,'pt'));
-    qs('#floorCount').textContent = `${list.length} locais`;
-    qs('#floorPlaces').innerHTML = list.length ? list.map(placeCard).join('') : '<div class="empty-state">Nenhum local cadastrado neste piso.</div>';
+    const badge = qs('#floorCount');
+    if (badge) badge.textContent = `${list.length} locais`;
+    qs('#floorPlaces').innerHTML = list.length ? list.map(placeCard).join('') : '<div class="empty-state" style="grid-column:1/-1; color:var(--muted); text-align:center; padding:20px;">Nenhum local cadastrado neste piso.</div>';
   }
 
   function placeCard(place) {
-    const loc = place.locations.find(l => l.floor === selectedFloor) || primaryLocation(place);
-    const dir = directionFor(place.name, loc);
-    return `<article class="place-card" data-place-id="${esc(place.id)}">
-      ${placeVisual(place)}
-      <span class="place-copy"><b>${esc(place.name)}</b><small>${loc ? esc(floorLabel(loc.floor)) : 'Piso por confirmar'}${loc?.unit ? ` · Unidade ${esc(loc.unit)}` : ''}${dir ? ` · ${esc(dir)}` : ''}</small></span>
-      <button class="favorite-btn ${isFavorite(place.id)?'active':''}" data-favorite-id="${esc(place.id)}" type="button">${isFavorite(place.id)?'★':'☆'}</button>
-    </article>`;
+    const loc = place.locations?.[0] || null;
+    const isFav = isFavorite(place.id);
+    const verified = place.type === 'custom' || place.type === 'service' || (place.source.verified !== false && place.locations.every(l => l.verified !== false));
+    const desc = place.type === 'store' ? (place.source.note || place.categories.join(', ')) : (place.source.note || 'Serviço operacional');
+    const tags = place.categories.slice(0, 2).map(t => `<span class="tag">${esc(t)}</span>`).join('');
+    const floorText = loc ? `${floorLabel(loc.floor)}${loc.unit ? ` · ${loc.unit}` : ''}` : 'Confirmar piso';
+
+    return `
+      <article class="store-card" data-place-id="${esc(place.id)}">
+        <div class="store-top">
+          ${placeVisual(place, 'small')}
+          <button class="fav ${isFav ? 'active' : ''}" data-favorite-id="${esc(place.id)}" type="button" aria-label="Favorito">
+            <svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"/></svg>
+          </button>
+        </div>
+        <h3>${esc(place.name)}</h3>
+        <p>${esc(desc)}</p>
+        <div class="tags">${tags}</div>
+        <div class="store-foot">
+          <span class="where">
+            <svg viewBox="0 0 24 24"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            ${esc(floorText)}
+          </span>
+          <span class="${verified ? 'verified' : 'verified unverified'}" style="${!verified ? 'color:var(--amber)' : ''}">
+            <svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg>
+            ${verified ? 'Oficial' : 'Confirmar'}
+          </span>
+        </div>
+      </article>
+    `;
   }
 
   function renderDirectory() {
-    const query=norm(qs('#directorySearch').value);
-    const floor=qs('#floorFilter').value;
-    const category=qs('#categoryFilter').value;
-    const verified=qs('#verifiedFilter').checked;
-    let list=allPlaces();
-    if(query) list=list.filter(p=>norm(`${p.name} ${p.categories.join(' ')} ${placeFloorText(p)}`).includes(query));
-    if(floor!=='all') list=list.filter(p=>floor==='unknown' ? !p.locations.length : p.locations.some(l=>l.floor===floor));
-    if(category!=='all') list=list.filter(p=>p.categories.includes(category));
-    if(verified) list=list.filter(p=>p.locations.length && p.locations.every(l=>l.verified!==false));
-    if(directoryFavoritesOnly) list=list.filter(p=>isFavorite(p.id));
+    const searchInput = qs('#directorySearch');
+    const query = searchInput ? norm(searchInput.value) : '';
+    const floor = qs('#floorFilter')?.value || 'all';
+    const category = qs('#categoryFilter')?.value || 'all';
+    const verified = qs('#verifiedFilter')?.checked || false;
+    let list = allPlaces();
+    if (query) list = list.filter(p => norm(`${p.name} ${p.categories.join(' ')} ${placeFloorText(p)}`).includes(query));
+    if (floor !== 'all') list = list.filter(p => floor === 'unknown' ? !p.locations.length : p.locations.some(l => l.floor === floor));
+    if (category !== 'all') list = list.filter(p => p.categories.includes(category));
+    if (verified) list = list.filter(p => p.locations.length && p.locations.every(l => l.verified !== false));
+    if (directoryFavoritesOnly) list = list.filter(p => isFavorite(p.id));
     list.sort((a,b)=>a.name.localeCompare(b.name,'pt'));
-    qs('#directoryCount').textContent=`${list.length} resultado${list.length===1?'':'s'}`;
-    qs('#directoryList').innerHTML=list.length?list.map(placeCard).join(''):'<div class="empty-state">Nenhum local encontrado com estes filtros.</div>';
-    qs('#directoryFavoritesOnly').classList.toggle('active',directoryFavoritesOnly);
+    qs('#directoryCount').textContent = `${list.length} resultado${list.length===1?'':'s'}`;
+    qs('#directoryGrid').innerHTML = list.length ? list.map(placeCard).join('') : '<div class="empty-state" style="grid-column: 1 / -1; color:var(--muted); text-align:center; padding:40px;">Nenhum local encontrado com estes filtros.</div>';
+    
+    const favBtn = qs('#directoryFavoritesOnly');
+    if (favBtn) favBtn.classList.toggle('active', directoryFavoritesOnly);
   }
 
   function handleCardListClick(e) {
-    const fav=e.target.closest('[data-favorite-id]');
-    if(fav){ e.stopPropagation(); toggleFavorite(fav.dataset.favoriteId); return; }
-    const card=e.target.closest('[data-place-id]'); if(card) openPlace(card.dataset.placeId);
+    const fav = e.target.closest('[data-favorite-id]');
+    if (fav) { e.stopPropagation(); toggleFavorite(fav.dataset.favoriteId); return; }
+    const card = e.target.closest('[data-place-id]'); if (card) openPlace(card.dataset.placeId);
   }
 
   function portugalNow() {
@@ -572,7 +726,8 @@
     const dayMap={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6};
     return { day:dayMap[parts.weekday], year:+parts.year, month:+parts.month, date:+parts.day, minutes:+parts.hour*60 + +parts.minute, md:`${parts.month}-${parts.day}` };
   }
-  const toMinutes=t=>{const [h,m]=t.split(':').map(Number);return h*60+m;};
+  const toMinutes = t => { const [h,m] = t.split(':').map(Number); return h*60+m; };
+
   function activeHourRows() {
     const now=portugalNow();
     return DATA.hours.filter(h=>h.weekdays.includes(now.day)).map(h=>{
@@ -581,23 +736,29 @@
       return {...h,close,isOpen:now.minutes>=toMinutes(h.open)&&now.minutes<toMinutes(close)};
     });
   }
+
   function renderHours() {
     const rows=activeHourRows();
     const shopping=rows.find(r=>r.id==='geral');
-    qs('#openStatusDot').className=`status-dot ${shopping?.isOpen?'open':'closed'}`;
+    const openStatusBtn = qs('#openStatusBtn');
+    if (openStatusBtn) {
+      openStatusBtn.className = `status ${shopping?.isOpen?'open':'closed'}`;
+    }
     qs('#openStatusText').textContent=shopping?.isOpen?'Shopping aberto':'Shopping fechado';
     const unique=[]; rows.forEach(r=>{if(!unique.some(x=>x.name===r.name)) unique.push(r);});
     qs('#hoursStrip').innerHTML=unique.slice(0,4).map(hourCard).join('');
     qs('#hoursDialogList').innerHTML=unique.map(r=>`<div class="mini-row"><span><b>${esc(r.name)}</b><br><small>${r.isOpen?'Aberto agora':'Fechado agora'}</small></span><small>${esc(r.open)}–${esc(r.close)}</small></div>`).join('');
   }
-  function hourCard(r){return `<div class="hour-card"><span class="state" style="color:${r.isOpen?'var(--success)':'var(--danger)'}">● ${r.isOpen?'Aberto':'Fechado'}</span><b>${esc(r.name)}</b><small>${esc(r.open)}–${esc(r.close)}</small></div>`;}
+  
+  function hourCard(r){return `<div class="mini-row" style="background:#ffffff; border:1px solid var(--line); flex-shrink:0; width:130px; display:block;"><b>${esc(r.name)}</b><span style="color:${r.isOpen?'var(--green)':'var(--red)'}; font-size:10px; font-weight:700;">● ${r.isOpen?'Aberto':'Fechado'}</span><br><small style="color:var(--muted); font-size:9px;">${esc(r.open)}–${esc(r.close)}</small></div>`;}
 
   function renderReferences() {
-    qs('#referenceCards').innerHTML = Object.values(DATA.orientation).map(x=>`<div class="reference-card"><strong>${esc(x.label)}</strong><small>${esc(x.reference)}</small></div>`).join('');
+    qs('#referenceCards').innerHTML = Object.values(DATA.orientation).map(x=>`<div class="reference" style="display:flex; justify-content:space-between; width:100%; border-bottom:1px solid var(--line-2); padding:10px 4px;"><b>${esc(x.label)}</b><span>${esc(x.reference)}</span></div>`).join('');
   }
 
   function randomItem(arr){return arr[Math.floor(Math.random()*arr.length)];}
   function shuffle(arr){return [...arr].sort(()=>Math.random()-.5);}
+
   function makeCompassQuestion(){
     const items=Object.values(DATA.orientation);
     const correct=randomItem(items);
@@ -605,28 +766,39 @@
     return styles?{type:'DIREÇÃO',question:`Qual referência corresponde a ${correct.label}?`,correct:correct.reference,answers:shuffle(items.map(x=>x.reference)),explain:`${correct.label}: ${correct.reference}.`}
       :{type:'REFERÊNCIA',question:`“${correct.reference}” indica qual direção?`,correct:correct.label,answers:shuffle(items.map(x=>x.label)),explain:`${correct.reference} = ${correct.label}.`};
   }
+
   function makeFloorQuestion(){
-    const candidates=DATA.stores.filter(s=>effectiveLocations(s).some(l=>floors.includes(l.floor)&&l.verified!==false));
+    const candidates=window.PG_SEARCH_CATALOG_V2.stores.filter(s=>effectiveLocations(s).some(l=>floors.includes(l.floor)&&l.verified!==false));
     const store=randomItem(candidates); const loc=randomItem(effectiveLocations(store).filter(l=>floors.includes(l.floor)));
     const choices=new Set([loc.floor]); while(choices.size<4) choices.add(randomItem(floors));
     return {type:'PISO',question:`Em que piso fica ${store.name}?`,correct:loc.floor,answers:shuffle([...choices]),explain:`${store.name}: ${floorLabel(loc.floor)}${loc.unit?`, unidade ${loc.unit}`:''}.`};
   }
+
   function nextQuestion(){
     currentQuestion = trainingMode==='compass'?makeCompassQuestion():trainingMode==='floors'?makeFloorQuestion():(Math.random()<.5?makeCompassQuestion():makeFloorQuestion());
     qs('#quizType').textContent=currentQuestion.type; qs('#quizQuestion').textContent=currentQuestion.question;
-    qs('#quizAnswers').innerHTML=currentQuestion.answers.map(a=>`<button class="answer-btn" type="button" data-answer="${esc(a)}">${currentQuestion.type==='PISO'?esc(floorLabel(a)):esc(a)}</button>`).join('');
+    qs('#quizAnswers').innerHTML=currentQuestion.answers.map(a=>`<button class="answer-btn select-lite" style="height:auto; padding:12px; font-size:11px;" type="button" data-answer="${esc(a)}">${currentQuestion.type==='PISO'?esc(floorLabel(a)):esc(a)}</button>`).join('');
     qs('#quizFeedback').classList.add('hidden'); qs('#nextQuestionBtn').classList.add('hidden');
     renderTrainingScore();
   }
+
   function answerQuestion(answer){
     const ok=answer===currentQuestion.correct; saved.quiz.total++; if(ok)saved.quiz.correct++; saveState();
-    qsa('.answer-btn',qs('#quizAnswers')).forEach(btn=>{btn.disabled=true;if(btn.dataset.answer===currentQuestion.correct)btn.classList.add('correct');else if(btn.dataset.answer===answer)btn.classList.add('wrong');});
-    const feedback=qs('#quizFeedback'); feedback.textContent=`${ok?'Certo!':'Ainda não.'} ${currentQuestion.explain}`; feedback.classList.remove('hidden');
+    qsa('.answer-btn',qs('#quizAnswers')).forEach(btn=>{
+      btn.disabled=true;
+      if(btn.dataset.answer===currentQuestion.correct) btn.setAttribute('style', 'background:var(--green-soft); color:var(--green); border-color:#b7e7d1;');
+      else if(btn.dataset.answer===answer) btn.setAttribute('style', 'background:var(--red-soft); color:var(--red); border-color:#fca5a5;');
+    });
+    const feedback=qs('#quizFeedback'); 
+    feedback.textContent=`${ok?'Certo!':'Ainda não.'} ${currentQuestion.explain}`; 
+    feedback.className = `quiz-feedback ${ok ? 'confidence-high' : 'confidence-low'}`;
     qs('#nextQuestionBtn').classList.remove('hidden'); renderTrainingScore();
   }
+
   function renderTrainingScore(){qs('#trainingScore').textContent=`${saved.quiz.correct} / ${saved.quiz.total}`;}
 
   function patrolKey(){const n=portugalNow();return `${n.year}-${String(n.month).padStart(2,'0')}-${String(n.date).padStart(2,'0')}`;}
+  
   function renderPatrol(){
     const key=patrolKey(); const done=saved.patrol[key]||[];
     qs('#patrolChecklist').innerHTML=floors.map(f=>`<label class="patrol-item"><input type="checkbox" data-patrol-floor="${f}" ${done.includes(f)?'checked':''}/><span><b>${floorLabel(f)}</b><br><small class="muted-note">Confirmar referências e pontos essenciais</small></span></label>`).join('');
@@ -639,6 +811,7 @@
     emergencia: 'Charlie, emergência médica/segurança no Papa [X], junto a [referência]. Ocorrência: [tipo]. Solicito Alpha com prioridade máxima.',
     limaEco: 'Charlie, anomalia na Lima Eco junto a [referência exterior]. Solicito manutenção.'
   };
+
   function renderNotes(){
     const labels={
       radio:{title:'Comunicação por rádio',hint:'Mensagem curta e objetiva'},
@@ -647,7 +820,7 @@
       emergencia:{title:'Emergência',hint:'Comunicação prioritária'},
       limaEco:{title:'Iluminação Exterior (Lima Eco)',hint:'Anomalia nas luzes exteriores'}
     };
-    qs('#operationalNotes').innerHTML=Object.entries(labels).map(([id,item])=>`<article class="note-editor">
+    qs('#operationalNotes').innerHTML=Object.entries(labels).map(([id,item])=>`<article class="note-editor" style="background:#ffffff">
       <div class="note-head"><div><span>${esc(item.hint)}</span><b>${esc(item.title)}</b></div><button data-copy-note="${id}" type="button">Copiar</button></div>
       <textarea data-note-id="${id}" aria-label="${esc(item.title)}">${esc(saved.notes[id] ?? noteTemplates[id])}</textarea>
     </article>`).join('');
@@ -667,17 +840,32 @@
   }
 
   function renderMore(){
-    qs('#servicesList').innerHTML=DATA.services.map(s=>`<div class="mini-row"><span>${esc(s.name)}</span><small>${esc(floorLabel(s.floor))}</small></div>`).join('');
-    qs('#rulesList').innerHTML=DATA.rules.map(r=>`<div class="mini-row"><span><b>${esc(r.title)}</b><br>${esc(r.text)}</span></div>`).join('');
-    renderNotes(); renderCustomPlaces();
+    qs('#servicesList').innerHTML=window.PG_SEARCH_CATALOG_V2.officialServices.map(s=>`<div class="mini-row" style="background:#ffffff; border:1px solid var(--line); font-size:10px; margin-bottom:4px;"><span>${esc(s.name)}</span><small style="color:var(--muted)">${esc(floorLabel(s.locations?.[0]?.floor || 'unknown'))}</small></div>`).join('');
+    qs('#rulesList').innerHTML=DATA.rules.map(r=>`<div class="mini-row" style="background:#ffffff; border:1px solid var(--line); font-size:10px; margin-bottom:4px; display:block;"><b>${esc(r.title)}</b><br><small style="color:var(--muted)">${esc(r.text)}</small></div>`).join('');
+    renderNotes(); renderCustomPlaces(); renderFailedSearches();
     const c=DATA.contact;
-    qs('#contactCard').innerHTML=`<b>Palácio do Gelo Shopping</b><p>${esc(c.address)}<br><a href="tel:${esc(c.phone.replace(/\s/g,''))}">${esc(c.phone)}</a> · <a href="tel:${esc(c.mobile.replace(/\s/g,''))}">${esc(c.mobile)}</a><br><a href="mailto:${esc(c.email)}">${esc(c.email)}</a></p>`;
-    qs('#sourcesList').innerHTML=DATA.sources.map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)} ↗</a>`).join('');
+    qs('#contactCard').innerHTML=`<b>Palácio do Gelo Shopping</b><p style="font-size:11px; margin:4px 0 0; line-height:1.5">${esc(c.address)}<br><a href="tel:${esc(c.phone.replace(/\s/g,''))}">${esc(c.phone)}</a> · <a href="tel:${esc(c.mobile.replace(/\s/g,''))}">${esc(c.mobile)}</a><br><a href="mailto:${esc(c.email)}">${esc(c.email)}</a></p>`;
+    qs('#sourcesList').innerHTML=DATA.sources.map(s=>`<a href="${esc(s.url)}" class="select-lite" style="height:32px; padding:0 8px; font-size:10px; display:inline-flex; align-items:center; text-decoration:none;" target="_blank" rel="noopener">${esc(s.label)} ↗</a>`).join('');
     qs('#dataNote').textContent=DATA.dataNote;
   }
+
   function renderCustomPlaces(){
     const el=qs('#customPlacesList');
-    el.innerHTML=saved.customPlaces.length?saved.customPlaces.map(p=>`<button class="mini-row" data-place-id="${esc(p.id)}" type="button"><span>${esc(p.name)}</span><small>${esc(floorLabel(p.floor))}${p.unit?` · ${esc(p.unit)}`:''}</small></button>`).join(''):'<p class="muted-note">Nenhum ponto personalizado.</p>';
+    el.innerHTML=saved.customPlaces.length?saved.customPlaces.map(p=>`<button class="mini-row" style="background:#ffffff; border:1px solid var(--line); margin-bottom:4px; width:100%" data-place-id="${esc(p.id)}" type="button"><span>${esc(p.name)}</span><small>${esc(floorLabel(p.floor))}${p.unit?` · ${esc(p.unit)}`:''}</small></button>`).join(''):'<p class="muted-note" style="margin:8px 0 0; color:var(--muted)">Nenhum ponto personalizado.</p>';
+  }
+
+  function renderFailedSearches() {
+    const el = qs('#failedSearchesList');
+    if (!el) return;
+    const list = Object.values(saved.failedSearches || {}).sort((a,b) => b.count - a.count);
+    el.innerHTML = list.length
+      ? list.map(item => `
+          <div class="mini-row" style="background:#ffffff; border:1px solid var(--line); margin-bottom:4px;">
+            <span><b>${esc(item.original)}</b><br><small style="color:var(--muted)">Normalizado: ${esc(item.term)} · Tentativas: ${item.count}</small></span>
+            <small style="color:var(--muted)">Última: ${new Date(item.lastSeen).toLocaleDateString()}</small>
+          </div>
+        `).join('')
+      : '<p class="muted-note" style="margin:8px 0 0; color:var(--muted)">Nenhuma pesquisa sem correspondência.</p>';
   }
 
   function renderDashboard() {
@@ -695,11 +883,50 @@
     const patrolPct = Math.round((patrolFloors.length / 7) * 100);
     
     qs('#dbRondas').textContent = `${patrolFloors.length}/7`;
+    const dbRondasTools = qs('#dbRondasTools');
+    if (dbRondasTools) dbRondasTools.textContent = `${patrolFloors.length}/7`;
+    
     qs('#dbProgressPct').textContent = `${patrolPct}%`;
     qs('#dbProgressFill').style.width = `${patrolPct}%`;
+
+    const noteEl = qs('#homeNotice');
+    const noteTextEl = qs('#homeNoticeText');
+    const radioNote = saved.notes['radio'] || noteTemplates.radio;
+    if (noteTextEl) {
+      if (radioNote && radioNote !== noteTemplates.radio) {
+        noteTextEl.textContent = `Nota de rádio atual: "${radioNote}"`;
+        if (noteEl) noteEl.style.display = 'flex';
+      } else {
+        noteTextEl.textContent = 'Nenhuma ocorrência de rádio gravada. Edite em Ferramentas.';
+      }
+    }
   }
 
-  function renderAll(){renderFavorites();renderHours();renderMap();renderDirectory();renderReferences();renderTrainingScore();renderPatrol();renderMore();renderDashboard();}
+  function initDynamicCounts() {
+    const catalog = window.PG_SEARCH_CATALOG_V2;
+    const customCount = saved.customPlaces.length;
+    const storeRecords = catalog.scope.storeRecords;
+    const officialServiceRecords = catalog.scope.officialServiceRecords;
+
+    const totalStores = storeRecords + customCount;
+    const totalServices = officialServiceRecords;
+
+    qs('#metricStores').textContent = totalStores;
+    qs('#metricServices').textContent = totalServices;
+    
+    const catalogCheckedCount = catalog.stores.filter(s => s.evidenceLevel === 'official_brand_catalog_checked').length;
+    qs('#metricCatalog').textContent = catalogCheckedCount;
+
+    qs('#homeStatCount').textContent = totalStores + totalServices;
+    qs('#homeStatLabel').textContent = 'locais e serviços indexados';
+
+    qs('#directoryHeaderCount').textContent = `${totalStores} LOJAS + ${totalServices} SERVIÇOS`;
+  }
+
+  function renderAll(){
+    renderFavorites();renderHours();renderMap();renderDirectory();renderReferences();renderTrainingScore();renderPatrol();renderMore();renderDashboard();
+    initDynamicCounts();
+  }
 
   function exportData(){
     const blob=new Blob([JSON.stringify({version:1,exportedAt:new Date().toISOString(),data:saved},null,2)],{type:'application/json'});
@@ -707,55 +934,153 @@
   }
 
   function bindEvents(){
-    qsa('.bottom-nav button').forEach(btn=>btn.addEventListener('click',()=>navTo(btn.dataset.nav)));
+    qsa('.bottom-nav button, #desktopNav button').forEach(btn=>btn.addEventListener('click',()=>navTo(btn.dataset.nav || btn.dataset.view)));
     qsa('[data-nav-target]').forEach(btn=>btn.addEventListener('click',()=>navTo(btn.dataset.navTarget)));
-    wireSearch(qs('#homeSearch'),qs('#homeSearchResults'));
-    qs('#floorPlaces').addEventListener('click',handleCardListClick);
-    qs('#directoryList').addEventListener('click',handleCardListClick);
-    ['input','change'].forEach(ev=>{qs('#directorySearch').addEventListener(ev,renderDirectory);qs('#floorFilter').addEventListener(ev,renderDirectory);qs('#categoryFilter').addEventListener(ev,renderDirectory);qs('#verifiedFilter').addEventListener(ev,renderDirectory);});
-    qs('#clearFilters').onclick=()=>{qs('#directorySearch').value='';qs('#floorFilter').value='all';qs('#categoryFilter').value='all';qs('#verifiedFilter').checked=false;directoryFavoritesOnly=false;renderDirectory();};
-    qs('#directoryFavoritesOnly').onclick=()=>{directoryFavoritesOnly=!directoryFavoritesOnly;renderDirectory();};
+    
+    const homeSearch = qs('#homeSearch');
+    const homeSearchResults = qs('#homeSearchResults');
+    if (homeSearch && homeSearchResults) {
+      wireSearch(homeSearch, homeSearchResults);
+    }
+
+    on('#floorPlaces', 'click', handleCardListClick);
+    on('#directoryGrid', 'click', handleCardListClick);
+
+    ['input','change'].forEach(ev=>{
+      on('#directorySearch', ev, renderDirectory);
+      on('#floorFilter', ev, renderDirectory);
+      on('#categoryFilter', ev, renderDirectory);
+      on('#verifiedFilter', ev, renderDirectory);
+    });
+
+    const clearFilters = qs('#clearFilters');
+    if (clearFilters) {
+      clearFilters.onclick=()=>{qs('#directorySearch').value='';qs('#floorFilter').value='all';qs('#categoryFilter').value='all';qs('#verifiedFilter').checked=false;directoryFavoritesOnly=false;renderDirectory();};
+    }
+
+    const dirFavOnly = qs('#directoryFavoritesOnly');
+    if (dirFavOnly) {
+      dirFavOnly.onclick=()=>{directoryFavoritesOnly=!directoryFavoritesOnly;renderDirectory();};
+    }
+
     qsa('.compass-point').forEach(btn=>btn.onclick=()=>{const d=DATA.orientation[btn.dataset.direction];toast(`${d.label}: ${d.reference}.`);});
     qsa('[data-action="open-floor"]').forEach(btn=>btn.onclick=()=>{selectedFloor=btn.dataset.floor;navTo('map');});
-    qsa('[data-action="find-place"]').forEach(btn=>btn.onclick=()=>{const p=allPlaces().find(x=>norm(x.name)===norm(btn.dataset.place));if(p)openPlace(p.id);});
-    qs('[data-action="open-radio"]').onclick=()=>{navTo('more');qs('#operationalNotesAccordion').open=true;setTimeout(()=>qs('[data-note-id="radio"]')?.scrollIntoView({behavior:'smooth',block:'center'}),180);};
-    qs('#openStatusBtn').onclick=qs('#showAllHours').onclick=()=>qs('#hoursDialog').showModal();
-    qs('#zoomInBtn').onclick=()=>{mapScale=Math.min(2.2,mapScale+.2);renderMap();};
-    qs('#zoomOutBtn').onclick=()=>{mapScale=Math.max(.8,mapScale-.2);renderMap();};
-    qs('#resetZoomBtn').onclick=()=>{mapScale=1;renderMap();};
-    qs('#markModeBtn').onclick=()=>{markMode=!markMode;qs('#markModeBtn').classList.toggle('active',markMode);qs('#markModeBtn').textContent=markMode?'Toque no mapa…':'+ Marcar ponto';toast(markMode?'Toque no local exato do mapa.':'Modo de marcação cancelado.');};
-    qs('#mapViewport').addEventListener('click',e=>{
-      if(!markMode||selectedFloor!=='0'||e.target.closest('.map-marker'))return;
-      const img=qs('#floorMapImage');const r=img.getBoundingClientRect();const x=((e.clientX-r.left)/r.width*100).toFixed(1);const y=((e.clientY-r.top)/r.height*100).toFixed(1);
-      markMode=false;qs('#markModeBtn').classList.remove('active');qs('#markModeBtn').textContent='+ Marcar ponto';openCustomForm(null,{x,y});
+    qsa('[data-action="find-place"]').forEach(btn=>btn.onclick=()=>{
+      const p=allPlaces().find(x=>norm(x.name)===norm(btn.dataset.place));
+      if(p) openPlace(p.id);
     });
-    qs('#addCustomPlaceBtn').onclick=()=>openCustomForm();
+
+    const openStatusBtn = qs('#openStatusBtn');
+    const showAllHours = qs('#showAllHours');
+    if (openStatusBtn) openStatusBtn.onclick = () => qs('#hoursDialog').showModal();
+    if (showAllHours) showAllHours.onclick = () => qs('#hoursDialog').showModal();
+
+    const zoomInBtn = qs('#zoomInBtn');
+    const zoomOutBtn = qs('#zoomOutBtn');
+    const resetZoomBtn = qs('#resetZoomBtn');
+    if (zoomInBtn) zoomInBtn.onclick=()=>{mapScale=Math.min(2.2,mapScale+.2);renderMap();};
+    if (zoomOutBtn) zoomOutBtn.onclick=()=>{mapScale=Math.max(.8,mapScale-.2);renderMap();};
+    if (resetZoomBtn) resetZoomBtn.onclick=()=>{mapScale=1;renderMap();};
+
+    const markModeBtn = qs('#markModeBtn');
+    if (markModeBtn) {
+      markModeBtn.onclick=()=>{markMode=!markMode;markModeBtn.classList.toggle('active',markMode);markModeBtn.textContent=markMode?'Toque no mapa…':'+ Marcar ponto';toast(markMode?'Toque no local exato do mapa.':'Modo de marcação cancelado.');};
+    }
+
+    const mapViewport = qs('#mapViewport');
+    if (mapViewport) {
+      mapViewport.addEventListener('click',e=>{
+        if(!markMode||selectedFloor!=='0'||e.target.closest('.map-marker'))return;
+        const img=qs('#floorMapImage');const r=img.getBoundingClientRect();const x=((e.clientX-r.left)/r.width*100).toFixed(1);const y=((e.clientY-r.top)/r.height*100).toFixed(1);
+        markMode=false;if (markModeBtn) { markModeBtn.classList.remove('active'); markModeBtn.textContent='+ Marcar ponto'; } openCustomForm(null,{x,y});
+      });
+    }
+
+    const addCustomPlaceBtn = qs('#addCustomPlaceBtn');
+    if (addCustomPlaceBtn) addCustomPlaceBtn.onclick=()=>openCustomForm();
+
     qsa('[data-close-dialog]').forEach(btn=>btn.onclick=()=>qs(`#${btn.dataset.closeDialog}`).close());
-    qs('#customPlaceForm').addEventListener('submit',e=>{
-      e.preventDefault();const form=e.currentTarget;const fd=new FormData(form);const obj=Object.fromEntries(fd.entries());
-      if(form.dataset.mode==='store'){
-        saved.overrides[form.dataset.id]={floor:obj.floor,unit:obj.unit,direction:obj.direction,note:obj.note};toast('Correção guardada neste dispositivo.');
-      }else if(form.dataset.mode==='custom-edit'){
-        const p=getCustom(form.dataset.id);if(p)Object.assign(p,{name:obj.name,floor:obj.floor,unit:obj.unit,direction:obj.direction,note:obj.note,x:obj.x,y:obj.y});toast('Local atualizado.');
-      }else{
-        saved.customPlaces.push({id:`custom-${Date.now()}`,name:obj.name,floor:obj.floor,unit:obj.unit,direction:obj.direction,note:obj.note,x:obj.x,y:obj.y});toast('Local adicionado.');
-      }
-      saveState();qs('#formDialog').close();renderAll();
-    });
-    qs('#quizAnswers').onclick=e=>{const b=e.target.closest('[data-answer]');if(b&&!b.disabled)answerQuestion(b.dataset.answer);};
-    qs('#nextQuestionBtn').onclick=nextQuestion;
+    
+    const customPlaceForm = qs('#customPlaceForm');
+    if (customPlaceForm) {
+      customPlaceForm.addEventListener('submit',e=>{
+        e.preventDefault();const form=e.currentTarget;const fd=new FormData(form);const obj=Object.fromEntries(fd.entries());
+        if(form.dataset.mode==='store'){
+          saved.overrides[form.dataset.id]={floor:obj.floor,unit:obj.unit,direction:obj.direction,note:obj.note};toast('Correção guardada neste dispositivo.');
+        }else if(form.dataset.mode==='custom-edit'){
+          const p=getCustom(form.dataset.id);if(p)Object.assign(p,{name:obj.name,floor:obj.floor,unit:obj.unit,direction:obj.direction,note:obj.note,x:obj.x,y:obj.y});toast('Local atualizado.');
+        }else{
+          saved.customPlaces.push({id:`custom-${Date.now()}`,name:obj.name,floor:obj.floor,unit:obj.unit,direction:obj.direction,note:obj.note,x:obj.x,y:obj.y});toast('Local adicionado.');
+        }
+        saveState();qs('#formDialog').close();renderAll();
+      });
+    }
+
+    const quizAnswers = qs('#quizAnswers');
+    if (quizAnswers) {
+      quizAnswers.onclick=e=>{const b=e.target.closest('[data-answer]');if(b&&!b.disabled)answerQuestion(b.dataset.answer);};
+    }
+    const nextQuestionBtn = qs('#nextQuestionBtn');
+    if (nextQuestionBtn) nextQuestionBtn.onclick=nextQuestion;
+
     qsa('[data-training-mode]').forEach(btn=>btn.onclick=()=>{trainingMode=btn.dataset.trainingMode;qsa('[data-training-mode]').forEach(x=>x.classList.toggle('active',x===btn));nextQuestion();});
-    qs('#patrolChecklist').onchange=e=>{const cb=e.target.closest('[data-patrol-floor]');if(!cb)return;const key=patrolKey();const set=new Set(saved.patrol[key]||[]);cb.checked?set.add(cb.dataset.patrolFloor):set.delete(cb.dataset.patrolFloor);saved.patrol[key]=[...set];saveState();renderAll();};
-    qs('#resetPatrolBtn').onclick=()=>{saved.patrol[patrolKey()]=[];saveState();renderAll();};
-    qs('#operationalNotes').addEventListener('input',e=>{const area=e.target.closest('[data-note-id]');if(!area)return;saved.notes[area.dataset.noteId]=area.value;saveState();renderDashboard();});
-    qs('#operationalNotes').addEventListener('click',e=>{const btn=e.target.closest('[data-copy-note]');if(btn)copyOperationalNote(btn.dataset.copyNote);});
-    qs('#customPlacesList').onclick=e=>{const id=e.target.closest('[data-place-id]')?.dataset.placeId;if(id)openPlace(id);};
-    qs('#exportDataBtn').onclick=exportData;
-    qs('#importDataBtn').onclick=()=>qs('#importDataInput').click();
-    qs('#importDataInput').onchange=async e=>{try{const f=e.target.files[0];if(!f)return;const parsed=JSON.parse(await f.text());saved={...defaultState,...(parsed.data||parsed)};saveState();renderAll();toast('Cópia importada.');}catch{toast('Não foi possível importar este ficheiro.');}};
-    qs('#voiceSearchBtn').onclick=startVoiceSearch;
-    window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredInstallPrompt=e;qs('#installBtn').classList.remove('hidden');});
-    qs('#installBtn').onclick=async()=>{if(!deferredInstallPrompt)return;deferredInstallPrompt.prompt();await deferredInstallPrompt.userChoice;deferredInstallPrompt=null;qs('#installBtn').classList.add('hidden');};
+    
+    const patrolChecklist = qs('#patrolChecklist');
+    if (patrolChecklist) {
+      patrolChecklist.onchange=e=>{const cb=e.target.closest('[data-patrol-floor]');if(!cb)return;const key=patrolKey();const set=new Set(saved.patrol[key]||[]);cb.checked?set.add(cb.dataset.patrolFloor):set.delete(cb.dataset.patrolFloor);saved.patrol[key]=[...set];saveState();renderAll();};
+    }
+    const resetPatrolBtn = qs('#resetPatrolBtn');
+    if (resetPatrolBtn) resetPatrolBtn.onclick=()=>{saved.patrol[patrolKey()]=[];saveState();renderAll();};
+    
+    const opsNotes = qs('#operationalNotes');
+    if (opsNotes) {
+      opsNotes.addEventListener('input',e=>{const area=e.target.closest('[data-note-id]');if(!area)return;saved.notes[area.dataset.noteId]=area.value;saveState();renderDashboard();});
+      opsNotes.addEventListener('click',e=>{const btn=e.target.closest('[data-copy-note]');if(btn)copyOperationalNote(btn.dataset.copyNote);});
+    }
+
+    const customPlacesList = qs('#customPlacesList');
+    if (customPlacesList) {
+      customPlacesList.onclick=e=>{const id=e.target.closest('[data-place-id]')?.dataset.placeId;if(id)openPlace(id);};
+    }
+
+    const exportDataBtn = qs('#exportDataBtn');
+    const importDataBtn = qs('#importDataBtn');
+    const importDataInput = qs('#importDataInput');
+    if (exportDataBtn) exportDataBtn.onclick=exportData;
+    if (importDataBtn) importDataBtn.onclick=()=>importDataInput?.click();
+    if (importDataInput) {
+      importDataInput.onchange=async e=>{try{const f=e.target.files[0];if(!f)return;const parsed=JSON.parse(await f.text());saved={...defaultState,...(parsed.data||parsed)};saveState();renderAll();toast('Cópia importada.');}catch{toast('Não foi possível importar este ficheiro.');}};
+    }
+
+    const clearFailedSearchesBtn = qs('#clearFailedSearchesBtn');
+    const exportFailedSearchesBtn = qs('#exportFailedSearchesBtn');
+    if (clearFailedSearchesBtn) {
+      clearFailedSearchesBtn.onclick = () => {
+        if (confirm('Limpar histórico de pesquisas sem correspondência?')) {
+          saved.failedSearches = {}; saveState(); renderFailedSearches();
+        }
+      };
+    }
+    if (exportFailedSearchesBtn) {
+      exportFailedSearchesBtn.onclick = () => {
+        const blob = new Blob([JSON.stringify(saved.failedSearches || {}, null, 2)],{type:'application/json'});
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = `pg-pesquisas-falhadas-${new Date().toISOString().slice(0,10)}.json`;
+        a.click();
+        URL.revokeObjectURL(a.href);
+        toast('Cópia de pesquisas exportada.');
+      };
+    }
+
+    const installBtn = qs('#installBtn');
+    const voiceSearchBtn = qs('#voiceSearchBtn');
+    if (voiceSearchBtn) voiceSearchBtn.onclick=startVoiceSearch;
+
+    window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredInstallPrompt=e;if(installBtn)installBtn.classList.remove('hidden');});
+    if (installBtn) {
+      installBtn.onclick=async()=>{if(!deferredInstallPrompt)return;deferredInstallPrompt.prompt();await deferredInstallPrompt.userChoice;deferredInstallPrompt=null;installBtn.classList.add('hidden');};
+    }
   }
 
   function startVoiceSearch(){
@@ -769,58 +1094,65 @@
   }
 
   function initFilters(){
-    const categories=[...new Set(DATA.stores.flatMap(s=>s.categories))].sort((a,b)=>a.localeCompare(b,'pt'));
-    qs('#categoryFilter').innerHTML='<option value="all">Todas as categorias</option>'+categories.map(c=>`<option>${esc(c)}</option>`).join('');
+    const categories=[...new Set(window.PG_SEARCH_CATALOG_V2.stores.flatMap(s=>s.categories))].sort((a,b)=>a.localeCompare(b,'pt'));
+    const catFilter = qs('#categoryFilter');
+    if (catFilter) {
+      catFilter.innerHTML='<option value="all">Todas as categorias</option>'+categories.map(c=>`<option>${esc(c)}</option>`).join('');
+    }
   }
 
   function bindPositionAndSOS() {
-    qs('#sosBtn').onclick = () => qs('#sosDialog').showModal();
+    const sosBtn = qs('#sosBtn');
+    if (sosBtn) sosBtn.onclick = () => qs('#sosDialog').showModal();
 
-    // Quick search chips Click bindings
     qsa('.chip-btn').forEach(btn => {
       btn.onclick = (e) => {
         e.stopPropagation();
         const searchInput = qs('#homeSearch');
-        searchInput.value = btn.dataset.search;
-        searchInput.dispatchEvent(new Event('input'));
-        searchInput.focus();
+        if (searchInput) {
+          searchInput.value = btn.dataset.search;
+          renderSearchResults(searchInput.value, qs('#homeSearchResults'));
+          searchInput.focus();
+        }
       };
     });
 
-    // Device orientation gyroscope compass
     let isCompassActive = false;
     const centerBtn = qs('.compass-center');
 
-    centerBtn.onclick = async () => {
-      if (isCompassActive) {
-        window.removeEventListener('deviceorientation', handleOrientation);
-        isCompassActive = false;
-        qs('.compass-card').style.transform = 'rotate(0deg)';
-        centerBtn.classList.remove('active');
-        toast('Bússola real desativada.');
-        return;
-      }
-
-      if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function') {
-        try {
-          const permission = await DeviceOrientationEvent.requestPermission();
-          if (permission === 'granted') {
-            startCompass();
-          } else {
-            toast('Permissão de giroscópio recusada.');
-          }
-        } catch (err) {
-          toast('Erro ao solicitar giroscópio.');
+    if (centerBtn) {
+      centerBtn.onclick = async () => {
+        if (isCompassActive) {
+          window.removeEventListener('deviceorientation', handleOrientation);
+          isCompassActive = false;
+          const compassCard = qs('.compass-card');
+          if (compassCard) compassCard.style.transform = 'rotate(0deg)';
+          centerBtn.classList.remove('active');
+          toast('Bússola real desativada.');
+          return;
         }
-      } else {
-        startCompass();
-      }
-    };
+
+        if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function') {
+          try {
+            const permission = await DeviceOrientationEvent.requestPermission();
+            if (permission === 'granted') {
+              startCompass();
+            } else {
+              toast('Permissão de giroscópio recusada.');
+            }
+          } catch (err) {
+            toast('Erro ao solicitar giroscópio.');
+          }
+        } else {
+          startCompass();
+        }
+      };
+    }
 
     function startCompass() {
       window.addEventListener('deviceorientation', handleOrientation, true);
       isCompassActive = true;
-      centerBtn.classList.add('active');
+      if (centerBtn) centerBtn.classList.add('active');
       toast('Bússola giroscópica ativada!');
     }
 
@@ -840,23 +1172,25 @@
       }
     }
 
-    // Position selectors
     const floorSelect = qs('#userCurrentFloor');
     const dirSelect = qs('#userCurrentDir');
 
-    floorSelect.value = saved.userFloor || '0';
-    dirSelect.value = saved.userDir || '';
-
-    floorSelect.addEventListener('change', e => {
-      saved.userFloor = e.target.value;
-      saveState();
-      renderAll();
-    });
-    dirSelect.addEventListener('change', e => {
-      saved.userDir = e.target.value;
-      saveState();
-      renderAll();
-    });
+    if (floorSelect) {
+      floorSelect.value = saved.userFloor || '0';
+      floorSelect.addEventListener('change', e => {
+        saved.userFloor = e.target.value;
+        saveState();
+        renderAll();
+      });
+    }
+    if (dirSelect) {
+      dirSelect.value = saved.userDir || '';
+      dirSelect.addEventListener('change', e => {
+        saved.userDir = e.target.value;
+        saveState();
+        renderAll();
+      });
+    }
   }
 
   function migrateNotes() {
@@ -873,11 +1207,11 @@
   }
 
   function init(){
+    window.pgSearch = window.PG_SEARCH_V2.makeSearchEngine(window.PG_SEARCH_CATALOG_V2);
     migrateNotes();
-    enrichSearchText();
     initFilters();bindEvents();bindPositionAndSOS();renderAll();
     setInterval(renderHours,60000);
-    if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=1.2.6').catch(()=>{});
+    if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=1.2.9').catch(()=>{});
   }
   document.addEventListener('DOMContentLoaded',init);
 })();
