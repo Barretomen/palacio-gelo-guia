@@ -1,0 +1,625 @@
+TAREFA: REDESIGN FINAL + PESQUISA INTELIGENTE V2 DO “PG — GUIA DE BOLSO”
+
+Analisa o projeto “PG — Guia de Bolso” que já está aberto e implementa uma versão final, institucional e pronta para produção, integrando DOIS trabalhos num único projeto:
+
+1. O redesign visual e estrutural demonstrado em `index-profissional-demo.html`;
+2. A nova base de dados e o motor de pesquisa fornecidos no pacote `PESQUISA-V2`.
+
+O resultado não deve ser outro mock, uma página paralela ou uma demonstração. Deve ser o projeto real completo, com a nova interface aplicada e todas as funções atuais preservadas e conectadas aos dados reais.
+
+======================================================================
+1. FICHEIROS DE REFERÊNCIA FORNECIDOS
+======================================================================
+
+REDESIGN:
+- `REDESIGN/index-profissional-demo.html`
+  - Esta é a referência visual e de experiência de utilização.
+  - A interface final deve ficar visualmente muito próxima deste ficheiro.
+  - Não usar apenas como inspiração vaga. Reproduzir a estrutura, proporções, hierarquia, espaçamentos, cards, navegação e comportamento responsivo.
+- `REDESIGN/desktop.png`
+- `REDESIGN/mobile.png`
+- `REDESIGN/DIRETRIZES-REDESIGN-PALACIO.md`
+
+PESQUISA E BASE DE DADOS:
+- `PESQUISA-V2/catalogo-pesquisa-v2.js`
+- `PESQUISA-V2/catalogo-pesquisa-v2.json`
+- `PESQUISA-V2/search-engine-v2.js`
+- `PESQUISA-V2/search-tests-v2.js`
+- `PESQUISA-V2/cobertura-lojas.csv`
+- `PESQUISA-V2/RELATORIO-AUDITORIA.md`
+- `PESQUISA-V2/INTEGRACAO-ANTIGRAVITY.md`
+- `PESQUISA-V2/estatisticas.json`
+- `PESQUISA-V2/stores-original.json`
+
+PROJETO ATUAL:
+- `index.html`
+- `styles.css`
+- `app.js`
+- `data.js`
+- `store-media.js`
+- `sw.js`
+- `manifest.webmanifest`
+- pasta `assets/`
+- restantes ficheiros atualmente usados pelo projeto.
+
+Antes de alterar qualquer coisa, cria mentalmente um mapa das dependências entre os IDs do HTML, listeners do `app.js`, dados de `data.js`, armazenamento local e cache PWA. Não removas funções porque um elemento deixou de existir no novo layout: adapta-o e reposiciona-o.
+
+======================================================================
+2. OBJETIVO DO PRODUTO
+======================================================================
+
+Transformar o PG — Guia de Bolso numa aplicação institucional, limpa, moderna e muito rápida, com aparência de produto final desenvolvido por uma equipa profissional de engenharia de software e design de produto.
+
+A aplicação deve continuar especialmente útil num telemóvel durante um turno de vigilância, mas também deve ficar excelente num computador.
+
+A principal proposta de valor deve ser:
+
+“Escrever o nome de uma loja, produto, serviço ou necessidade e receber imediatamente a melhor resposta, com localização, nível de confiança e acesso ao mapa.”
+
+Exemplos:
+- Onde vende capa de iPhone?
+- Pilha de relógio
+- Carregador USB-C
+- Perdi a carteira
+- Onde há cadeira de rodas?
+- Onde fica o fraldário?
+- Onde faço análises ao sangue?
+- Onde posso carregar um carro elétrico?
+- Onde compro roupa de criança?
+- Onde encontro um presente para bebé?
+- Onde há comida vegetariana?
+- Worten / Wroten
+
+======================================================================
+3. REGRAS INEGOCIÁVEIS
+======================================================================
+
+1. Não converter o projeto para React, Vue, Angular, Tailwind, Bootstrap ou outra framework.
+2. Manter HTML, CSS e JavaScript puro, compatível com GitHub Pages e PWA offline.
+3. Não destruir, simplificar ou remover funcionalidades atuais.
+4. Não entregar apenas o novo `index.html` demonstrativo.
+5. Não criar uma segunda aplicação separada do projeto.
+6. Não manter dados fictícios do protótipo quando já existirem dados reais no projeto.
+7. Não copiar o JavaScript demonstrativo de forma que ele substitua a lógica real.
+8. Não perder favoritos, notas, checklist, treino, correções locais, marcadores, posição atual, feedback operacional ou dados existentes no `localStorage`.
+9. Não mudar chaves existentes do `localStorage` sem uma migração retrocompatível.
+10. Não afirmar que um produto “está em stock” ou “está disponível” sem prova de inventário da loja física de Viseu.
+11. Não usar correspondência simples e insegura por substring como `hay.includes(token)` para decidir resultados.
+12. Não apresentar serviços do centro como se fossem lojas comuns.
+13. Não usar emojis misturados como sistema principal de ícones. Usar uma família consistente de SVGs ou ícones inline acessíveis.
+14. Não criar efeitos exagerados, sombras pesadas, excesso de gradientes, glassmorphism em todos os blocos ou animações que prejudiquem o desempenho.
+15. Não entregar patches soltos. Entregar o projeto completo pronto para substituir/publicar.
+
+======================================================================
+4. DIREÇÃO VISUAL OBRIGATÓRIA
+======================================================================
+
+Usa `index-profissional-demo.html`, `desktop.png` e `mobile.png` como referência visual principal.
+
+A interface final deve manter o mesmo conceito:
+
+DESKTOP:
+- Sidebar fixa à esquerda.
+- Marca no topo da sidebar.
+- Navegação claramente separada por áreas.
+- Conteúdo principal centralizado.
+- Cabeçalho superior limpo, com contexto da página, estado do centro e SOS.
+- Largura máxima útil entre aproximadamente 1120 e 1200 px.
+- Cards organizados numa grelha respirável.
+- Pesquisa como elemento visual principal da visão geral.
+
+TELEMÓVEL:
+- Sidebar removida.
+- Dock inferior fixo com as áreas principais.
+- Cabeçalho compacto.
+- Respeitar `safe-area-inset-top` e `safe-area-inset-bottom`.
+- Cards em uma coluna.
+- Botões principais com pelo menos 42–44 px de altura.
+- Sem conteúdo escondido atrás do dock.
+- Sem scroll horizontal acidental.
+
+IDENTIDADE VISUAL:
+- Fundo geral claro, neutro e institucional.
+- Azul-marinho escuro para estrutura e marca.
+- Azul de ação usado com moderação.
+- Verde apenas para confirmação/estado positivo.
+- Âmbar para atenção ou “confirmar”.
+- Vermelho apenas para SOS, erro importante ou emergência.
+- Tipografia limpa, sóbria e legível.
+- Raio consistente, aproximadamente 16–18 px nos cards principais.
+- Bordas discretas e sombras muito leves.
+- Espaçamento baseado em múltiplos de 4 px.
+- Estados hover, active, focus e disabled consistentes.
+- Foco de teclado visível.
+- Contraste adequado.
+
+A interface não deve parecer um template genérico de dashboard. Deve manter a identidade do Palácio do Gelo e o caráter operacional do guia.
+
+======================================================================
+5. NOVA ARQUITETURA DE NAVEGAÇÃO
+======================================================================
+
+Organiza o produto em cinco áreas principais:
+
+1. VISÃO GERAL / INÍCIO
+- Pesquisa principal.
+- Resposta inteligente imediata.
+- Posição atual do utilizador.
+- Estado/progresso da ronda.
+- Acessos recentes ou favoritos.
+- Indicadores úteis e discretos.
+- Serviços essenciais em destaque, sem poluir a página.
+
+2. MAPA
+- Mapa grande e central.
+- Seletor de pisos.
+- Zoom e ajuste.
+- Marcadores.
+- Lista dos locais do piso.
+- Pesquisa ou resultado selecionado deve abrir o piso correto e destacar o local.
+- Manter pontos personalizados e modo de marcação.
+
+3. DIRETÓRIO
+- Pesquisa completa.
+- Separação entre lojas e serviços.
+- Filtros por piso, categoria, confiança e favoritos.
+- Cards profissionais e consistentes.
+- Contagem dinâmica.
+- Estado sem resultados útil.
+
+4. TREINO
+- Perguntas e respostas atuais.
+- Pontuação.
+- Referências cardeais.
+- Progresso.
+- Interface mais limpa e concentrada.
+
+5. FERRAMENTAS / OPERAÇÃO
+- Notas.
+- Checklist/ronda.
+- Rádio e modelos de comunicação.
+- Contactos.
+- Horários.
+- Importação/exportação.
+- Feedback e pesquisas a enriquecer.
+- Configurações e informações dos dados.
+
+No desktop, estas áreas aparecem na sidebar. No telemóvel, usar dock inferior para as áreas principais e colocar ferramentas secundárias dentro de “Mais” ou “Ferramentas”.
+
+======================================================================
+6. PÁGINA INICIAL
+======================================================================
+
+A página inicial não deve mostrar todos os módulos ao mesmo tempo.
+
+Prioridade visual:
+1. Pesquisa;
+2. Resposta inteligente;
+3. Posição atual / ronda;
+4. Ações rápidas;
+5. Favoritos ou recentes;
+6. Informações secundárias.
+
+A pesquisa deve ocupar o papel principal, tal como no protótipo.
+
+Exibir sugestões/chips úteis, mas sem excesso. Exemplos:
+- WC
+- Multibanco
+- Restauração
+- Farmácia
+- Informações
+- Perdidos e Achados
+
+Os chips devem utilizar a Pesquisa v2 e não pesquisas paralelas hardcoded.
+
+======================================================================
+7. PESQUISA V2 E BASE DE DADOS
+======================================================================
+
+Substitui integralmente a pesquisa antiga, baseada em `catalogKeywords`, `enrichSearchText()` e correspondência por substring, pela Pesquisa v2 fornecida.
+
+CARREGAMENTO:
+- Carregar `catalogo-pesquisa-v2.js` e `search-engine-v2.js` antes de `app.js`.
+- Integrar com os dados atuais sem duplicar registos visualmente.
+- Adicionar os ficheiros ao cache do service worker.
+- Atualizar a versão do cache.
+
+A PESQUISA DEVE:
+- Aceitar nomes de lojas.
+- Aceitar categorias.
+- Aceitar produtos específicos.
+- Aceitar serviços.
+- Aceitar perguntas naturais.
+- Normalizar acentos.
+- Lidar com singular/plural quando previsto pelo motor.
+- Tolerar erros seguros no nome de lojas, como “wroten”.
+- Evitar correções perigosas, como interpretar “manga” automaticamente como “Mango”.
+- Evitar que uma palavra genérica domine uma pesquisa composta.
+- Apresentar desambiguação quando necessário.
+
+TIPOS DE RESULTADO:
+- `store`: loja ou unidade comercial.
+- `service`: serviço do centro ou ponto operacional.
+
+NÍVEIS DE EVIDÊNCIA VISÍVEIS:
+- Serviço confirmado no Palácio do Gelo.
+- Categoria confirmada no catálogo oficial da marca; stock local por confirmar.
+- Família de produtos curada; confirmar na loja.
+- Correspondência por categoria; verificar antes de indicar.
+- Registo/localização a confirmar.
+
+Nunca esconder este nível num detalhe técnico. Mostrar um selo curto no card e uma explicação completa ao abrir o resultado.
+
+AVISO DE DISPONIBILIDADE:
+- Para produtos, informar de forma discreta que modelo, tamanho, cor e stock devem ser confirmados na loja.
+- Não repetir um bloco enorme em todos os cards. Pode usar um aviso compacto e uma explicação mais completa no detalhe.
+
+======================================================================
+8. INTERFACE DOS RESULTADOS
+======================================================================
+
+A resposta da pesquisa deve aparecer antes da lista completa e ser orientada à decisão.
+
+Cada resultado deve mostrar:
+- logótipo ou ícone consistente;
+- nome;
+- tipo: loja ou serviço;
+- piso e unidade/localização;
+- selo de confiança/evidência;
+- produtos, intenção ou termos correspondentes;
+- texto “Encontrado por: …”;
+- aviso de disponibilidade quando aplicável;
+- botão “Abrir no mapa”;
+- botão de detalhes;
+- favorito, quando aplicável.
+
+Organizar por prioridade:
+1. Resposta recomendada / melhor correspondência;
+2. Serviços oficiais diretamente relacionados;
+3. Lojas com categoria confirmada;
+4. Outras alternativas que exigem confirmação.
+
+Não misturar tudo numa lista sem hierarquia.
+
+O card deve ter:
+- cabeçalho consistente;
+- logo com área padronizada;
+- no máximo duas ou três tags visíveis;
+- localização no rodapé;
+- detalhes progressivos;
+- altura visual equilibrada dentro da grelha.
+
+No detalhe, incluir feedback operacional:
+- Encontrou;
+- Não vendia;
+- Loja mudou/fechou;
+- Localização incorreta.
+
+Guardar feedback no `localStorage`, com data, termo pesquisado e identificador do local, sem dados pessoais.
+
+======================================================================
+9. TERMOS AMBÍGUOS E INTENÇÕES
+======================================================================
+
+Quando houver ambiguidade, não inventar uma certeza. Mostrar chips para refinar.
+
+Exemplos:
+- manga → banda desenhada/livro OU parte de roupa;
+- capa → capa de telemóvel, capa de livro ou roupa de cama;
+- bateria → telemóvel, automóvel ou instrumento musical;
+- cartão → SIM, memória, bancário ou cheque-prenda;
+- carteira → produto para comprar OU ocorrência de objeto perdido;
+- carregador → telemóvel/computador OU carregamento de veículo elétrico.
+
+Perguntas operacionais como “perdi a carteira” devem priorizar Perdidos e Achados, não lojas que vendem carteiras.
+
+======================================================================
+10. DADOS E CORREÇÕES OBRIGATÓRIAS
+======================================================================
+
+Aplicar as conclusões da auditoria:
+
+- Mayoral, O’ Dreams, Pista de Gelo e Tuttocars aparecem no diretório oficial atual e não devem continuar como “não verificadas”.
+- Inside não foi correspondida no diretório oficial atual. Não apagar automaticamente. Marcar “Confirmar antes de indicar”.
+- Balcão de Informações, Cheque-prenda, DAE, Espaço Kids, Minimingos, Multibanco, Perdidos e Achados, WC acessível e outros pontos são serviços, não lojas comuns.
+- “Auchan — O Meu Pet” não deve ser mostrado como loja independente sem confirmação; pode ser um departamento do Auchan.
+- Ourivesaria Pereirinha possui duas entradas oficiais. Pode continuar agrupada apenas se as duas localizações forem apresentadas claramente.
+- Incluir os serviços oficiais constantes na base fornecida, como cadeiras de rodas, carrinhos de bebé, fraldários, coworking, tomadas USB, carregamento de veículos elétricos, recolha de pilhas, levantamento de encomendas, Wi-Fi e outros.
+
+CONTAGEM:
+- Remover textos fixos como “142 LOCAIS CADASTRADOS”.
+- Calcular dinamicamente:
+  - número de lojas/unidades comerciais;
+  - número de serviços;
+  - total pesquisável.
+- Mostrar “Dados verificados em 24/07/2026” na versão atual da base.
+- Preparar o código para que esta data venha dos metadados do catálogo, e não de um texto espalhado pelo HTML.
+
+======================================================================
+11. SEM RESULTADOS E MELHORIA CONTÍNUA
+======================================================================
+
+Quando não houver correspondência segura:
+- Mostrar “Não encontrei uma correspondência segura”.
+- Não devolver lojas aleatórias só para preencher a tela.
+- Sugerir reformulações ou categorias relacionadas.
+- Oferecer acesso ao diretório completo.
+
+Guardar localmente pesquisas sem resultado:
+- termo normalizado;
+- termo original;
+- contagem;
+- primeira e última data;
+- sem dados pessoais.
+
+Criar em Ferramentas/Mais uma área “Pesquisas a enriquecer”:
+- lista por frequência;
+- data da última tentativa;
+- botão exportar JSON;
+- botão limpar, com confirmação.
+
+Incluir esses dados na exportação geral já existente.
+
+======================================================================
+12. MAPA E LIGAÇÃO DOS RESULTADOS
+======================================================================
+
+O botão “Abrir no mapa” deve:
+- navegar para a área Mapa;
+- selecionar automaticamente o piso correto;
+- ajustar o mapa;
+- destacar o marcador ou a localização aproximada;
+- abrir um resumo do local;
+- manter opção de regressar à pesquisa anterior.
+
+Se uma localização não tiver coordenada precisa:
+- não fingir precisão;
+- destacar o piso e apresentar a unidade/referência textual;
+- usar indicação “posição aproximada” quando necessário.
+
+Preservar:
+- mapas oficiais atuais;
+- zoom;
+- marcadores;
+- pontos personalizados;
+- modo de marcação;
+- lista por piso;
+- posição atual do utilizador;
+- referências cardeais.
+
+======================================================================
+13. COMPONENTES E QUALIDADE DO CÓDIGO
+======================================================================
+
+Não manter um único `app.js` ainda mais monolítico se isso tornar a integração frágil.
+
+Podes organizar em ficheiros/módulos JavaScript puros, por exemplo:
+- `app.js`: bootstrap e estado global mínimo;
+- `search-ui.js`: pesquisa e resultados;
+- `directory-ui.js`: diretório e filtros;
+- `map-ui.js`: mapa e destaque;
+- `storage.js`: localStorage, migrações e exportação;
+- `ui-components.js`: cards, badges, modais e estados vazios.
+
+Isto é uma sugestão, não obrigação. O essencial é:
+- funções pequenas;
+- nomes claros;
+- evitar duplicação;
+- listeners registados uma vez;
+- renderizações previsíveis;
+- nenhuma variável global desnecessária;
+- tratamento de erros;
+- compatibilidade com browsers modernos em telemóvel.
+
+Se alterares IDs do HTML, atualiza todos os seletores e listeners de forma coordenada.
+
+======================================================================
+14. CSS E RESPONSIVIDADE
+======================================================================
+
+Migrar o conceito visual do protótipo para o `styles.css` real.
+
+Criar tokens em `:root`, por exemplo:
+- cores;
+- superfícies;
+- texto principal e secundário;
+- bordas;
+- sombras;
+- raios;
+- espaçamentos;
+- largura da sidebar;
+- largura máxima do conteúdo;
+- alturas de controlo.
+
+Requisitos:
+- layout consistente em 320, 360, 390, 430, 768, 1024, 1366 e 1920 px;
+- sem scroll horizontal;
+- tabelas/listas adaptadas ao mobile;
+- áreas clicáveis adequadas;
+- modais com scroll interno e fecho acessível;
+- dock móvel acima da safe area;
+- cabeçalhos sticky sem cobrir conteúdo;
+- logos usando `object-fit: contain`;
+- imagens com dimensões reservadas para evitar saltos de layout;
+- animações curtas, preferencialmente 120–220 ms;
+- respeitar `prefers-reduced-motion`;
+- estados de carregamento e vazio consistentes.
+
+Não usar fontes externas como dependência obrigatória offline. Se mantiver Google Fonts, fornecer fallback excelente e garantir que a PWA continua utilizável offline. Preferencialmente usar stack de sistema ou manter a tipografia atual com fallback local seguro.
+
+======================================================================
+15. PWA, OFFLINE E CACHE
+======================================================================
+
+Preservar instalação PWA e funcionamento offline.
+
+Obrigatório:
+- adicionar os novos ficheiros estáticos ao `sw.js`;
+- atualizar a versão do cache;
+- remover caches antigos de forma segura;
+- garantir que o novo HTML, CSS, JS, catálogo, logos e mapas essenciais abrem offline;
+- evitar que uma versão antiga do CSS ou JS continue presa no cache;
+- manter o manifest correto;
+- validar ícones e `theme-color` de acordo com o redesign;
+- testar atualização da aplicação já instalada.
+
+A base JSON pode permanecer para manutenção, mas a aplicação estática deve usar uma versão adequada ao browser, como `catalogo-pesquisa-v2.js`, para não depender de `fetch` que falhe ao abrir localmente ou offline.
+
+======================================================================
+16. ACESSIBILIDADE
+======================================================================
+
+- HTML semântico.
+- Um `h1` principal por contexto adequado.
+- Labels ou `aria-label` em campos e botões de ícone.
+- Foco visível.
+- Navegação básica por teclado.
+- Modais com foco controlado e fecho por Escape.
+- `aria-live` para quantidade/resultados da pesquisa quando necessário.
+- Não depender apenas de cor para comunicar confiança ou erro.
+- Textos legíveis e sem microfontes excessivas.
+- `alt` adequado nos logos.
+
+======================================================================
+17. PRESERVAÇÃO DAS FUNÇÕES ATUAIS
+======================================================================
+
+Auditar e preservar, no mínimo:
+- pesquisa por loja/local atual, agora migrada para a Pesquisa v2;
+- mapas por piso;
+- zoom e ajuste;
+- marcadores e pontos personalizados;
+- favoritos;
+- posição atual;
+- referências cardeais;
+- horários e estado aberto/fechado;
+- diretório e filtros;
+- treino e pontuação;
+- notas pessoais;
+- rádio/modelos;
+- checklist/ronda;
+- contactos e SOS;
+- importação/exportação;
+- instalação PWA;
+- funcionamento offline;
+- correções e dados guardados no dispositivo.
+
+Cria um inventário destas funções no CHANGELOG final e informa como foram preservadas ou reposicionadas.
+
+======================================================================
+18. TESTES OBRIGATÓRIOS
+======================================================================
+
+PESQUISA:
+1. Executar `node search-tests-v2.js`.
+2. Manter todos os 34 testes a passar.
+3. Testar manualmente:
+   - capa de iPhone;
+   - pilha de relógio;
+   - manga;
+   - carregador USB-C;
+   - perdi a carteira;
+   - cadeira de rodas;
+   - fraldário;
+   - análises ao sangue;
+   - carregar carro elétrico;
+   - wroten.
+4. “Pilha de relógio” não pode devolver joalharias genéricas apenas por venderem relógios.
+5. “Manga” não pode ser corrigida automaticamente para Mango.
+6. “Perdi a carteira” deve priorizar Perdidos e Achados.
+7. Pesquisas compostas não podem devolver lojas que só correspondem a uma palavra genérica.
+
+FUNCIONAL:
+- abrir cada área da navegação;
+- abrir e fechar modais;
+- alternar pisos;
+- abrir um resultado no mapa;
+- adicionar/remover favorito;
+- criar e apagar nota;
+- guardar posição;
+- usar checklist/ronda;
+- utilizar treino;
+- exportar e importar dados;
+- registar feedback;
+- exportar pesquisas sem resultado;
+- recarregar a página e confirmar persistência.
+
+RESPONSIVO:
+- testar desktop e mobile;
+- comparar visualmente com `desktop.png` e `mobile.png`;
+- testar 320 px de largura;
+- testar orientação vertical e horizontal;
+- confirmar ausência de scroll horizontal;
+- confirmar que o dock não cobre botões ou conteúdo.
+
+PWA/OFFLINE:
+- instalar ou simular instalação;
+- abrir offline;
+- testar mapas, diretório, catálogo e pesquisa offline;
+- atualizar o service worker;
+- confirmar remoção do cache anterior;
+- verificar console sem erros críticos.
+
+QUALIDADE:
+- validar que não existem IDs duplicados;
+- verificar links/paths de assets;
+- verificar imagens quebradas;
+- verificar erros de JavaScript;
+- verificar listeners duplicados;
+- verificar que dados do protótipo não permanecem hardcoded na versão final.
+
+======================================================================
+19. CRITÉRIOS DE ACEITAÇÃO VISUAL
+======================================================================
+
+A tarefa só está concluída se:
+- a página inicial se parecer claramente com a versão profissional fornecida;
+- o desktop tiver sidebar e conteúdo central equilibrado;
+- o mobile tiver dock inferior e layout próprio;
+- os cards estiverem mais centrados, alinhados e consistentes;
+- a pesquisa for o centro da experiência;
+- mapa, diretório, treino e ferramentas tiverem telas próprias;
+- a densidade visual for menor que no projeto antigo;
+- cores, sombras, bordas e raios forem consistentes;
+- a aplicação parecer uma versão oficial final, e não um protótipo;
+- os dados mostrados forem reais e provenientes do projeto/catálogo;
+- todas as funções anteriores continuarem disponíveis.
+
+Não considerar concluído apenas porque o novo CSS “ficou mais bonito”. É necessário entregar a arquitetura visual e de navegação demonstrada no protótipo.
+
+======================================================================
+20. ENTREGA OBRIGATÓRIA
+======================================================================
+
+Faz as alterações diretamente no projeto.
+
+Entrega:
+1. ZIP COMPLETO do projeto final pronto para substituir/publicar.
+2. Todos os assets necessários dentro do ZIP.
+3. `CHANGELOG.md` com:
+   - ficheiros alterados/criados;
+   - resumo do redesign;
+   - integração da Pesquisa v2;
+   - migrações de armazenamento;
+   - funções preservadas;
+   - correções de dados;
+   - testes executados e respetivos resultados;
+   - pontos que ainda dependem de confirmação presencial.
+4. `TEST-REPORT.md` com checklist de testes.
+5. Breve `README.md` atualizado com instruções para executar e publicar.
+6. Nenhum ficheiro demonstrativo ou dado fictício deve ser tratado como fonte principal na aplicação final.
+
+Não entregar somente código parcial, snippets, diff, explicação, mock, imagens ou sugestões.
+
+Antes da entrega final:
+- executar os testes;
+- abrir a aplicação localmente;
+- verificar desktop e mobile;
+- verificar o console;
+- verificar o modo offline;
+- comparar com as imagens de referência;
+- confirmar que a pesquisa usa efetivamente a base v2;
+- confirmar que os dados existentes do utilizador não são perdidos.
+
+RESULTADO ESPERADO:
+Um PG — Guia de Bolso visualmente equivalente ao conceito profissional fornecido, alimentado pelos dados reais do projeto, com pesquisa inteligente e confiável por lojas, produtos e serviços, mantendo todo o funcionamento operacional atual e pronto para publicação no GitHub Pages como PWA.

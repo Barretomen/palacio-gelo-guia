@@ -1,0 +1,1347 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+	<head>
+				<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<title>Palácio do Gelo | 404</title>
+		<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="canonical" href="http://palaciodogelo.pt/pt/404">
+
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<meta name="author" content="Bang Bang | Creative Shots">
+		<meta name="robots" content="/robots.txt" />
+		<link rel="author" href="/humans.txt" />
+
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://palaciodogelo.pt/pt/404" />
+		<meta property="og:title" content="Palácio do Gelo | 404" />
+		<meta property="og:description" content="" />
+		<meta property="og:image" content="" />
+		<meta property="og:site_name" content="Palácio do Gelo">
+		<meta property="og:locale" content="pt">
+
+		<!-- Favicon -->
+		<link rel="apple-touch-icon" sizes="57x57" href="https://palaciodogelo.pt/images/favicon/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="https://palaciodogelo.pt/images/favicon/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="https://palaciodogelo.pt/images/favicon/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="https://palaciodogelo.pt/images/favicon/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="https://palaciodogelo.pt/images/favicon/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="https://palaciodogelo.pt/images/favicon/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="https://palaciodogelo.pt/images/favicon/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="https://palaciodogelo.pt/images/favicon/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="https://palaciodogelo.pt/images/favicon/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="https://palaciodogelo.pt/images/favicon/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="https://palaciodogelo.pt/images/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="https://palaciodogelo.pt/images/favicon/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="https://palaciodogelo.pt/images/favicon/favicon-16x16.png">
+		<link rel="manifest" href="https://palaciodogelo.pt/images/favicon/manifest.json">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="https://palaciodogelo.pt/images/favicon/ms-icon-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+
+		<!--CSS-->
+		<link rel="stylesheet" type="text/css" href="https://palaciodogelo.pt/components/bootstrap/dist/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="https://palaciodogelo.pt/css/bootstrap-formhelpers.min.css">
+		<link rel="stylesheet" type="text/css" href="https://palaciodogelo.pt/components/bootstrap/dist/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" type="text/css" href="https://palaciodogelo.pt/components/jquery-ui/themes/vader/jquery-ui.css">
+		<link rel="stylesheet" type="text/css" href="https://palaciodogelo.pt/components/bootstrap/dist/css/bootstrap-select.min.css">
+		<link rel="stylesheet" type="text/css" href="https://palaciodogelo.pt/components/fontawesome/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="https://palaciodogelo.pt/css/jquery.bxslider.css">
+		<link rel="stylesheet" type="text/css" href="https://palaciodogelo.pt/css/build.css">
+		<link rel="stylesheet" type="text/css" href="https://palaciodogelo.pt/css/style.css?v=1.21">
+		<link rel="stylesheet" type="text/css" href="https://palaciodogelo.pt/css/fullcalendar.css">
+		<link rel="stylesheet" type="text/css" href="https://palaciodogelo.pt/css/owl.carousel.css">
+		<link rel="stylesheet" type="text/css" href="https://palaciodogelo.pt/css/owl.theme.css">
+		<link rel="stylesheet" type="text/css" href="https://palaciodogelo.pt/css/owl.transitions.css">
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+		<link rel="stylesheet" type="text/css" href="https://palaciodogelo.pt/css/cookiecuttr.css">
+		<link rel="stylesheet" type="text/css" href="https://palaciodogelo.pt/stylesheets/estilos.css?v=1.21">
+
+        <script type="text/javascript">window.gdprAppliesGlobally=true;(function(){function a(e){if(!window.frames[e]){if(document.body&&document.body.firstChild){var t=document.body;var n=document.createElement("iframe");n.style.display="none";n.name=e;n.title=e;t.insertBefore(n,t.firstChild)}
+        else{setTimeout(function(){a(e)},5)}}}function e(n,r,o,c,s){function e(e,t,n,a){if(typeof n!=="function"){return}if(!window[r]){window[r]=[]}var i=false;if(s){i=s(e,t,n)}if(!i){window[r].push({command:e,parameter:t,callback:n,version:a})}}e.stub=true;function t(a){if(!window[n]||window[n].stub!==true){return}if(!a.data){return}
+        var i=typeof a.data==="string";var e;try{e=i?JSON.parse(a.data):a.data}catch(t){return}if(e[o]){var r=e[o];window[n](r.command,r.parameter,function(e,t){var n={};n[c]={returnValue:e,success:t,callId:r.callId};a.source.postMessage(i?JSON.stringify(n):n,"*")},r.version)}}
+        if(typeof window[n]!=="function"){window[n]=e;if(window.addEventListener){window.addEventListener("message",t,false)}else{window.attachEvent("onmessage",t)}}}e("__tcfapi","__tcfapiBuffer","__tcfapiCall","__tcfapiReturn");a("__tcfapiLocator");(function(e){
+        var t=document.createElement("script");t.id="spcloader";t.type="text/javascript";t.async=true;t.src="https://sdk.privacy-center.org/"+e+"/loader.js?target="+document.location.hostname;t.charset="utf-8";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n)})("60e1d767-421c-448e-8724-4cc13496300c")})();
+        </script>
+
+		<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.5.3/modernizr.min.js"></script>
+
+		<script>
+			window.lazySizesConfig = window.lazySizesConfig || {};
+			//only for demo in production I would use normal expand option
+			window.lazySizesConfig.expand = 9;
+		</script>		
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" async=""></script>		
+
+		<script data-main="https://palaciodogelo.pt/js/app.min.js" src="https://palaciodogelo.pt/js/lib/require.min.js"></script>
+		<script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js'></script>
+
+		<!--[if lte IE 8]>
+			<script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="//oss.maxcdn.com/respond/1.3/respond.min.js"></script>
+			<script type='text/javascript' src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+			<link href='https://palaciodogelo.pt/stylesheets/ie8.css' rel='stylesheet'>
+		<![endif]-->
+
+		<!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4YZVXH7LD2"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-4YZVXH7LD2');
+        </script>	</head>
+	<body class="gradient" itemscope itemtype="https://schema.org/LocalBusiness">
+		<!-- Menu -->
+								<aside id="sidebar">
+							  	<div class="sideheader">
+							      <div class="langchange">
+							        <ul>
+							          <li>&nbsp;<a href="https://palaciodogelo.pt/pt/home">PT</a>&nbsp;</li>
+							          <li>&nbsp;<a href="https://palaciodogelo.pt/en/home">EN</a>&nbsp;</li>
+							          <li>&nbsp;<a href="https://palaciodogelo.pt/es/home">ES</a>&nbsp;</li>
+							          <li>&nbsp;<a href="https://palaciodogelo.pt/fr/home">FR</a>&nbsp;</li>
+							        </ul>
+							      </div>
+							      <div class="sidebarclose">
+							        <i class="fa fa-times" aria-hidden="true"></i>
+							      </div>
+							  		<div class="menuSections"><ul><li>
+												<a href="https://palaciodogelo.pt/pt/home" class="dropdown-item " >Home</a>
+										 </li><li>
+												<a href="https://palaciodogelo.pt/pt/lojas" class="dropdown-item " >Lojas</a>
+										 </li><li>
+												<a href="https://palaciodogelo.pt/pt/apoios-ue" class="dropdown-item " >Apoios UE</a>
+										 </li><li>
+												<a href="https://palaciodogelo.pt/pt/servicos" class="dropdown-item " >Serviços</a>
+										 </li><li>
+												<a href="https://palaciodogelo.pt/pt/agenda" class="dropdown-item " >Agenda</a>
+										 </li><li>
+												<a href="https://cinemas.nos.pt/cinemas/Pages/palacio-do-gelo.aspx" class="dropdown-item "  target="_blank">Cinema</a>
+										 </li><li>
+												<a href="https://palaciodogelo.pt/pt/pista-de-gelo" class="dropdown-item "  target="_blank">Pista de Gelo</a>
+										 </li><li>
+												<a href="https://palaciodogelo.pt/pt/cheque-prenda" class="dropdown-item " >Cheque-Prenda</a>
+										 </li><li>
+												<a href="https://palaciodogelo.pt/pt/negocios" class="dropdown-item " >Negócios</a>
+										 </li><li>
+												<a href="https://palaciodogelo.pt/pt/contactos" class="dropdown-item " >Contactos</a>
+										 </li></ul>
+									 <div class="socialSide">
+                   		<a href="//www.facebook.com/palaciodogeloshopping" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                   		<a href="//www.instagram.com/palaciodogelo/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    	<a href="//www.youtube.com/channel/UCJfERLLsMutE5YOlxyV9pxA" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                   </div>     </div>
+								    	<div class="menuCopyright">© <span itemprop="name">Palácio do Gelo</span> 2026</div>
+								    </div>
+								 </aside>
+								 <!-- Menu Fim --><!-- Menu SECONDARY -->
+								 <div id="secondarymenu" class="menuhead">
+							  	<div class="col-lg-2 col-md-2 col-sm-3 col-xs-6 clearPadding">
+										<div class="logosecondary">
+											<a href="https://palaciodogelo.pt/">
+												<img src="https://palaciodogelo.pt/images/palaciodogelom.svg" alt="Logo Palácio do Gelo" itemprop="image">
+											</a>
+										</div>
+							   	</div>
+							   	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 clearPadding menutopblack">
+										<div class="menubuttonb">
+											<span class="hidemenutext">MENU</span> <i class="fa fa-bars" aria-hidden="true"></i>
+										</div>
+							      <div class="socialb">
+						        	<a href="//www.facebook.com/palaciodogeloshopping" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+							        <a href="//www.instagram.com/palaciodogelo/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+							        <a href="//www.youtube.com/channel/UCJfERLLsMutE5YOlxyV9pxA" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+								    </div>
+							 		</div>
+								</div>
+								<!-- Menu SECONDARY Fim -->		<header>
+                    <div class="container">
+                      <div class="col-lg-4 col-md-4 col-sm-3 col-xs-6">
+                        <div class="logo"><a href="https://palaciodogelo.pt/"><img src="https://palaciodogelo.pt/images/palaciodogelo.svg" alt="Logo Palácio do Gelo" ></a></div>
+                      </div>
+                      <div class="col-lg-8 col-md-8 col-sm-9 col-xs-6 clearPadding menutopblack">
+                        <div class="menubutton">MENU <i class="fa fa-bars" aria-hidden="true"></i></div>
+                        <div class="social">
+                            <a href="//www.facebook.com/palaciodogeloshopping" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a href="//www.instagram.com/palaciodogelo/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                            <a href="//www.youtube.com/channel/UCJfERLLsMutE5YOlxyV9pxA" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </header>    
+    <section id="pistadegelo" class="templateSection marginTop">
+        <div class="container paddingContainer clearPadding">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 clearPadding marginBottom titleSectionContainer">
+                <h1><span class="linha"></span>404</h1>
+            </div>
+            <div class="pistaGelo">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 clearPadding">
+                  	<p style="font-size: 30px; text-align: center;">
+                  	  Opps!
+                  	</p>
+                  	<p style="text-align: center;">
+                    	Lamentamos              		</p>
+              		<p style="text-align: center;">
+                    	A página que procurou não está disponivel.              		</p>
+              		<p style="text-align: center;">
+                    	Sugerimos navegar até à                    	<a href="https://palaciodogelo.pt/pt/home"> homepage</a>
+                  	</p>
+                </div>
+            </div>
+        </div>
+    </section>
+			<!-- footer -->
+			<footer>
+				<div class="container">
+					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 clearPadding">
+                          <ul><li>© Palácio do Gelo 2026</li><li>
+                          <a class="areaReservada" href='http://beonservicesv2.beontech.com/PG/GestaoContratosV2/Default.aspx/' target ="_blank">Área reservada </a>
+                          </li><li>
+                          <a class="modalBt" data-toggle="modal" data-target="#othercontents" data-id='232;1' data-url='pt/termos-e-condicoes' >Termos e condições </a>
+                          </li> </ul>
+                          </div><div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 clearPadding">
+                          <ul><li>&nbsp;</li><li>
+                          <a class="modalBt" data-toggle="modal" data-target="#othercontents" data-id='233;1' data-url='pt/politica-de-privacidade' >Política de privacidade </a>
+                          </li><li>
+                          <a  href='https://palaciodogelo.pt/pt/press-room' >Press room </a>
+                          </li> </ul>
+                          </div><div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 clearPadding">
+                          <ul><li>&nbsp;</li><li>
+                          <a class="modalBt" data-toggle="modal" data-target="#recrutamento" data-id='243;1' data-url='pt/recrutamento' >Recrutamento </a>
+                          </li><li>
+                          <a class="modalBt" data-toggle="modal" data-target="#pedidodeinformacao" data-id='244;1' data-url='pt/pedido-de-informacao' >Pedido de informação </a>
+                          </li> </ul>
+                          </div><div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 clearPadding">
+                          <ul><li>&nbsp;</li><li>
+                          <a class="modalBt" data-toggle="modal" data-target="#othercontents" data-id='234;1' data-url='pt/politica-de-cookies' >Política de Cookies </a>
+                          </li> </ul>
+                         </div>					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 clearPadding">
+		<ul><li>
+			<a href='https://grupovisabeira.integrityline.com/frontpage' target='_blank' rel='nofollow'>Canal de Denúncias</a>
+			</li> </ul>
+	
+	  <!-- <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 clearPadding"> -->
+                    <div class="grupovisabeira">
+                      <a href="//www.grupovisabeira.com/" target="_blank"><img src="https://palaciodogelo.pt/images/grupovisabeira.png" alt="Logo Grupo Visabeira"></a>
+                    </div>
+                  </div>
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 clearPadding">
+                     <div class="logos_footer">
+                        <div class="grupovisabeira" style="margin: 5px;">
+                          <div class="row">
+                              <div class="col-lg-12" style="display: flex;flex-direction: row;flex-wrap: nowrap;align-content: center;justify-content: center;align-items: center;">
+                                 <ul>
+                                   <li>
+                                      <a href="https://palaciodogelo.pt/pt/apoios-ue" style="color: #cdcdcd;">Apoios UE </a>
+                                   </li>
+                                  </ul>
+                              </div>
+                           </div>
+                           <div class="row">
+                              <div class="col-lg-12" style="display: flex;flex-direction: row;flex-wrap: nowrap;align-content: center;justify-content: center;align-items: center;">
+                                 <a href="https://palaciodogelo.pt/pt/apoios-ue" target="_blank">
+                                 <img src="https://palaciodogelo.pt//assets/2024/EN-Funded_by_the_EU-POS.jpg" style="max-width: 180px;height: auto;margin: 0px;" alt="Logo Apoios EU"></a>
+                                 <a href="https://palaciodogelo.pt/pt/apoios-ue" target="_blank" style="background-color: white;height: 39px;display: inline-block;">
+                                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/UK_Research_and_Innovation_logo.svg/220px-UK_Research_and_Innovation_logo.svg.png" style="max-width: 180px;margin: 0px;padding: 0px;height: 40px;" alt="Logo Apoios EU">
+                                 </a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 clearPadding">
+                    <p class="greyP">Em caso de litígio o consumidor pode recorrer a uma Entidade de Resolução Alternativa de Litígios:   <br>CNIACC – Centro Nacional de Informação e Arbitragem de Conflitos de Consumo - www.centroarbitragemlisboa.pt   <br>Mais informações em ’Portal do Consumidor’ – www.arbitragemdeconsumo.org   <br>
+                      <div class="grupovisabeira">
+                        <a href="//www.livroreclamacoes.pt/" target="_blank"><img src="https://palaciodogelo.pt/images/livro-de-reclamacoes.png" alt="Livro de Reclamacões"></a>
+                      </div>
+                    </p>
+                  </div>
+				</div>
+			</footer>
+			<!-- footer Fim -->
+
+		</div>
+		<style>
+	body .modal .contentModal i { 
+		display: initial; 
+	}
+</style>
+<div class="topMargin modal fade" id="modalLoja" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="btCloseContainer clearfix">
+				<a class="fa fa-times" aria-hidden="true" data-dismiss="modal" aria-label="Close"></a>
+		</div>
+		<div id="Shops_container" class="container clearPadding" role="document"></div>
+</div>
+
+<div class="modal fade" id="recrutamento" tabindex="-1" role="dialog" aria-hidden="true" >
+	<div class="btCloseContainer clearfix">
+		<a class="fa fa-times" aria-hidden="true" data-dismiss="modal" aria-label="Close"></a>
+	</div>
+	<div class="container clearPadding" role="document">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 clearPadding titleSectionContainer">
+			<h4><span class="linha"></span>Recrutamento</h4>
+		</div>
+
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 clearPadding contentModal">
+			<form id="formRecrutamento" class="clearfix marginBottom clearPadding" enctype="multipart/form-data">
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12  inputContainer">
+					<span>Nome *</span>
+					<input type="text" name="recrutamento_name" id="recrutamento_name" value="" placeholder="Nome" minlength="3" class="recrutamentoForm-name" />
+				</div>
+
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12  inputContainer">
+					<span>Email *</span>
+					<input type="email" name="recrutamento_email" id="recrutamento_email" value="" placeholder="Email" class="recrutamentoForm-email" />
+				</div>
+
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12  inputContainer">
+					<span>Contacto Telefónico *</span>
+					<input  name="recrutamento_contacto" id="recrutamento_contacto" value="" placeholder="Contacto Telefónico"  minlength="9" maxlength="9" class="recrutamentoForm-contacto" />
+				</div>
+
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6  inputContainer">
+					<span>Idade *</span>
+					<input  name="recrutamento_idade" id="recrutamento_idade" value="" placeholder="Idade"  minlength="2" maxlength="2" class="recrutamentoForm-idade" />
+				</div>
+
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 inputContainer">
+					<span class="clearfix">Sexo *</span>
+					<span id="#sexoError"></span>
+					<div class="radio">
+						<input type="radio" name="recrutamento_sexo" id="radio1" value="option1">
+						<label for="radio1">M</label>
+					</div>
+					<div class="radio">
+						<input type="radio" name="recrutamento_sexo" id="radio2" value="option2">
+						<label for="radio2">F</label>
+					</div>
+				</div>
+
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 clearPadding">
+					<span class="col-lg-12 col-md-12 col-sm-12 col-xs-12 inputContainer">Área de interesse</span>
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 clearPadding selectContainer">
+						<select class="selectpicker" name="recrutamento_areaInteresse" id="recrutamento_areaInteresse" >
+							<option class="disabled" value="Área de interesse">Área de interesse</option>
+							<option value="Lojas">Lojas</option>
+							<option value="Restauração">Restauração</option>
+							<option value="Administração">Administração</option>
+						</select>
+					</div>
+
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 clearPadding selectContainer">
+						<select class="selectpicker" name="recrutamento_funcaoInteresse" id="recrutamento_funcaoInteresse">
+							<option class="disabled" value="Função de interesse">Função de interesse</option>
+							<option value="Caixa">Caixa</option>
+							<option value="Emprego">Emprego</option>
+							<option value="Gerente">Gerente</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 clearPadding">
+					<span class="col-lg-12 col-md-12 col-sm-12 col-xs-12 inputContainer">Disponilibidade</span>
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 clearPadding selectContainer">
+						<select class="selectpicker" name="recrutamento_disponibilidade" id="recrutamento_disponibilidade">
+							<option class="disabled" value="Disponilibidade">Disponilibidade</option>
+							<option value="Disponibilidade">Disponibilidade</option>
+							<option value="Sem Disponibilidade Imediata">Sem Disponibilidade Imediata</option>
+						</select>
+					</div>
+
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 clearPadding selectContainer">
+						<select class="selectpicker" name="recrutamento_disponibilidadeTurnos" id="recrutamento_disponibilidadeTurnos">
+							<option class="disabled" value="Disponilibidade para Turnos">Disponilibidade para Turnos</option>
+							<option value="Disponilibidade para Turnos">Disponilibidade para Turnos</option>
+							<option value="Sem Disponibilidade">Sem Disponibilidade</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 clearPadding">
+					<span class="col-lg-12 col-md-12 col-sm-12 col-xs-12 inputContainer">Formação Académica</span>
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 clearPadding selectContainer">
+						<select class="selectpicker" name="recrutamento_formacaoAcademica" id="recrutamento_formacaoAcademica">
+							<option class="disabled" value="Formação Académica">Formação Académica</option>
+							<option value="Ensino Básico">Ensino Básico</option>
+							<option value="Ensino Secundário">Ensino Secundário</option>
+							<option value="Frequência Universitária">Frequência Universitária</option>
+							<option value="Licenciatura">Licenciatura</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12  inputContainer">
+					<span class="clearfix">Experiência profissional</span>
+					<textarea placeholder="Experiência profissional" name="recrutamento_experiencia" id="recrutamento_experiencia" rows="5" ></textarea>
+				</div>
+
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12  inputContainer">
+					<span class="clearfix">Línguas</span>
+					<textarea placeholder="Línguas" rows="5" name="recrutamento_linguas" id="recrutamento_linguas" ></textarea>
+				</div>
+
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  inputContainer">
+					<span class="clearfix">Anexar CV *</span>
+					<div class="uploadContainer clearfix">
+						<div class="uploadCv">
+							<span>Upload</span>
+							<input id="uploadBtn" type="file" class="upload" accept=".pdf" onchange="javascript:changUpl(this)"/>
+						</div>
+						<div class="disabledContainer">
+							<span>&nbsp;</span>
+							<input id="uploadCV" name="uploadCV" placeholder="Anexar CV" />
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 inputContainer">
+						<button id="btRecrutamento">Enviar</button>
+						<br />
+						<div class="ajax-loading"></div>
+						<div class="lMsg"></div>
+				</div>
+				<script>
+						function changUpl(e) {
+							document.getElementById("uploadCV").value = e.value;
+						}
+				</script>
+			</form>
+			<p class="col-lg-12 col-md-12 col-sm-12 col-xs-12 small inputContainer">
+					*O seu CV só pode ser enviado com extensão .pdf					<br>
+					O seu CV ficará na base de dados que é disponibilizada aos lojistas, quando os mesmos a solicitam.					<br>
+					O recrutamento é feito pelos lojistas directamente.					<br>
+					Poderá ainda inscrever-se directamente nas lojas que têm o indicativo de "colaborador precisa-se" na montra.			</p>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="pedidodeinformacao" tabindex="-1" role="dialog" aria-hidden="true" >
+	<div class="btCloseContainer clearfix">
+		<a class="fa fa-times" aria-hidden="true" data-dismiss="modal" aria-label="Close"></a>
+	</div>
+	<div class="container clearPadding" role="document">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 clearPadding titleSectionContainer">
+			<h4><span class="linha"></span>Pedido de informação</h4>
+		</div>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 clearPadding contentModal">
+			<form id="formPedidoInfo" class="clearfix marginBottom clearPadding">
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12  inputContainer">
+							<span>Nome *</span>
+							<input type="text" name="pedido_info_name" id="pedido_info_name" value="" placeholder="Nome" minlength="3" class="recrutamentoForm-name" />
+					</div>
+
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12  inputContainer">
+							<span>Email *</span>
+							<input type="email" name="pedido_info_email" id="pedido_info_email" value="" placeholder="Email" class="recrutamentoForm-email" />
+					</div>
+
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12  inputContainer">
+							<span>Contacto Telefónico *</span>
+							<input name="pedido_info_contacto" id="pedido_info_contacto" value="" placeholder="Contacto Telefónico" minlength="9" maxlength="9" class="recrutamentoForm-contacto" />
+					</div>
+
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 clearPadding">
+							<span class="col-lg-12 col-md-12 col-sm-12 col-xs-12 inputContainer">O que procura</span>
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 clearPadding selectContainer">
+									<select class="selectpicker" name="pedido_info_procuraInfo" id="pedido_info_procuraInfo">
+										<option class="disabled" value="Seleccionar">Seleccionar</option>
+										<option value="Lojas">Lojas</option>
+										<option value="Cinema">Cinema</option>
+										<option value="Restauração">Restauração</option>
+										<option value="Horários de Funcionamento">Horários de Funcionamento</option>
+										<option value="Emprego">Emprego</option>
+										<option value="Cheques Prenda">Cheques Prenda</option>
+										<option value="Acessos">Acessos</option>
+									</select>
+							</div>
+					</div>
+
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  inputContainer">
+							<span class="clearfix">Mensagem *</span>
+							<textarea name="pedido_info_mensagem" id="pedido_info_mensagem" placeholder="Mensagem" rows="5" ></textarea>
+					</div>
+
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 inputContainer">
+							<button id="btPedidoInformacao">Enviar</button>
+							<br />
+							<div class="ajax-loading"></div>
+							<div class="lMsg"></div>
+					</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="pedidoinformacaoloja" tabindex="-1" role="dialog" aria-hidden="true" >
+	<div class="btCloseContainer clearfix">
+		<a class="fa fa-times" aria-hidden="true" data-dismiss="modal" aria-label="Close"></a>
+	</div>
+	<div class="container clearPadding" role="document">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 clearPadding titleSectionContainer">
+			<h4><span class="linha"></span>Pedido de Informação de Loja</h4>
+		</div>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 clearPadding contentModal">
+			<form id="formPedidoInfoLoja" class="clearfix marginBottom clearPadding">
+						<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12  inputContainer">
+							<span>Nome *</span>
+							<input type="text" name="pedido_info_loja_name" id="pedido_info_loja_name" value="" placeholder="Nome" minlength="3" />
+						</div>
+
+						<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12  inputContainer">
+						<span>Email *</span>
+							<input type="email" name="pedido_info_loja_email" id="pedido_info_loja_email" value="" placeholder="Email" />
+						</div>
+
+						<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12  inputContainer">
+						<span>Contacto Telefónico *</span>
+							<input  name="pedido_info_loja_contacto" id="pedido_info_loja_contacto" value="" placeholder="Contacto Telefónico"  minlength="9" maxlength="9" />
+						</div>
+
+						<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12  inputContainer">
+						<span>Marca/Produto/Serviço *</span>
+							<input type="text" name="pedido_info_loja_marcaProdutoServico" id="pedido_info_loja_marcaProdutoServico" value="" placeholder="Marca/Produto/Serviço" minlength="4" />
+						</div>
+
+						<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12  inputContainer">
+							<span>Área Pretendida (M2) *</span>
+							<input  name="pedido_info_loja_areapretendida" id="pedido_info_loja_areapretendida" value="" placeholder="Área Pretendida (M2)"  minlength="1"  maxlength="3" />
+						</div>
+						<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12  inputContainer">
+							<span>Actividade Comercial *</span>
+							<input type="text" name="pedido_info_loja_actividadecomercial" id="pedido_info_loja_actividadecomercial" value="" placeholder="Actividade Comercial" minlength="4" />
+						</div>
+
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  inputContainer">
+							<span class="clearfix">Mensagem *</span>
+							<textarea name="pedido_info_loja_mensagem" id="pedido_info_loja_mensagem" placeholder="Mensagem" rows="5" ></textarea>
+					</div>
+
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 inputContainer">
+						<button id="btPedidoInformacaoLoja">Enviar</button>
+						<br />
+						<div class="ajax-loading"></div>
+						<div class="lMsg"></div>
+					</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="pedidoinformacaoespaco" tabindex="-1" role="dialog" aria-hidden="true" >
+	<div class="btCloseContainer clearfix">
+		<a class="fa fa-times" aria-hidden="true" data-dismiss="modal" aria-label="Close"></a>
+	</div>
+	<div class="container clearPadding" role="document">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 clearPadding titleSectionContainer">
+			<h4><span class="linha"></span>Pedido de Informação Espaço Temporário</h4>
+		</div>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 clearPadding contentModal">
+			<form id="formPedidoInfoTemporario" class="clearfix marginBottom clearPadding">
+
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12  inputContainer">
+					<span>Nome *</span>
+					<input type="text" name="pedido_info_temp_name" id="pedido_info_temp_name" value="" placeholder="Nome" minlength="3"/>
+				</div>
+
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12  inputContainer">
+					<span>Email *</span>
+					<input type="email" name="pedido_info_temp_email" id="pedido_info_temp_email" value="" placeholder="Email" />
+				</div>
+
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12  inputContainer">
+					<span>Contacto Telefónico *</span>
+					<input name="pedido_info_temp_contacto" id="pedido_info_temp_contacto" value="" placeholder="Contacto Telefónico"  minlength="9" maxlength="9" />
+				</div>
+
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12  inputContainer">
+					<span>Marca/Produto/Serviço *</span>
+					<input type="text" name="pedido_info_temp_marcaProdutoServico" id="pedido_info_temp_marcaProdutoServico" value="" placeholder="Marca/Produto/Serviço" minlength="4" />
+				</div>
+
+
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12  inputContainer">
+					<span>Actividade Comercial *</span>
+					<input type="text" name="pedido_info_temp_actividadecomercial" id="pedido_info_temp_actividadecomercial" value="" placeholder="Actividade Comercial" minlength="4" />
+				</div>
+
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12  inputContainer">
+					<span>Área Pretendida (M2) *</span>
+					<input type="text" name="pedido_info_temp_areapretendida" id="pedido_info_temp_areapretendida" value="" placeholder="Área Pretendida (M2)"  minlength="1"  maxlength="3" />
+				</div>
+
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12  inputContainer">
+					<span>Data Pretendida *</span>
+					<input type="text" name="pedido_info_temp_data" id="pedido_info_temp_data" placeholder="Data (DD/MM/AAAA)" >
+				</div>
+
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  inputContainer">
+					<span class="clearfix">Mensagem *</span>
+					<textarea name="pedido_info_temp_mensagem" id="pedido_info_temp_mensagem" placeholder="Mensagem" rows="5" ></textarea>
+				</div>
+
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 inputContainer">
+					<button id="btPedidoInformacaoTemporario">Enviar</button>
+					<br />
+					<div class="ajax-loading"></div>
+					<div class="lMsg"></div>
+				</div>
+
+			</form>
+		</div>
+	</div>
+</div>
+
+<!-- Inicio Internet Wireless | Política de Privacidade | Termos e Condições -->
+<div class="modal fade" id="othercontents" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="btCloseContainer clearfix">
+			<a class="fa fa-times" aria-hidden="true" data-dismiss="modal" aria-label="Close"></a>
+	</div>
+	<div id="OtherContents_container" class="container" role="document">
+	</div>
+</div>
+<!-- Fim - Internet Wireless | Política de Privacidade | Termos e Condições --><script>
+    var URL_SITE = 'https://palaciodogelo.pt/';
+</script>
+
+<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-594bd246f9e2c7c1"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics>
+script async type="didomi/javascript" data-vendor=" c:analytical-ArefZV96" src="https://www.googletagmanager.com/gtag/js?id=UA-2162675-5"></script
+<script type="didomi/javascript" data-vendor=" c:analytical-ArefZV96">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2162675-5');
+/script -->
+
+<!-- Google Tag Manager (noscript) -->
+<!-- noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PN27SQ3" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript -->
+<!-- End Google Tag Manager (noscript) -->
+
+<!--[if lte IE 8]>
+<script>
+  $('img').each(function() {
+      var img_src = $(this).attr('src');
+      var new_src = img_src.replace(/\.svg$/, '.png');
+      $(this).attr('src', new_src);
+  });
+  $('iframe').each(function(){
+      var url = $(this).attr("src");
+      $(this).attr("src",url+"?wmode=transparent");
+  });
+</script>
+<![endif]-->
+
+<script>
+  var _url = window.location.href;
+  var _lang = "";
+  var _required = "";
+  var _success = "";
+  var _error = "";
+  var _loading = "";
+  var _min3carac = "";
+  var _min4carac = "";
+  var _valid_email = "";
+  var _1dig = "";
+  var _9dig = "";
+  var _valid_age = "";
+  var _sex_m = "";
+  var _sex_f = "";
+
+  var _valid_onenumber = "";
+  if (_url.indexOf("/pt/") != -1) {
+    _lang = "PT";
+    _required = "Campo Obrigatório";
+    _success = "Obrigado<br/><br/>A sua mensagem foi enviada com sucesso";
+    _error = "Ocorreu um erro. Por favor, tente mais tarde.";
+    _loading = "Aguarde um momento...";
+    _min3carac = "No minimo 3 caracteres";
+    _min4carac = "No minimo 4 caracteres";
+    _valid_email = "Insira um email válido";
+    _1dig = "Insira 1 dígito";
+    _9dig = "Insira 9 dígitos";
+    _valid_onenumber = "Insira um número válido";
+    _valid_age = "Insira idade válida";
+    _sex_m = "Masculino";
+    _sex_f = "Feminino";
+    _pp = "Deve aceitar a política de privacidade";
+  }
+  else if (_url.indexOf("/en/") != -1) {
+    _lang = "EN";
+    _required = "Required Field";
+    _success = "Thank you <br/> <br/> Your message was sent successfully.";
+    _error = "An error occurred. Please try again later.";
+    _loading = "Wait a moment...";
+    _min3carac = "At least 3 characters";
+    _min4carac = "At least 4 characters";
+    _valid_email = "Please enter a valid email address";
+    _1dig = "Enter 1 digits";
+    _9dig = "Enter 9 digits";
+    _valid_onenumber = "Please enter a valid number";
+    _valid_age = "Please enter valid age";
+    _sex_m = "Male";
+    _sex_f = "Female";
+    _pp = "You must accept the privacy policy";
+  }
+  else if (_url.indexOf("/es/") != -1) {
+    _lang = "ES";
+    _required = "Campo Obrigatorio";
+    _success = "Gracias <br/> Su mensaje ha sido enviado con éxito";
+    _error = "Ocurrio un error. Por favor, intente más tarde.";
+    _loading = "Espera un momento...";
+    _min3carac = "Al menos 3 caracteres";
+    _min4carac = "Al menos 4 caracteres";
+    _valid_email = "Introduzca un correo electrónico válido";
+    _1dig = "Introduzca  1 dígito";
+    _9dig = "Introduzca 9 dígitos";
+    _valid_onenumber = "Introduzca un número válido";
+    _valid_age = "Insiradade válida";
+    _sex_m = "Masculina";
+    _sex_f = "Femenino";
+    _pp = "Debe aceptar la política de privacidad";
+  }
+
+  $(document).ready(function () {
+    $(".modalBt").click(function () {
+      $("#OtherContents_container").html("");
+      if ($(this).data('target') == "#modalForm") {
+          $("#hidFormID").val($(this).data('src'));
+      } else {
+          var str = $(this).data("id");
+          var ret = str.split(";");
+
+          var vID = 0;
+          if (ret[0] != undefined)
+              vID = ret[0];
+
+          var vId_Multilanguage = 1;
+          if (ret[1] != undefined)
+              vId_Multilanguage = ret[1];
+
+          var vURL = 'https://palaciodogelo.pt/hdata.php?pOpc=N&pId_Multilanguage=' + vId_Multilanguage + '&pId=' + vID;
+
+          $.ajax({
+              type: 'POST',
+              contentType: 'application/json; charset=utf-8',
+              dataType: 'html',
+              url: vURL,
+              success: function (response) {
+                  $("#OtherContents_container").html(response);
+              },
+              error: function (jqXHR, textStatus, errorThrown) {
+                  console.log(textStatus, errorThrown);
+              }
+          });
+      }
+      /*ga('set', 'page','/' + $(this).data('url'));*/
+    });
+
+    $(".modalLojas").click(function () {
+
+      var _hash = document.URL.substr(document.URL.indexOf('#') + 1);
+      var _url = window.location.href;
+
+      var str = $(this).data("id");
+      var ret = str.split(";");
+
+      var vID = 0;
+      if (ret[0] != undefined)
+          vID = ret[0];
+
+      var vId_Multilanguage = 1;
+      if (ret[1] != undefined)
+          vId_Multilanguage = ret[1];
+
+      var vURL = 'https://palaciodogelo.pt/hdata.php?pOpc=S&pId_Multilanguage=' + vId_Multilanguage + '&pId=' + vID;
+      var vURLHash = '';
+
+      $.ajax({
+        type: 'POST',
+        contentType: 'application/json; charset=utf-8',
+        dataType: 'html',
+        url: vURL,
+        success: function (response) {
+            var ArrResponse = response.split("|");
+            $("#Shops_container").html(ArrResponse[0]);
+            if (ArrResponse[1] != undefined)
+                vURLHash = ArrResponse[1];
+
+            window.location.hash = vURLHash;
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.log(textStatus, errorThrown);
+        }
+      });
+      /*ga('set', 'page', '/' + $(this).data('url') + vURLHash);*/
+    });
+  });
+
+  $(document).on('click', '#btPedidoInformacao', function (e) {
+    e.preventDefault();
+    var form = $("#formPedidoInfo");
+    form.validate({
+      rules:
+      {
+        pedido_info_name: {
+          required: true,
+          notPlaceholder: true
+        },
+        pedido_info_email: {
+          required: true,
+          notPlaceholder: true,
+          email: true
+        },
+        pedido_info_contacto: {
+          required: true,
+          number: true
+        },
+        pedido_info_mensagem: {
+          required: true,
+          notPlaceholder: true
+        }
+      },
+      messages:
+      {
+        pedido_info_name: {
+          required: _required,
+          notPlaceholder: _required,
+          minlength:  _min3carac
+        },
+        pedido_info_email: {
+          required: _required,
+          email: _valid_email
+        },
+        pedido_info_contacto: {
+          required: _required,
+          minlength: _9dig,
+          number: _valid_onenumber
+        },
+        pedido_info_mensagem: {
+          required: _required,
+          notPlaceholder: _required
+        }
+      }
+    });
+
+    if (form.valid()) {
+
+      $(".lMsg").html("<center>" + _loading + "<br/><br/><img src='../images/ajax-loader.gif' alt='" + _loading + "' style='width: 128px; height: 15px;' /></center>");
+
+      var _data = "?id=formPedidoInfo&vSubject=Pedido de Informação&vName=" + $('#pedido_info_name').val() + "&vEmail=" + $('#pedido_info_email').val() + "&vContact=" + $('#pedido_info_contacto').val() + "&vSearchInfo=" + $('#pedido_info_procuraInfo').val() + "&vMessage=" + $('#pedido_info_mensagem').val() + "&vId_Multilanguage=1";
+
+      var settings = {
+		  'data': _data,        
+          'url': 'https://palaciodogelo.pt/hmail.php' + _data,
+          'contentType': 'application/json; charset=utf-8'
+      };
+
+      if (sendEmail(settings) == true) {
+          $(".lMsg").html(_success);
+          $('#pedido_info_name').val('');
+          $('#pedido_info_email').val('');
+          $('#pedido_info_contacto').val('');
+          $('#pedido_info_procuraInfo').val('');
+          $('#pedido_info_mensagem').val('');
+      } else {
+          console.log('Error: ' + _error);
+          $(".lMsg").html(_error);
+      }
+    } else {
+      	console.log('Null');
+        $(".lMsg").html("");
+    }
+  });
+
+  $(document).on('click', '#btPedidoInformacaoLoja', function (e) {
+    e.preventDefault();
+    var form = $("#formPedidoInfoLoja");
+    form.validate({
+      rules: {
+        pedido_info_loja_name: {
+            required: true,
+            notPlaceholder: true
+        },
+        pedido_info_loja_email: {
+            required: true,
+            notPlaceholder: true,
+            email: true
+        },
+        pedido_info_loja_contacto: {
+            required: true,
+            number: true
+        },
+        pedido_info_loja_areapretendida: {
+            required: true,
+            number: true
+        },
+        pedido_info_loja_marcaProdutoServico: {
+            required: true,
+            notPlaceholder: true
+        },
+        pedido_info_loja_actividadecomercial: {
+            required: true,
+            number: true
+        },
+        pedido_info_loja_mensagem: {
+            required: true,
+            notPlaceholder: true
+        }
+      },
+      messages:
+      {
+        pedido_info_loja_name: {
+          required: _required,
+          notPlaceholder: _required,
+          minlength: _min3carac
+        },
+        pedido_info_loja_email: {
+          required: _required,
+          email: _valid_email
+        },
+        pedido_info_loja_contacto: {
+          required: _required,
+          minlength: _9dig,
+          number: _valid_onenumber
+        },
+        pedido_info_loja_areapretendida: {
+          required: _required,
+          minlength: _1dig,
+          number: _valid_onenumber
+        },
+        pedido_info_loja_marcaProdutoServico: {
+          required: _required,
+          notPlaceholder: _required,
+          minlength: _min4carac
+        },
+        pedido_info_loja_actividadecomercial: {
+          required: _required,
+          notPlaceholder: _required,
+          minlength: _min4carac
+        },
+        pedido_info_loja_mensagem: {
+          required: _required,
+          notPlaceholder: _required
+        }
+      }
+    });
+
+    if (form.valid())
+    {
+      $(".lMsg").html("<center>" + _loading + "<br/><br/><img src='../images/ajax-loader.gif' alt='" + _loading + "' style='width: 128px; height: 15px;' /></center>");
+
+      var _data = "?id=formPedidoInfoLoja&vSubject=Pedido de Informação - Loja&vName=" + $('#pedido_info_loja_name').val() + "&vEmail=" + $('#pedido_info_loja_email').val() + "&vContact=" + $('#pedido_info_loja_contacto').val() + "&vBrand=" + $('#pedido_info_loja_marcaProdutoServico').val() + "&vArea=" + $('#pedido_info_loja_areapretendida').val() + "&vActivity=" + $('#pedido_info_loja_actividadecomercial').val() + "&vMessage=" + $('#pedido_info_loja_mensagem').val() + "&vId_Multilanguage=1";
+      
+
+      var settings = {
+          'data': _data,
+          'url': 'https://palaciodogelo.pt/hmail.php' + _data,
+          'contentType': 'application/json; charset=utf-8'
+      };  
+
+      if (sendEmail(settings) == true) {
+          $(".lMsg").html(_success);
+          $('#name').val('');
+          $('#email').val('');
+          $('#contacto').val('');
+          $('#marcaProdutoServico').val('');
+          $('#areapretendida').val('');
+          $('#actividadecomercial').val('');
+          $('#mensagem').val('');
+      } else {
+          $(".lMsg").html(_error);
+      }
+    } else {
+        $(".lMsg").html("");
+    }
+  });
+
+  $(document).on('click', '#btPedidoInformacaoTemporario', function (e) {
+    e.preventDefault();
+    var form = $("#formPedidoInfoTemporario");
+    form.validate(
+    {
+      rules:
+      {
+        pedido_info_temp_name: {
+          required: true,
+          notPlaceholder: true
+        },
+        pedido_info_temp_email: {
+          required: true,
+          notPlaceholder: true,
+          email: true
+        },
+        pedido_info_temp_contacto: {
+            required: true,
+            number: true
+        },
+        pedido_info_temp_areapretendida: {
+          required: true,
+          number: true
+        },
+        pedido_info_temp_marcaProdutoServico: {
+          required: true,
+          notPlaceholder: true
+        },
+        pedido_info_temp_actividadecomercial: {
+          required: true
+        },
+        pedido_info_temp_data: {
+          required: true,
+          regex: /^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[1,3-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$/
+        },
+        pedido_info_temp_mensagem: {
+          required: true,
+          notPlaceholder: true
+        },
+      },
+      messages:
+      {
+        pedido_info_temp_name: {
+          required: _required,
+          notPlaceholder: _required,
+          minlength: _min3carac
+        },
+        pedido_info_temp_email: {
+          required: _required,
+          email: _valid_email
+          },
+          pedido_info_temp_contacto: {
+          required: _required,
+          minlength: _9dig,
+          number: _valid_onenumber
+        },
+        pedido_info_temp_areapretendida: {
+          required: _required,
+          minlength: _1dig,
+          number: _valid_onenumber
+        },
+        pedido_info_temp_marcaProdutoServico: {
+          required: _required,
+          notPlaceholder: _required,
+          minlength: _min4carac
+        },
+        pedido_info_temp_actividadecomercial: {
+          required: _required,
+          notPlaceholder: _required,
+          minlength: _min4carac
+        },
+        pedido_info_temp_data:{
+          required: _required
+        },
+        pedido_info_temp_mensagem: {
+          required: _required,
+          notPlaceholder: _required
+        },
+      }
+    });
+
+    if (form.valid()) {
+      $(".lMsg").html("<center>" + _loading + "<br/><br/><img src='../images/ajax-loader.gif' alt='" + _loading+ "' style='width: 128px; height: 15px;' /></center>");
+
+      var _data = "?id=formPedidoInfoTemporario&vSubject=Pedido de Informação - Espaço Temporário&vName=" + $('#pedido_info_temp_name').val() + "&vEmail=" + $('#pedido_info_temp_email').val() + "&vContact=" + $('#pedido_info_temp_contacto').val() + "&vBrand=" + $('#pedido_info_temp_marcaProdutoServico').val() + "&vArea=" + $('#pedido_info_temp_areapretendida').val() + "&vDate=" + $('#pedido_info_temp_data').val() + "&vActivity=" + $('#pedido_info_temp_actividadecomercial').val() + "&vMessage=" + $('#pedido_info_temp_mensagem').val() + "&vId_Multilanguage=1";
+
+
+      var settings = {
+        'data': _data,
+        'url': 'https://palaciodogelo.pt/hmail.php' + _data,
+        'contentType': 'application/json; charset=utf-8'
+      };
+
+      if (sendEmail(settings) == true) {
+        $(".lMsg").html(_success);
+        $('#name').val('');
+        $('#email').val('');
+        $('#contacto').val('');
+        $('#marcaProdutoServico').val('');
+        $('#areapretendida').val('');
+        $('#data').val('');
+        $('#actividadecomercial').val('');
+        $('#mensagem').val('');
+      } else {
+        $(".lMsg").html(_error);
+      }
+    } else {
+      $(".lMsg").html("");
+    }
+  });
+
+  $(document).on('click', '#btRecrutamento', function (e) {
+    var form = $("#formRecrutamento");
+    form.validate(
+    {
+      rules: {
+        recrutamento_name: {
+            required: true,
+            notPlaceholder: true
+        },
+        recrutamento_email: {
+            required: true,
+            notPlaceholder: true,
+            email: true
+        },
+        recrutamento_contacto: {
+            required: true,
+            number: true
+        },
+        recrutamento_idade: {
+            required: true,
+            number: true,
+            regexAge: /^(1[89]|[2-9][0-9])$/
+        },
+        recrutamento_sexo: {
+            required: false
+        },
+        uploadCV: {
+            required: true
+        }
+      },
+      messages: {
+        recrutamento_name: {
+            required: _required,
+            notPlaceholder: _required,
+            minlength:  _min3carac
+        },
+        recrutamento_email: {
+            required: _required,
+            email: _valid_email
+        },
+        recrutamento_contacto: {
+            required: _required,
+            minlength: _9dig,
+            number: _valid_onenumber
+        },
+        recrutamento_idade: {
+            required: _required,
+            minlength: _valid_age,
+            number: _valid_age
+        },
+        recrutamento_sexo: {
+            required: _required
+        },
+        uploadCV: {
+            required: _required
+        }
+      }
+    });
+
+    var vSex = '';
+
+    if ($("#radio1").is(':checked'))
+        vSex = _sex_m;
+    else if ($("#radio2").is(':checked'))
+        vSex = _sex_f;
+    else
+        vSex = '-';
+
+    if (form.valid())
+    {
+      $(".lMsg").html("<center>" + _loading + "<br/><br/><img src='../images/ajax-loader.gif' alt='" + _loading + "' style='width: 128px; height: 15px;' /></center>");
+
+      var fileUpload = $("#uploadBtn").get(0);
+      var files = fileUpload.files;
+
+      var data = new FormData();
+      for (var i = 0; i < files.length; i++) {
+          data.append(files[i].name, files[i]);
+      }
+
+      $.ajax({
+        url: "https://palaciodogelo.pt/hfileupload.php",
+        type: "POST",
+        data: data,
+        contentType: false,
+        processData: false,
+        success: function (result) {
+          var vSplit = result.split('|');
+          //console.log(vSplit[0] + " | " + vSplit[1]);
+
+          if ( vSplit[0] == "OK") {
+            var _data = "?id=formRecrutamento&vSubject=Recrutamento&vName=" + $('#recrutamento_name').val() + "&vEmail=" + $('#recrutamento_email').val() + "&vContact=" + $('#recrutamento_contacto').val() + "&vAge=" + $('#recrutamento_idade').val() + "&vSex=" + vSex + "&vArea=" + $('#recrutamento_areaInteresse').val() + "&vFunction=" + $('#recrutamento_funcaoInteresse').val() + "&vAvailability= " + $('#recrutamento_disponibilidade').val() + "&vAvailabilityShifts=" + $('#recrutamento_disponibilidadeTurnos').val() + "&vAcademic=" + $('#recrutamento_formacaoAcademica').val() + "&vProfessional=" + $('#recrutamento_experiencia').val() + "&vLanguages=" + $('#recrutamento_linguas').val() + "&vId_Multilanguage=1&vCV=" + vSplit[1];
+
+            var settings = {
+              'data': _data,
+              'url': 'https://palaciodogelo.pt/hmail.php' + _data,
+              'contentType': 'application/json; charset=utf-8'
+            }; //application/x-www-form-urlencoded;charset=UTF-8'
+
+            if (sendEmail(settings) == true) {
+              $(".lMsg").html(_success);
+              $('#recrutamento_name').val('');
+              $('#recrutamento_email').val('');
+              $('#recrutamento_contacto').val('');
+              $('#recrutamento_idade').val('');
+              $("#radio1").prop('checked', false);
+              $("#radio2").prop('checked', false);
+              $('#recrutamento_areaInteresse').val('');
+              $('#recrutamento_funcaoInteresse').val('');
+              $('#recrutamento_disponibilidade').val('');
+              $('#recrutamento_disponibilidadeTurnos').val('');
+              $('#recrutamento_formacaoAcademica').val('');
+              $('#recrutamento_experiencia').val('');
+              $('#recrutamento_linguas').val('');
+              $('#uploadCV').val('');
+            } else {
+              $(".lMsg").html(_error);
+            }
+          }
+          else {
+            $(".lMsg").html(_error);
+          }
+        },
+        error: function (err) {
+          $(".lMsg").html(_error);
+        }
+      });
+
+    } else {
+        $(".lMsg").html("");
+    }
+
+    e.preventDefault();
+  });
+
+  $(document).ready(function () {
+    LoadingShop();
+    ShowInfo();
+
+    /*if($('[data-shop="giovanni-galli"]').length) {
+      $('[data-shop="giovanni-galli"]').css('display', 'block');
+      $('[data-shop="giovanni-galli"]').css('align-content', 'center');
+      $('[data-shop="giovanni-galli"]').height($('[data-shop="genevcrep"]').height())
+    }*/
+  });
+
+  function sendEmail(settings) {
+    var success = false;
+
+    $.ajax({
+      type: "POST",
+      contentType: settings.contentType,
+      data: settings.data,
+      url: settings.url,
+      dataType: "html",
+      async: false,
+      success: function (response) {
+        if (response == "ok") {
+          success = true;
+        } else {
+          success = false;
+        }
+      },
+      error: function (jqXHR, status) {
+        console.log("Status: " + status);
+        console.log("jqXHR: " + jqXHR);
+        success = false;
+      }
+    });
+    return success;
+  }
+
+  function ppCookies() {
+    $('.modalBt')[4].click();
+  }
+
+  function LoadingShop() {
+    var _hash = document.URL.substr(document.URL.indexOf('#') + 1);
+
+    if (_hash.indexOf("fl-") == 0) {
+
+      var _text = _hash.replace("fl-", "");
+
+      $(".filtrarLojas dt a").html($("[data-category='" + _text + "']").html());
+      $(".filtrarLojas dd ul").hide();
+
+      if ( _text == "acessorios")
+        $('.filtroLojasdContainer ul li[data-filter="1"]').trigger('click');
+      else if ( _text == "bancos")
+        $('.filtroLojasdContainer ul li[data-filter="2"]').trigger('click');
+      else if ( _text == "casa-e-decoracao")
+        $('.filtroLojasdContainer ul li[data-filter="3"]').trigger('click');
+      else if ( _text == "cinemas")
+        $('.filtroLojasdContainer ul li[data-filter="4"]').trigger('click');
+      else if ( _text == "cultura-e-electronica")
+        $('.filtroLojasdContainer ul li[data-filter="5"]').trigger('click');
+      else if ( _text == "diversos")
+        $('.filtroLojasdContainer ul li[data-filter="6"]').trigger('click');
+      else if ( _text == "entretenimento")
+        $('.filtroLojasdContainer ul li[data-filter="7"]').trigger('click');
+      else if ( _text == "estetica-e-saude")
+        $('.filtroLojasdContainer ul li[data-filter="8"]').trigger('click');
+      else if ( _text == "hipermercado")
+        $('.filtroLojasdContainer ul li[data-filter="9"]').trigger('click');
+      else if ( _text == "moda")
+        $('.filtroLojasdContainer ul li[data-filter="10"]').trigger('click');
+      else if ( _text == "moda-desporto")
+        $('.filtroLojasdContainer ul li[data-filter="11"]').trigger('click');
+      else if ( _text == "moda-infantil")
+        $('.filtroLojasdContainer ul li[data-filter="12"]').trigger('click');
+      else if ( _text == "restaurantes-e-cafes")
+        $('.filtroLojasdContainer ul li[data-filter="13"]').trigger('click');
+      else if ( _text == "todas-as-lojas")
+        $('.filtroLojasdContainer ul li[data-filter="all"]').trigger('click');
+      else
+        $('.filtroLojasdContainer ul li[data-filter="all"]').trigger('click');
+
+    } else {
+        $("#lojas").find("[data-shop='" + _hash + "']").click();
+    }
+  }
+
+  var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+      sURLVariables = sPageURL.split('&'),
+      sParameterName,
+      i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+      sParameterName = sURLVariables[i].split('=');
+
+      if (sParameterName[0] === sParam) {
+        return sParameterName[1] === undefined ? true : sParameterName[1];
+      }
+    }
+  };
+
+  function ShowInfo() {
+    var _url = window.location.href;
+    $("#OtherContents_container").html("");
+
+    if (_url.indexOf("?id=") != -1) {
+
+      var ret = getUrlParameter("id").split(";");
+
+      var vID = 0;
+      if (ret[0] != undefined)
+          vID = ret[0];
+
+      var vId_Multilanguage = 1;
+      if (ret[1] != undefined)
+          vId_Multilanguage = ret[1];
+
+      var vURL = 'https://palaciodogelo.pt/hdata.php?pOpc=N&pId_Multilanguage=' + vId_Multilanguage + '&pId=' + vID;
+
+      $.ajax({
+        type: 'POST',
+        contentType: 'application/json; charset=utf-8',
+        dataType: 'html',
+        url: vURL,
+        success: function (response) {
+          $("#OtherContents_container").html(response);
+          $('#othercontents').modal('show');
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.log(textStatus, errorThrown);
+        }
+      });
+    }
+  }
+
+</script>
+	</body>

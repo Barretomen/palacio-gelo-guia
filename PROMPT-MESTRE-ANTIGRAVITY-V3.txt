@@ -1,0 +1,151 @@
+TAREFA: CORRIGIR E FINALIZAR O “PG — GUIA DE BOLSO” COM RESPONSIVIDADE REAL, TREINO OPERACIONAL INTELIGENTE E FUNCIONALIDADES SEGURAS DERIVADAS DO MANUAL
+
+Trabalha diretamente sobre a pasta `PROJETO-ATUAL` deste pacote. Não cries uma demo, uma página paralela, um novo mock ou apenas snippets. Entrega o projeto completo pronto para substituir e publicar.
+
+ANTES DE ALTERAR:
+1. Lê `00-LEIA-PRIMEIRO.md`.
+2. Lê todos os documentos da pasta `DOCUMENTACAO`.
+3. Analisa `index.html`, `styles.css`, `app.js`, `data.js`, Pesquisa v2, service worker, manifest e localStorage.
+4. Preserva todas as funções existentes e cria backup dos ficheiros originais.
+
+OBJETIVOS PRINCIPAIS:
+A. Corrigir totalmente o layout móvel, funcionando desde 320 px.
+B. Criar diferenciação visual forte e acessível para o piso selecionado.
+C. Corrigir a trava do treino e transformar as perguntas em treino contextual e inteligente.
+D. Implementar as melhores funcionalidades derivadas do Manual de Operações, sem publicar conteúdo interno sensível.
+E. Manter Pesquisa v2, mapas, diretório, favoritos, notas, ronda, PWA e dados locais.
+
+DEFEITOS CONFIRMADOS QUE DEVEM SER CORRIGIDOS:
+1. Não existe CSS para `.floor-tabs`; criar componente completo com active, sombra, borda, foco, aria-selected e scroll horizontal.
+2. Não existe `.hidden` global; criar `.hidden { display:none !important; }` e complementar com estados disabled/aria.
+3. Há cerca de 68 estilos inline. Remover todos os estilos inline que controlam layout/responsividade e mover para CSS.
+4. O `#quizAnswers` possui grid inline de duas colunas e impede o media query móvel. Corrigir.
+5. `.hero-grid` continua em duas colunas no telemóvel e `.hero-stat` tem min-width rígido. Em mobile deve ser uma coluna.
+6. Criar CSS real para classes atualmente sem definição suficiente: floor-tabs, training-grid, training-tabs, quiz-feedback, map-hint, section-heading, placeholder-page, score-pill, count-badge e demais componentes usados.
+7. Corrigir header para 320–360 px: sem colisão entre título, estado, instalação e SOS.
+8. Aumentar legibilidade; evitar textos operacionais de 9–10 px e inputs abaixo de 16 px no mobile.
+9. Corrigir perguntas ambíguas de lojas com múltiplos pisos/unidades.
+10. Remover dependência visual de fonte externa no modo offline, preferindo stack de sistema.
+
+RESPONSIVIDADE OBRIGATÓRIA:
+- testar 320×568, 360×640, 375×667, 390×844, 412×915, 480×800, 768×1024, 1024×768 e 1366×768;
+- zero scroll horizontal;
+- hero sem palavras quebradas uma por linha;
+- cards centralizados e proporcionais;
+- mapa totalmente visível e com controlos de 44 px;
+- dock respeitando safe area e sem cobrir conteúdo;
+- usar CSS fluido com clamp(), minmax(), aspect-ratio e min-width:0;
+- respostas do quiz em uma coluna em ecrãs pequenos;
+- não depender somente dos breakpoints 520/820.
+
+SELETOR DE PISOS:
+- aparência de segmented control/cards premium;
+- estado ativo com background, borda e shadow perceptíveis;
+- texto/ícone adicional ou relevo, não só cor;
+- role=tab, aria-selected e focus-visible;
+- toque mínimo 44×44;
+- horizontal scroll em 320 px;
+- atualizar aria-selected a cada clique;
+- preservar seleção e renderização do mapa.
+
+NOVO TREINO:
+Implementar uma máquina de estados:
+- unanswered;
+- answered-correct/answered-wrong;
+- ready-next;
+- session-summary.
+
+Regras:
+- antes de responder, “Próxima pergunta” deve estar escondido ou disabled e não acionável;
+- só uma resposta por pergunta;
+- pontuação somente uma vez;
+- mudar modo não pode gerar nova pergunta sem confirmar/registrar skip;
+- não repetir imediatamente;
+- sessão de 5, 10 ou 20 perguntas;
+- revisão de erros;
+- progresso por categoria;
+- fonte e explicação;
+- persistência segura;
+- perguntas de loja só quando a resposta for inequívoca.
+
+Criar banco determinístico em JSON com perguntas contextuais. Usar `EXEMPLOS/banco-perguntas-exemplo.json` como modelo e expandir somente com fatos confirmados. Categorias: orientação, pisos, rádio, pessoas perdidas, perdidos e achados, reclamações, conflitos, furtos, acidentes, evacuação e funções de posto.
+
+PERGUNTAS DEVEM SER MELHORES:
+- cenários realistas;
+- primeira ação adequada;
+- ordenar passos;
+- escolher mensagem de rádio;
+- identificar erro;
+- reconhecer informação insuficiente;
+- explicação detalhada após resposta.
+
+FUNCIONALIDADES PRIORITÁRIAS DO MANUAL:
+1. Assistente de pessoa perdida com cronómetro e checklist.
+2. Perdidos e achados com cadeia de custódia.
+3. Criador de mensagem de rádio.
+4. Assistente de relatório de ocorrência.
+5. Protocolos rápidos Fazer/Não fazer.
+6. Ronda por posto e passagem de turno.
+7. Pesquisa privada de procedimentos.
+
+SEGURANÇA INEGOCIÁVEL:
+- o Manual fotografado é de 02/2013 e precisa validação atual;
+- todo item derivado dele deve ter sourceDate, source image/section e requiresCurrentValidation=true;
+- mostrar “Validar com chefia”;
+- NÃO incluir fotos do manual, códigos internos, rotas técnicas, postos, procedimentos detalhados ou banco operacional no build/repositório público;
+- separar modo público e modo operacional privado;
+- um PIN client-side não é segurança real;
+- preferir build operacional separado/autenticação real/pacote local não publicado;
+- minimizar dados pessoais e permitir Exportar e apagar.
+
+PRESERVAR:
+- HTML/CSS/JS puro;
+- Pesquisa v2 e os 34 testes;
+- todos os mapas;
+- diretório, lojas e serviços;
+- favoritos;
+- posição atual;
+- notas;
+- ronda/checklist;
+- pontos personalizados;
+- horários;
+- SOS com confirmação;
+- importação/exportação;
+- localStorage e migração retrocompatível;
+- PWA e offline.
+
+NÃO FAZER:
+- não migrar para React/Vue/Tailwind/Bootstrap;
+- não substituir dados reais por mock;
+- não apagar funcionalidades;
+- não entregar somente CSS ou index;
+- não criar segunda aplicação dentro da mesma interface sem integração;
+- não afirmar stock local sem prova;
+- não publicar conteúdo interno do manual;
+- não usar estilos inline para layout;
+- não considerar concluído sem testar 320 px.
+
+ORDEM DE IMPLEMENTAÇÃO:
+1. Auditoria e backup.
+2. Correção `.hidden`, floor-tabs e remoção de inline crítico.
+3. Refatoração mobile-first completa.
+4. Ajuste de mapa, cards, header, hero e dock.
+5. Máquina de estados do treino.
+6. Banco de perguntas contextual.
+7. Funcionalidades privadas priorizadas.
+8. Separação público/operacional.
+9. PWA/cache/migrações.
+10. Testes de aceitação.
+
+ENTREGA:
+- ZIP completo pronto para substituir;
+- CHANGELOG.md;
+- TEST-REPORT.md;
+- screenshots em 320, 360, 390, 412, 768 e desktop;
+- lista de ficheiros alterados;
+- lista das chaves de localStorage preservadas;
+- relatório dos 34 testes de pesquisa;
+- relatório de responsividade e acessibilidade;
+- lista do conteúdo do manual que ficou aguardando validação atual.
+
+Não concluas a tarefa enquanto o botão “Próxima pergunta” puder ser usado sem responder, enquanto o piso ativo não estiver visualmente inequívoco ou enquanto a interface quebrar em 320 px.

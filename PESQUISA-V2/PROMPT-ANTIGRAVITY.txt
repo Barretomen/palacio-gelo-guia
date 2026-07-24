@@ -1,0 +1,99 @@
+Analisa o projeto PG — Guia de Bolso que já está aberto e implanta integralmente a Pesquisa v2 usando os ficheiros fornecidos neste pacote.
+
+OBJETIVO
+Substituir a pesquisa atual, baseada em catalogKeywords + substring, por uma pesquisa confiável de produtos, lojas e serviços. A pesquisa deve responder a perguntas naturais como “onde vende capa de iPhone?”, “pilha de relógio”, “perdi a carteira”, “cadeira de rodas”, “fraldário”, “carregador USB-C” e “onde faço análises ao sangue”.
+
+FICHEIROS FORNECIDOS
+- catalogo-pesquisa-v2.js: base pronta para uso estático no navegador.
+- catalogo-pesquisa-v2.json: mesma base em JSON para manutenção.
+- search-engine-v2.js: motor pronto, sem dependências.
+- search-tests-v2.js: 34 testes automatizados.
+- cobertura-lojas.csv: auditoria por loja.
+- RELATORIO-AUDITORIA.md e INTEGRACAO-ANTIGRAVITY.md: regras e instruções.
+
+REGRAS INEGOCIÁVEIS
+1. Não estragar mapas, favoritos, notas, treino, checklist, horários, importação/exportação, PWA ou funcionamento offline.
+2. Não reescrever o projeto em React/Vue/Tailwind. Manter HTML/CSS/JavaScript puro.
+3. Remover o uso da pesquisa antiga por substring `hay.includes(token)` e deixar de depender de `catalogKeywords`/`enrichSearchText()`.
+4. Carregar `catalogo-pesquisa-v2.js` e `search-engine-v2.js` antes de `app.js`.
+5. Adicionar ambos ao cache do service worker e atualizar a versão do cache.
+6. Suportar resultados `type: store` e `type: service`.
+7. Não afirmar “tem em stock”, “está disponível” ou equivalente. Catálogo da marca não garante stock físico em Viseu.
+8. Mostrar sempre nível de evidência:
+   - serviço confirmado no Palácio do Gelo;
+   - categoria confirmada no catálogo oficial da marca, stock local por confirmar;
+   - família de produtos curada, confirmar na loja;
+   - correspondência por categoria, verificar.
+9. Mostrar o motivo do resultado, piso/unidade, produtos correspondentes e aviso de disponibilidade.
+10. Se não houver correspondência segura, mostrar uma mensagem clara; não esconder simplesmente a caixa.
+
+ALTERAÇÕES DE DADOS
+- Mayoral, O' Dreams, Pista de Gelo e Tuttocars aparecem no diretório oficial atual e não devem continuar como “não verificadas”.
+- Inside não foi correspondida no diretório oficial atual. Não apagar automaticamente: mostrar aviso “Confirmar antes de indicar”.
+- Balcão de Informações, Cheque-prenda, DAE, Espaço Kids, Minimingos, Multibanco, Perdidos e Achados, WC acessível e outros pontos são serviços, não lojas comuns.
+- “Auchan — O Meu Pet” não deve ser apresentado como loja independente sem confirmação; pode ser um departamento do Auchan.
+- A Ourivesaria Pereirinha possui duas entradas oficiais e pode continuar agrupada num único registo apenas se as duas localizações forem claramente mostradas.
+
+INTERFACE DE RESULTADOS
+Criar cartões com:
+- logótipo/ícone;
+- nome;
+- piso e unidade;
+- selo de confiança;
+- “Encontrado por: …”;
+- aviso de stock;
+- botão “Abrir no mapa”;
+- para serviços, mostrar o prestador e a localização oficial.
+
+Agrupar visualmente:
+1. Serviços do centro;
+2. Lojas com produto/categoria confirmada;
+3. Alternativas que exigem confirmação.
+
+TERMOS AMBÍGUOS
+Quando adequado, mostrar desambiguação para termos como:
+- manga: banda desenhada/livro ou parte de roupa;
+- capa: telemóvel, livro ou cama;
+- bateria: telemóvel, automóvel ou instrumento;
+- cartão: SIM, memória, banco ou cheque-prenda.
+Não bloquear a pesquisa; mostrar a melhor opção e chips para refinar.
+
+CONTAGEM E DATA
+- Substituir “142 LOCAIS CADASTRADOS” fixo por contagem dinâmica.
+- Mostrar “Dados verificados em 24/07/2026”.
+- Separar quantidade de locais e serviços.
+
+SEM RESULTADOS E APRENDIZAGEM
+- Mostrar “Não encontrei uma correspondência segura”.
+- Sugerir categorias ou reformulação.
+- Guardar localmente as pesquisas sem resultado com contagem e data, sem dados pessoais.
+- Criar na área Mais uma pequena lista “Pesquisas a enriquecer”, exportável em JSON.
+
+FEEDBACK OPERACIONAL
+Adicionar, no detalhe do resultado, opções discretas:
+- Encontrou;
+- Não vendia;
+- Loja mudou/fechou;
+- Localização incorreta.
+Guardar em localStorage e incluir na exportação já existente.
+
+TESTES OBRIGATÓRIOS
+1. Executar `node search-tests-v2.js` e manter os 34 testes a passar.
+2. Testar manualmente no browser:
+   - capa de iPhone;
+   - pilha de relógio;
+   - manga;
+   - carregador USB-C;
+   - perdi a carteira;
+   - cadeira de rodas;
+   - fraldário;
+   - análises ao sangue;
+   - carregar carro elétrico;
+   - wroten.
+3. Garantir que “pilha de relógio” não devolve joalharias genéricas.
+4. Garantir que “manga” não é corrigida para Mango.
+5. Garantir que uma pesquisa composta não devolve lojas que só correspondem a uma palavra genérica.
+6. Testar instalação/offline e atualização do service worker.
+
+ENTREGA
+Faz as alterações diretamente no projeto e entrega um ZIP completo pronto para substituir/publicar, preservando todos os dados e funcionalidades existentes. Inclui um CHANGELOG com os ficheiros alterados, decisões tomadas, testes executados e qualquer ponto que ainda precise de confirmação presencial. Não entregar apenas trechos ou sugestões.

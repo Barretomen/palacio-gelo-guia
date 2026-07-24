@@ -1,0 +1,27 @@
+{
+  "stores": 142,
+  "services": 39,
+  "stores_with_confirmed_families": 127,
+  "stores_without_confirmed_families": [
+    "Alicarius",
+    "Balcão de Informações",
+    "Bleem",
+    "Cheque-prenda",
+    "Desfibrilador e Primeiros Socorros",
+    "Espaço Kids",
+    "Minimingos",
+    "Multibanco",
+    "Mundicor",
+    "Perdidos e achados",
+    "Pista de Gelo",
+    "Ponto de Táxi",
+    "Rádio Estação Diária",
+    "Tuttocars",
+    "WC acessível"
+  ],
+  "official_brand_catalog_checked": 27,
+  "official_brand_sources": 25,
+  "official_center_page_mapped": 131,
+  "total_confirmed_terms": 869,
+  "total_discovery_terms": 770
+}

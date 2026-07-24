@@ -1,0 +1,38 @@
+/* Referência mínima. Adaptar ao design final, não copiar cegamente. */
+.floor-tabs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  overflow-x: auto;
+  padding: 6px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #f3f5f8;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+}
+.floor-tabs::-webkit-scrollbar { display: none; }
+.floor-tabs button {
+  flex: 0 0 46px;
+  min-width: 46px;
+  min-height: 44px;
+  padding: 0 10px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  color: var(--muted);
+  font-weight: 800;
+  scroll-snap-align: center;
+}
+.floor-tabs button.active,
+.floor-tabs button[aria-selected="true"] {
+  background: #fff;
+  color: var(--navy);
+  border-color: #d6dde8;
+  box-shadow: 0 6px 18px rgba(16, 24, 40, .16);
+}
+.floor-tabs button:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, .28);
+  outline-offset: 2px;
+}
+.hidden { display: none !important; }
