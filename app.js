@@ -159,8 +159,8 @@
 
   function navTo(screen) {
     activeScreen = screen;
-    qsa('.screen').forEach(el => el.classList.toggle('active', el.dataset.screen === screen));
-    qsa('.bottom-nav button, #desktopNav button').forEach(btn => {
+    qsa('.view').forEach(el => el.classList.toggle('active', el.dataset.screen === screen));
+    qsa('.mobile-nav button, #desktopNav button').forEach(btn => {
       const target = btn.dataset.nav || btn.dataset.view;
       btn.classList.toggle('active', target === screen);
     });
@@ -934,7 +934,7 @@
   }
 
   function bindEvents(){
-    qsa('.bottom-nav button, #desktopNav button').forEach(btn=>btn.addEventListener('click',()=>navTo(btn.dataset.nav || btn.dataset.view)));
+    qsa('.mobile-nav button, #desktopNav button').forEach(btn=>btn.addEventListener('click',()=>navTo(btn.dataset.nav || btn.dataset.view)));
     qsa('[data-nav-target]').forEach(btn=>btn.addEventListener('click',()=>navTo(btn.dataset.navTarget)));
     
     const homeSearch = qs('#homeSearch');
@@ -943,6 +943,7 @@
       wireSearch(homeSearch, homeSearchResults);
     }
 
+    on('#favoritesList', 'click', handleCardListClick);
     on('#floorPlaces', 'click', handleCardListClick);
     on('#directoryGrid', 'click', handleCardListClick);
 
@@ -1211,7 +1212,7 @@
     migrateNotes();
     initFilters();bindEvents();bindPositionAndSOS();renderAll();
     setInterval(renderHours,60000);
-    if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=1.2.9').catch(()=>{});
+    if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=1.3.1').catch(()=>{});
   }
   document.addEventListener('DOMContentLoaded',init);
 })();
